@@ -275,3 +275,35 @@ p, ul, ol, li, blockquote {
   box-shadow: 0 0 0 1px var(--color-champagne-deep);
 }
 
+/* Contact Conversation Form Input */
+.contact-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.75rem;
+  transition: none;
+}
+
+@media (min-width: 640px) {
+  .contact-input {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.contact-input::placeholder {
+  color: color-mix(in srgb, var(--color-muted) 60%, transparent);
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--color-ink);
+}
+

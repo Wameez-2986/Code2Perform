@@ -8,92 +8,83 @@ import {
   ArrowRight,
   AlertCircle,
   Compass,
+  Check,
 } from "lucide-react";
 
 interface FormFields {
   name: string;
   email: string;
-  company: string;
-  need: string;
+  phone: string;
+  services: string[];
   projectDetails: string;
-  goals: string;
 }
 
 interface FormErrors {
   name?: string;
   email?: string;
-  need?: string;
   projectDetails?: string;
-  goals?: string;
 }
 
-const NEED_OPTIONS = [
-  "Website",
+const SERVICE_OPTIONS = [
+  "Web & Digital Development",
   "UI/UX & Product Design",
-  "Mobile App",
-  "SaaS / Custom Platform",
-  "E-Commerce",
-  "AI / Automation",
-  "Ongoing Support",
-  "Other",
+  "Mobile App Development",
+  "SaaS & Custom Platforms",
+  "E-Commerce Solutions",
+  "AI & Business Automation",
 ] as const;
 
 export function ContactView() {
   const [formData, setFormData] = useState<FormFields>({
     name: "",
     email: "",
-    company: "",
-    need: "Website",
+    phone: "",
+    services: [],
     projectDetails: "",
-    goals: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<keyof FormFields, boolean>>({
     name: false,
     email: false,
-    company: false,
-    need: false,
+    phone: false,
+    services: false,
     projectDetails: false,
-    goals: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [serverError, setServerError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState("");
 
   // Field refs for focus management upon validation error
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const projectDetailsRef = useRef<HTMLTextAreaElement>(null);
-  const goalsRef = useRef<HTMLTextAreaElement>(null);
 
-  const validateField = (field: keyof FormFields, value: string): string | undefined => {
+  const validateField = (field: keyof FormFields, value: string | string[]): string | undefined => {
     switch (field) {
       case "name":
-        if (!value.trim()) {
+        if (typeof value === "string" && !value.trim()) {
           return "Please enter your name.";
         }
         return undefined;
       case "email":
-        if (!value.trim()) {
-          return "Please enter your work email address.";
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
-          return "Please enter a valid email address (e.g. name@company.com).";
+        if (typeof value === "string") {
+          if (!value.trim()) {
+            return "Please enter your email address.";
+          }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
+            return "Please enter a valid email address (e.g. name@company.com).";
+          }
         }
         return undefined;
       case "projectDetails":
-        if (!value.trim()) {
-          return "Please share a few sentences about your project.";
-        }
-        if (value.trim().length < 10) {
-          return "Please provide a bit more context about the project.";
-        }
-        return undefined;
-      case "goals":
-        if (!value.trim()) {
-          return "Please tell us what outcome or goal you are trying to achieve.";
-        }
-        if (value.trim().length < 10) {
-          return "Please share a little more about what success looks like.";
+        if (typeof value === "string") {
+          if (!value.trim()) {
+            return "Please tell us about your project.";
+          }
+          if (value.trim().length < 10) {
+            return "Please provide a bit more context about the project.";
+          }
         }
         return undefined;
       default:
@@ -112,14 +103,11 @@ export function ContactView() {
     const detailsErr = validateField("projectDetails", data.projectDetails);
     if (detailsErr) errs.projectDetails = detailsErr;
 
-    const goalsErr = validateField("goals", data.goals);
-    if (goalsErr) errs.goals = goalsErr;
-
     return errs;
   };
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     const key = name as keyof FormFields;
@@ -132,7 +120,7 @@ export function ContactView() {
   };
 
   const handleBlur = (
-    e: FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     const key = name as keyof FormFields;
@@ -142,16 +130,29 @@ export function ContactView() {
     setErrors((prev) => ({ ...prev, [key]: fieldError }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const toggleService = (service: string) => {
+    setFormData((prev) => {
+      const exists = prev.services.includes(service);
+      return {
+        ...prev,
+        services: exists
+          ? prev.services.filter((s) => s !== service)
+          : [...prev.services, service],
+      };
+    });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (status === "submitting") return;
 
     setTouched({
       name: true,
       email: true,
-      company: true,
-      need: true,
+      phone: true,
+      services: true,
       projectDetails: true,
-      goals: true,
     });
 
     const validationErrors = validateAll(formData);
@@ -164,33 +165,60 @@ export function ContactView() {
         emailRef.current?.focus();
       } else if (validationErrors.projectDetails) {
         projectDetailsRef.current?.focus();
-      } else if (validationErrors.goals) {
-        goalsRef.current?.focus();
       }
       return;
     }
 
-    setSubmitted(true);
+    setStatus("submitting");
+    setServerError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          honeypot,
+        }),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok || !data?.success) {
+        setStatus("error");
+        setServerError(
+          data?.error || "Something went wrong while sending your message. Please try again."
+        );
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setStatus("error");
+      setServerError("Something went wrong while sending your message. Please try again.");
+    }
   };
 
   const handleReset = () => {
-    setSubmitted(false);
+    setStatus("idle");
+    setServerError(null);
+    setHoneypot("");
     setFormData({
       name: "",
       email: "",
-      company: "",
-      need: "Website",
+      phone: "",
+      services: [],
       projectDetails: "",
-      goals: "",
     });
     setErrors({});
     setTouched({
       name: false,
       email: false,
-      company: false,
-      need: false,
+      phone: false,
+      services: false,
       projectDetails: false,
-      goals: false,
     });
   };
 
@@ -279,11 +307,11 @@ export function ContactView() {
               </div>
             </div>
 
-            {/* Right Column: Form or Confirmation State */}
+            {/* Right Column: Form matching reference image or Confirmation State */}
             <div className="lg:col-span-8">
-              {submitted ? (
+              {status === "success" ? (
                 <div
-                  className="p-8 md:p-12 bg-surface-alt border border-hairline space-y-6"
+                  className="bg-surface border border-hairline rounded-3xl p-8 sm:p-10 md:p-12 space-y-6"
                   role="status"
                   aria-live="polite"
                 >
@@ -294,16 +322,20 @@ export function ContactView() {
                     </h3>
                   </div>
                   <div className="space-y-3 text-muted type-body leading-relaxed">
-                    <p>
-                      Thank you, <span className="text-ink font-medium">{formData.name}</span>.
-                      We have received your discovery notes regarding{" "}
-                      <span className="text-ink font-medium">{formData.need}</span>.
+                    <p className="text-ink font-medium text-lg">
+                      Thanks for reaching out. We&apos;ve received your project details.
                     </p>
                     <p>
-                      Our team will carefully review your requirements and business context, then
-                      reach out to <span className="text-ink font-medium">{formData.email}</span> to
-                      discuss what makes sense for your project.
+                      Thank you, <span className="text-ink font-medium">{formData.name}</span>. Your inquiry has been submitted directly to our team.
                     </p>
+                    {formData.services.length > 0 && (
+                      <p className="text-sm">
+                        Selected services:{" "}
+                        <span className="text-ink font-medium">
+                          {formData.services.join(", ")}
+                        </span>
+                      </p>
+                    )}
                   </div>
                   <div className="pt-2">
                     <button
@@ -317,246 +349,247 @@ export function ContactView() {
                   </div>
                 </div>
               ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  noValidate
-                  className="space-y-6"
-                  aria-label="Discovery inquiry form"
-                >
-                  {/* Row 1: Name and Work Email */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Name */}
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
+                <div className="bg-surface border border-hairline rounded-3xl p-6 sm:p-8 md:p-10 shadow-none">
+                  <h2 className="type-heading text-2xl sm:text-3xl font-bold text-ink tracking-tight mb-8">
+                    Start a Conversation
+                  </h2>
+
+                  <form onSubmit={handleSubmit} noValidate className="space-y-6" aria-label="Start a Conversation form">
+                    {/* Hidden Honeypot Field for Spam Protection */}
+                    <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
+                      <label htmlFor="company_website_url">Leave this empty</label>
+                      <input
+                        type="text"
+                        id="company_website_url"
+                        name="honeypot"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
+
+                    {/* Server-Side Error Alert */}
+                    {serverError && (
+                      <div
+                        role="alert"
+                        className="p-4 bg-surface border border-champagne-deep/40 rounded-xl flex items-start gap-3 text-sm text-ink"
+                      >
+                        <AlertCircle className="h-5 w-5 text-champagne-deep shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <p className="font-medium text-ink">Submission Error</p>
+                          <p className="text-muted text-xs leading-relaxed">{serverError}</p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* ROW 1 — TWO COLUMNS */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                      {/* YOUR NAME * */}
+                      <div className="space-y-2">
                         <label
                           htmlFor="name"
-                          className="type-label text-ink block"
+                          className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
                         >
-                          Name <span className="text-champagne-deep" aria-hidden="true">*</span>
+                          YOUR NAME <span className="text-champagne-deep" aria-hidden="true">*</span>
                         </label>
-                        <span className="type-legal text-muted" aria-hidden="true">Required</span>
+                        <input
+                          ref={nameRef}
+                          type="text"
+                          id="name"
+                          name="name"
+                          autoComplete="name"
+                          required
+                          disabled={status === "submitting"}
+                          aria-required="true"
+                          aria-invalid={touched.name && !!errors.name}
+                          aria-describedby={touched.name && errors.name ? "name-error" : undefined}
+                          value={formData.name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          placeholder="John Doe"
+                          className={`contact-input ${
+                            touched.name && errors.name
+                              ? "border-champagne-deep"
+                              : "border-hairline"
+                          }`}
+                        />
+                        {touched.name && errors.name && (
+                          <p id="name-error" role="alert" className="text-xs text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5">
+                            <AlertCircle className="h-3.5 w-3.5 shrink-0" />
+                            <span>{errors.name}</span>
+                          </p>
+                        )}
                       </div>
-                      <input
-                        ref={nameRef}
-                        type="text"
-                        id="name"
-                        name="name"
-                        autoComplete="name"
-                        required
-                        aria-required="true"
-                        aria-invalid={touched.name && !!errors.name}
-                        aria-describedby={touched.name && errors.name ? "name-error" : undefined}
-                        value={formData.name}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        placeholder="Your full name"
-                        className={`input-base ${
-                          touched.name && errors.name ? "input-base-error" : ""
-                        }`}
-                      />
-                      {touched.name && errors.name && (
-                        <p
-                          id="name-error"
-                          role="alert"
-                          className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
-                        >
-                          <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-                          <span>{errors.name}</span>
-                        </p>
-                      )}
-                    </div>
 
-                    {/* Work Email */}
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
+                      {/* EMAIL ADDRESS * */}
+                      <div className="space-y-2">
                         <label
                           htmlFor="email"
-                          className="type-label text-ink block"
+                          className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
                         >
-                          Work Email <span className="text-champagne-deep" aria-hidden="true">*</span>
+                          EMAIL ADDRESS <span className="text-champagne-deep" aria-hidden="true">*</span>
                         </label>
-                        <span className="type-legal text-muted" aria-hidden="true">Required</span>
+                        <input
+                          ref={emailRef}
+                          type="email"
+                          id="email"
+                          name="email"
+                          autoComplete="email"
+                          required
+                          disabled={status === "submitting"}
+                          aria-required="true"
+                          aria-invalid={touched.email && !!errors.email}
+                          aria-describedby={touched.email && errors.email ? "email-error" : undefined}
+                          value={formData.email}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          placeholder="john@company.com"
+                          className={`contact-input ${
+                            touched.email && errors.email
+                              ? "border-champagne-deep"
+                              : "border-hairline"
+                          }`}
+                        />
+                        {touched.email && errors.email && (
+                          <p id="email-error" role="alert" className="text-xs text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5">
+                            <AlertCircle className="h-3.5 w-3.5 shrink-0" />
+                            <span>{errors.email}</span>
+                          </p>
+                        )}
                       </div>
+                    </div>
+
+                    {/* ROW 2 — FULL WIDTH: PHONE NUMBER */}
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
+                      >
+                        PHONE NUMBER
+                      </label>
                       <input
-                        ref={emailRef}
-                        type="email"
-                        id="email"
-                        name="email"
-                        autoComplete="email"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autoComplete="tel"
+                        disabled={status === "submitting"}
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+91 98765 43210"
+                        className="contact-input border-hairline"
+                      />
+                    </div>
+
+                    {/* ROW 3 — SERVICES NEEDED (SELECT ALL THAT APPLY) */}
+                    <div className="space-y-2.5">
+                      <span id="services-label" className="block text-xs font-semibold tracking-wider text-ink/80 uppercase">
+                        SERVICES NEEDED (SELECT ALL THAT APPLY)
+                      </span>
+                      <div
+                        role="group"
+                        aria-labelledby="services-label"
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                      >
+                        {SERVICE_OPTIONS.map((service) => {
+                          const isSelected = formData.services.includes(service);
+                          return (
+                            <button
+                              key={service}
+                              type="button"
+                              role="checkbox"
+                              disabled={status === "submitting"}
+                              aria-checked={isSelected}
+                              onClick={() => toggleService(service)}
+                              className={`w-full flex items-center justify-between px-4 py-3 sm:py-3.5 rounded-xl border text-left cursor-pointer transition-none ${
+                                isSelected
+                                  ? "border-ink bg-surface text-ink"
+                                  : "border-hairline bg-surface text-ink hover:border-muted/50"
+                              }`}
+                            >
+                              <span className="text-xs sm:text-sm font-medium pr-3 leading-snug">
+                                {service}
+                              </span>
+                              <span
+                                className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-none ${
+                                  isSelected
+                                    ? "border-ink bg-ink text-white"
+                                    : "border-hairline bg-surface"
+                                }`}
+                                aria-hidden="true"
+                              >
+                                {isSelected && (
+                                  <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+                                )}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* ROW 4 — PROJECT DETAILS */}
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="projectDetails"
+                        className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
+                      >
+                        TELL US ABOUT YOUR PROJECT <span className="text-champagne-deep" aria-hidden="true">*</span>
+                      </label>
+                      <textarea
+                        ref={projectDetailsRef}
+                        id="projectDetails"
+                        name="projectDetails"
+                        rows={4}
                         required
+                        disabled={status === "submitting"}
                         aria-required="true"
-                        aria-invalid={touched.email && !!errors.email}
-                        aria-describedby={touched.email && errors.email ? "email-error" : undefined}
-                        value={formData.email}
+                        aria-invalid={touched.projectDetails && !!errors.projectDetails}
+                        aria-describedby={touched.projectDetails && errors.projectDetails ? "projectDetails-error" : undefined}
+                        value={formData.projectDetails}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="name@company.com"
-                        className={`input-base ${
-                          touched.email && errors.email ? "input-base-error" : ""
+                        placeholder="Tell us about your business, what you want to build, your goals, and any important requirements..."
+                        className={`contact-input resize-y min-h-30 ${
+                          touched.projectDetails && errors.projectDetails
+                            ? "border-champagne-deep"
+                            : "border-hairline"
                         }`}
                       />
-                      {touched.email && errors.email && (
-                        <p
-                          id="email-error"
-                          role="alert"
-                          className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
-                        >
+                      {touched.projectDetails && errors.projectDetails && (
+                        <p id="projectDetails-error" role="alert" className="text-xs text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5">
                           <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-                          <span>{errors.email}</span>
+                          <span>{errors.projectDetails}</span>
                         </p>
                       )}
                     </div>
-                  </div>
 
-                  {/* Row 2: Company / Business and What do you need? */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Company / Business */}
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <label
-                          htmlFor="company"
-                          className="type-label text-ink block"
-                        >
-                          Company / Business
-                        </label>
-                        <span className="type-legal text-muted" aria-hidden="true">Optional</span>
-                      </div>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        autoComplete="organization"
-                        value={formData.company}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        placeholder="Company or organization name"
-                        className="input-base"
-                      />
-                    </div>
+                    {/* SUBMIT BUTTON */}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={status === "submitting"}
+                        className={`w-full py-4 px-6 rounded-2xl bg-ink text-white font-medium text-base hover:bg-champagne-deep cursor-pointer flex items-center justify-center gap-2 transition-none ${
+                          status === "submitting" ? "opacity-75 cursor-not-allowed" : ""
+                        }`}
+                      >
+                        {status === "submitting" ? (
+                          <span>Sending...</span>
+                        ) : (
+                          <>
+                            <span>Start Your Project</span>
+                            <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                          </>
+                        )}
+                      </button>
 
-                    {/* What do you need? */}
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <label
-                          htmlFor="need"
-                          className="type-label text-ink block"
-                        >
-                          What do you need? <span className="text-champagne-deep" aria-hidden="true">*</span>
-                        </label>
-                        <span className="type-legal text-muted" aria-hidden="true">Required</span>
-                      </div>
-                      <select
-                        id="need"
-                        name="need"
-                        required
-                        aria-required="true"
-                        value={formData.need}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        className="input-base cursor-pointer"
-                      >
-                        {NEED_OPTIONS.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Row 3: Tell us about the project */}
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="projectDetails"
-                        className="type-label text-ink block"
-                      >
-                        Tell us about the project <span className="text-champagne-deep" aria-hidden="true">*</span>
-                      </label>
-                      <span className="type-legal text-muted" aria-hidden="true">Required</span>
-                    </div>
-                    <textarea
-                      ref={projectDetailsRef}
-                      id="projectDetails"
-                      name="projectDetails"
-                      rows={4}
-                      required
-                      aria-required="true"
-                      aria-invalid={touched.projectDetails && !!errors.projectDetails}
-                      aria-describedby={touched.projectDetails && errors.projectDetails ? "projectDetails-error" : undefined}
-                      value={formData.projectDetails}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder="Describe what your project involves, your current setup, and any existing challenges."
-                      className={`input-base resize-y ${
-                        touched.projectDetails && errors.projectDetails ? "input-base-error" : ""
-                      }`}
-                    />
-                    {touched.projectDetails && errors.projectDetails && (
-                      <p
-                        id="projectDetails-error"
-                        role="alert"
-                        className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
-                      >
-                        <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-                        <span>{errors.projectDetails}</span>
+                      {/* PRIVACY MESSAGE */}
+                      <p className="text-center text-xs text-muted pt-3">
+                        We respect your privacy. No spam ever.
                       </p>
-                    )}
-                  </div>
-
-                  {/* Row 4: What are you trying to achieve? */}
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="goals"
-                        className="type-label text-ink block"
-                      >
-                        What are you trying to achieve? <span className="text-champagne-deep" aria-hidden="true">*</span>
-                      </label>
-                      <span className="type-legal text-muted" aria-hidden="true">Required</span>
                     </div>
-                    <textarea
-                      ref={goalsRef}
-                      id="goals"
-                      name="goals"
-                      rows={3}
-                      required
-                      aria-required="true"
-                      aria-invalid={touched.goals && !!errors.goals}
-                      aria-describedby={touched.goals && errors.goals ? "goals-error" : undefined}
-                      value={formData.goals}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder="What commercial outcome or operational improvement matters most? (e.g., launching a new product, eliminating manual bottlenecks, increasing qualified leads)"
-                      className={`input-base resize-y ${
-                        touched.goals && errors.goals ? "input-base-error" : ""
-                      }`}
-                    />
-                    {touched.goals && errors.goals && (
-                      <p
-                        id="goals-error"
-                        role="alert"
-                        className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
-                      >
-                        <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-                        <span>{errors.goals}</span>
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Submission Row */}
-                  <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-                    <button
-                      type="submit"
-                      className="type-button w-full sm:w-auto px-8 py-4 bg-ink text-bone hover:bg-champagne-deep text-center cursor-pointer transition-none rounded-none"
-                    >
-                      Submit for Consultation
-                    </button>
-                    <p className="type-legal text-muted">
-                      No marketing sequences or data sharing. Direct technical consultation.
-                    </p>
-                  </div>
-                </form>
+                  </form>
+                </div>
               )}
             </div>
           </div>

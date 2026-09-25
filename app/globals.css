@@ -1,26 +1,55 @@
+/* =============================================================================
+   Satoshi — Fontshare (must precede all other imports)
+   ============================================================================= */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap");
+
 @import "tailwindcss";
 
+/* =============================================================================
+   Design Tokens
+   ============================================================================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bone:            #F8F5EE;
+  --color-ink:             #16150F;
+  --color-champagne:       #A8864A;
+  --color-champagne-deep:  #7A5F2A;
+  --color-muted:           #6B675C;
+  --color-surface:         #FFFFFF;
+  --color-surface-alt:     #F1ECE0;
+  --color-hairline:        #E8E2D2;
+  --color-champagne-glow:  rgba(217, 192, 138, 0.25);
 }
 
+/* =============================================================================
+   Tailwind v4 Theme Registration
+   ============================================================================= */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-santoshi);
-  --font-mono: var(--font-geist-mono);
-}   
+  /* Font */
+  --font-sans: "Satoshi", system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Colors */
+  --color-bone:            var(--color-bone);
+  --color-ink:             var(--color-ink);
+  --color-champagne:       var(--color-champagne);
+  --color-champagne-deep:  var(--color-champagne-deep);
+  --color-muted:           var(--color-muted);
+  --color-surface:         var(--color-surface);
+  --color-surface-alt:     var(--color-surface-alt);
+  --color-hairline:        var(--color-hairline);
+  --color-champagne-glow:  var(--color-champagne-glow);
+}
+
+/* =============================================================================
+   Base Styles
+   ============================================================================= */
+html {
+  background-color: var(--color-bone);
+  color: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Satoshi", system-ui, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

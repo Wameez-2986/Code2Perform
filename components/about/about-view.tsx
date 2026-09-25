@@ -160,7 +160,8 @@ export function AboutView() {
           </div>
 
           {/* 6-Stage Editorial Ledger */}
-          <div className="divide-y divide-hairline border-t border-b border-hairline">
+          <div className="border-t border-b border-hairline">
+            <div className="divide-y divide-hairline">
             {/* Step 1: Understand the business */}
             <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
@@ -282,7 +283,8 @@ export function AboutView() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* =====================================================================
           4. WHAT WE BELIEVE

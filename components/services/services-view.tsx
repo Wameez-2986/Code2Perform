@@ -170,7 +170,7 @@ export function ServicesView() {
               </div>
 
               {/* Natural Post-Launch Support Connection */}
-              <div className="pt-6 border-t border-hairline space-y-3 bg-surface-alt/60 p-5 rounded-none">
+              <div className="pt-6 border-t border-hairline space-y-2">
                 <p className="type-label text-champagne-deep">Post-Launch Support Areas We Can Discuss</p>
                 <p className="type-body-sm text-muted leading-relaxed">
                   After launch, we can assist with ongoing website maintenance, code updates, security
@@ -205,7 +205,8 @@ export function ServicesView() {
           </div>
 
           {/* 2-Column Spread: UI/UX & Product Design + Mobile App Development */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-b border-hairline divide-y lg:divide-y-0 lg:divide-x divide-hairline">
+          <div className="border-t border-b border-hairline">
+            <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-hairline">
             {/* Service 2: UI/UX & Product Design */}
             <div className="py-10 lg:pr-12 space-y-8">
               <div className="space-y-4">
@@ -269,7 +270,7 @@ export function ServicesView() {
               </div>
 
               {/* Post-Launch Capabilities */}
-              <div className="pt-6 border-t border-hairline space-y-2.5 bg-surface-alt/60 p-4">
+              <div className="pt-6 border-t border-hairline space-y-2">
                 <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
                 <p className="type-body-sm text-muted leading-relaxed">
                   As real customers use the product, we can help analyze user feedback, perform UX
@@ -341,7 +342,7 @@ export function ServicesView() {
               </div>
 
               {/* Post-Launch Capabilities */}
-              <div className="pt-6 border-t border-hairline space-y-2.5 bg-surface-alt/60 p-4">
+              <div className="pt-6 border-t border-hairline space-y-2">
                 <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
                 <p className="type-body-sm text-muted leading-relaxed">
                   We remain available to help keep apps compatible with new mobile OS releases, resolve
@@ -351,7 +352,8 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* =====================================================================
           4. SAAS, COMMERCE & AUTOMATION
@@ -375,7 +377,8 @@ export function ServicesView() {
           </div>
 
           {/* 3-Tier Horizontal Bands */}
-          <div className="divide-y divide-hairline border-t border-b border-hairline">
+          <div className="border-t border-b border-hairline">
+            <div className="divide-y divide-hairline">
             {/* Service 4: SaaS & Custom Platforms */}
             <div className="py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Left Identifier */}
@@ -454,7 +457,7 @@ export function ServicesView() {
                 </div>
 
                 {/* Post-Launch Capabilities */}
-                <div className="pt-4 border-t border-hairline space-y-2 bg-surface-alt/60 p-4">
+                <div className="pt-4 border-t border-hairline space-y-2">
                   <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
                   <p className="type-body-sm text-muted leading-relaxed">
                     We can support ongoing platform health, database performance, security reviews, and
@@ -543,7 +546,7 @@ export function ServicesView() {
                 </div>
 
                 {/* Post-Launch Capabilities */}
-                <div className="pt-4 border-t border-hairline space-y-2 bg-surface-alt/60 p-4">
+                <div className="pt-4 border-t border-hairline space-y-2">
                   <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
                   <p className="type-body-sm text-muted leading-relaxed">
                     Following store launch, we can support conversion rate optimization, promotional
@@ -631,7 +634,7 @@ export function ServicesView() {
                 </div>
 
                 {/* Post-Launch Capabilities */}
-                <div className="pt-4 border-t border-hairline space-y-2 bg-surface-alt/60 p-4">
+                <div className="pt-4 border-t border-hairline space-y-2">
                   <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
                   <p className="type-body-sm text-muted leading-relaxed">
                     As your business workflows evolve, we can maintain API connectors, introduce customer
@@ -642,7 +645,8 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* =====================================================================
           5. POST-LAUNCH & ONGOING GROWTH MODEL
@@ -668,7 +672,8 @@ export function ServicesView() {
           </div>
 
           {/* Editorial Ledger of 6 Post-Launch Support Areas */}
-          <div className="divide-y divide-hairline border-t border-b border-hairline">
+          <div className="border-t border-b border-hairline">
+            <div className="divide-y divide-hairline">
             {/* Area 1: Website Maintenance & Support */}
             <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
               <div className="md:col-span-4 space-y-1">
@@ -807,6 +812,7 @@ export function ServicesView() {
               </div>
             </div>
           </div>
+        </div>
 
           {/* Model Note: No Forced Retainers */}
           <div className="pt-2">

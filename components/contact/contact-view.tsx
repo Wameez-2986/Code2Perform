@@ -350,10 +350,8 @@ export function ContactView() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="Your full name"
-                        className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none ${
-                          touched.name && errors.name
-                            ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
-                            : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
+                        className={`input-base ${
+                          touched.name && errors.name ? "input-base-error" : ""
                         }`}
                       />
                       {touched.name && errors.name && (
@@ -393,10 +391,8 @@ export function ContactView() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="name@company.com"
-                        className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none ${
-                          touched.email && errors.email
-                            ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
-                            : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
+                        className={`input-base ${
+                          touched.email && errors.email ? "input-base-error" : ""
                         }`}
                       />
                       {touched.email && errors.email && (
@@ -434,7 +430,7 @@ export function ContactView() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="Company or organization name"
-                        className="w-full px-4 py-3 bg-surface border border-hairline text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
+                        className="input-base"
                       />
                     </div>
 
@@ -457,7 +453,7 @@ export function ContactView() {
                         value={formData.need}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className="w-full px-4 py-3 bg-surface border border-hairline text-ink text-sm rounded-none transition-none focus:outline-none focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep cursor-pointer"
+                        className="input-base cursor-pointer"
                       >
                         {NEED_OPTIONS.map((option) => (
                           <option key={option} value={option}>
@@ -492,10 +488,8 @@ export function ContactView() {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="Describe what your project involves, your current setup, and any existing challenges."
-                      className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none resize-y ${
-                        touched.projectDetails && errors.projectDetails
-                          ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
-                          : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
+                      className={`input-base resize-y ${
+                        touched.projectDetails && errors.projectDetails ? "input-base-error" : ""
                       }`}
                     />
                     {touched.projectDetails && errors.projectDetails && (
@@ -534,10 +528,8 @@ export function ContactView() {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="What commercial outcome or operational improvement matters most? (e.g., launching a new product, eliminating manual bottlenecks, increasing qualified leads)"
-                      className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none resize-y ${
-                        touched.goals && errors.goals
-                          ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
-                          : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
+                      className={`input-base resize-y ${
+                        touched.goals && errors.goals ? "input-base-error" : ""
                       }`}
                     />
                     {touched.goals && errors.goals && (
@@ -598,7 +590,8 @@ export function ContactView() {
           </div>
 
           {/* 4 Steps: Clean editorial columns with hairline dividers */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-b border-hairline divide-y sm:divide-y-0 sm:divide-x divide-hairline">
+          <div className="border-t border-b border-hairline">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-hairline">
             {/* Step 1 */}
             <div className="py-8 md:py-10 sm:pr-6 lg:pr-8 space-y-3">
               <div className="flex items-center justify-between">
@@ -653,6 +646,7 @@ export function ContactView() {
               <p className="type-body-sm text-muted leading-relaxed">
                 If there is a mutual fit, we prepare a clear proposal with scope, deliverables, and next steps for your review.
               </p>
+            </div>
             </div>
           </div>
         </div>

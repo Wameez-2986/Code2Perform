@@ -262,7 +262,8 @@ export function HomeView() {
           </div>
 
           {/* Editorial Process Rows across the 5 delivery stages */}
-          <div className="divide-y divide-hairline border-t border-b border-hairline">
+          <div className="border-t border-b border-hairline">
+            <div className="divide-y divide-hairline">
             {/* Step 1: Understand */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
@@ -366,7 +367,8 @@ export function HomeView() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* =====================================================================
           4. SERVICES OVERVIEW
@@ -401,7 +403,8 @@ export function HomeView() {
           </div>
 
           {/* Editorial Index Ledger (Not a boxed card grid) */}
-          <div className="divide-y divide-hairline border-b border-hairline">
+          <div className="border-b border-hairline">
+            <div className="divide-y divide-hairline">
             {SERVICES.map((service) => (
               <div
                 key={service.name}
@@ -440,6 +443,7 @@ export function HomeView() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>

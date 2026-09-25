@@ -71,8 +71,8 @@ export function ServicesView() {
             {/* Left Anchor */}
             <div className="lg:col-span-5 space-y-5">
               <div className="flex items-center gap-3">
-                <span className="type-label text-champagne font-medium">01</span>
-                <Globe className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                <span className="type-label text-champagne-deep font-medium">01</span>
+                <Globe className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
               </div>
               <h2 className="type-heading text-ink">
                 Web &amp; Digital Development
@@ -190,8 +190,8 @@ export function ServicesView() {
             <div className="py-10 lg:pr-12 space-y-8">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="type-label text-champagne font-medium">02</span>
-                  <Palette className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                  <span className="type-label text-champagne-deep font-medium">02</span>
+                  <Palette className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
                 </div>
                 <h3 className="type-heading text-2xl md:text-3xl text-ink">
                   UI/UX &amp; Product Design
@@ -250,8 +250,8 @@ export function ServicesView() {
             <div className="py-10 lg:pl-12 space-y-8">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="type-label text-champagne font-medium">03</span>
-                  <Smartphone className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                  <span className="type-label text-champagne-deep font-medium">03</span>
+                  <Smartphone className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
                 </div>
                 <h3 className="type-heading text-2xl md:text-3xl text-ink">
                   Mobile App Development
@@ -337,8 +337,8 @@ export function ServicesView() {
               {/* Left Identifier */}
               <div className="lg:col-span-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="type-label text-champagne font-medium">04</span>
-                  <Layers className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                  <span className="type-label text-champagne-deep font-medium">04</span>
+                  <Layers className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
                 </div>
                 <h3 className="type-title text-ink font-medium text-2xl">
                   SaaS &amp; Custom Platforms
@@ -413,8 +413,8 @@ export function ServicesView() {
               {/* Left Identifier */}
               <div className="lg:col-span-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="type-label text-champagne font-medium">05</span>
-                  <ShoppingBag className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                  <span className="type-label text-champagne-deep font-medium">05</span>
+                  <ShoppingBag className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
                 </div>
                 <h3 className="type-title text-ink font-medium text-2xl">
                   E-Commerce Solutions
@@ -489,8 +489,8 @@ export function ServicesView() {
               {/* Left Identifier */}
               <div className="lg:col-span-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="type-label text-champagne font-medium">06</span>
-                  <Cpu className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                  <span className="type-label text-champagne-deep font-medium">06</span>
+                  <Cpu className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
                 </div>
                 <h3 className="type-title text-ink font-medium text-2xl">
                   AI &amp; Business Automation
@@ -597,7 +597,7 @@ export function ServicesView() {
                 className="type-nav text-ink hover:text-champagne-deep inline-flex items-center justify-center sm:justify-start gap-1.5"
               >
                 Learn how we work
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

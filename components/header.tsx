@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -20,6 +20,20 @@ export function Header() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  // Close mobile menu on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        closeMenu();
+        const toggleBtn = document.getElementById("mobile-menu-toggle");
+        toggleBtn?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   const isHomeActive = pathname === "/" || pathname === "/home";
 
   return (
@@ -34,7 +48,7 @@ export function Header() {
         >
           <Image
             src="/logo.png"
-            alt="Code2Perform"
+            alt="Code2Perform - Digital Design and Web Engineering"
             width={160}
             height={48}
             priority
@@ -57,6 +71,7 @@ export function Header() {
               <Link
                 key={item.label}
                 href={item.href}
+                aria-current={isActive ? "page" : undefined}
                 className={`type-nav ${
                   isActive
                     ? "text-ink font-medium"
@@ -81,19 +96,28 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
+          id="mobile-menu-toggle"
           type="button"
           onClick={toggleMenu}
-          className="md:hidden p-2 text-ink"
+          className="md:hidden p-2 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-champagne-deep"
           aria-expanded={isOpen}
+          aria-controls="mobile-menu"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? (
+            <X className="h-6 w-6" aria-hidden="true" />
+          ) : (
+            <Menu className="h-6 w-6" aria-hidden="true" />
+          )}
         </button>
       </div>
 
       {/* Mobile Navigation Panel */}
       {isOpen && (
-        <div className="md:hidden border-t border-hairline bg-bone px-6 py-6">
+        <div
+          id="mobile-menu"
+          className="md:hidden border-t border-hairline bg-bone px-6 py-6"
+        >
           <nav
             className="flex flex-col space-y-4"
             aria-label="Mobile Navigation"
@@ -109,6 +133,7 @@ export function Header() {
                   key={item.label}
                   href={item.href}
                   onClick={closeMenu}
+                  aria-current={isActive ? "page" : undefined}
                   className={`type-nav py-2 ${
                     isActive
                       ? "text-ink font-medium"

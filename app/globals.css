@@ -242,3 +242,12 @@ p, ul, ol, li, blockquote {
   padding-top: var(--spacing-section-sm);
   padding-bottom: var(--spacing-section-sm);
 }
+
+/* =============================================================================
+   Keyboard Accessibility & Focus-Visible Ring
+   ============================================================================= */
+:focus-visible {
+  outline: 2px solid var(--color-champagne-deep);
+  outline-offset: 2px;
+}
+

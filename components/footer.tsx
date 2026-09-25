@@ -16,7 +16,7 @@ export function Footer() {
             >
               <Image
                 src="/logo.png"
-                alt="Code2Perform"
+                alt="Code2Perform - Digital Design and Web Engineering"
                 width={150}
                 height={45}
                 className="h-9 w-auto object-contain"

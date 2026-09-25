@@ -437,7 +437,7 @@ export function TermsView() {
                       Governing Jurisdiction: [Applicable Country / State Jurisdiction as specified in SOW]
                     </p>
                     <div className="pt-2 flex items-center gap-2 text-ink">
-                      <Mail className="h-4 w-4 text-champagne-deep shrink-0" />
+                      <Mail className="h-4 w-4 text-champagne-deep shrink-0" aria-hidden="true" />
                       <a
                         href="mailto:legal@code2perform.com"
                         className="hover:text-champagne-deep font-medium break-all"
@@ -455,7 +455,7 @@ export function TermsView() {
                   href="/home"
                   className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-2"
                 >
-                  <ArrowLeft className="h-4 w-4" />
+                  <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                   Return to Home
                 </Link>
                 <Link

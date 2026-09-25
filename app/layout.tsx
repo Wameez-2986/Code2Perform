@@ -20,8 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-bone text-ink">
+        {/* Skip to Main Content Link for Keyboard and Screen Reader Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-ink focus:text-bone focus:outline-none focus:ring-2 focus:ring-champagne font-medium text-sm"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1 w-full">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1 w-full focus:outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

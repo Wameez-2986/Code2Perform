@@ -111,7 +111,7 @@ export function HomeView() {
                 className="type-nav inline-flex items-center justify-center gap-2 w-full sm:w-auto lg:w-full px-6 py-3.5 border border-hairline text-ink hover:border-ink text-center"
               >
                 Explore Our Services
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -356,7 +356,7 @@ export function HomeView() {
                 className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep"
               >
                 View all services
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -373,10 +373,10 @@ export function HomeView() {
                   <div className="space-y-4">
                     {/* Index & Simple Lucide Icon */}
                     <div className="flex items-center justify-between">
-                      <span className="type-label text-champagne font-medium">
+                      <span className="type-label text-champagne-deep font-medium">
                         {service.number}
                       </span>
-                      <Icon className="h-5 w-5 text-champagne-deep stroke-[1.5]" />
+                      <Icon className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
                     </div>
 
                     {/* Exact Service Name */}
@@ -394,10 +394,11 @@ export function HomeView() {
                   <div className="mt-8 pt-4 border-t border-hairline/60">
                     <Link
                       href="/services"
+                      aria-label={`Learn more about ${service.name}`}
                       className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5"
                     >
                       Learn more
-                      <ArrowUpRight className="h-3.5 w-3.5" />
+                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -448,7 +449,7 @@ export function HomeView() {
                 className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5"
               >
                 Or review our services
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

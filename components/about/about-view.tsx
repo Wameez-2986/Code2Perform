@@ -164,7 +164,7 @@ export function AboutView() {
           <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-hairline">
             {/* Belief 01 */}
             <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne font-medium">01 / Clarity</span>
+              <span className="type-label text-champagne-deep font-medium">01 / Clarity</span>
               <h3 className="type-title text-ink font-medium text-xl">
                 Clarity comes before decoration
               </h3>
@@ -178,7 +178,7 @@ export function AboutView() {
 
             {/* Belief 02 */}
             <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne font-medium">02 / Speed</span>
+              <span className="type-label text-champagne-deep font-medium">02 / Speed</span>
               <h3 className="type-title text-ink font-medium text-xl">
                 Speed is respect for your user
               </h3>
@@ -192,7 +192,7 @@ export function AboutView() {
 
             {/* Belief 03 */}
             <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne font-medium">03 / Utility</span>
+              <span className="type-label text-champagne-deep font-medium">03 / Utility</span>
               <h3 className="type-title text-ink font-medium text-xl">
                 Useful products beat flashy gimmicks
               </h3>
@@ -206,7 +206,7 @@ export function AboutView() {
 
             {/* Belief 04 */}
             <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne font-medium">04 / Longevity</span>
+              <span className="type-label text-champagne-deep font-medium">04 / Longevity</span>
               <h3 className="type-title text-ink font-medium text-xl">
                 Simple code is durable code
               </h3>
@@ -339,7 +339,7 @@ export function AboutView() {
                 className="type-nav text-ink hover:text-champagne-deep inline-flex items-center justify-center sm:justify-start gap-1.5"
               >
                 Explore our services
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

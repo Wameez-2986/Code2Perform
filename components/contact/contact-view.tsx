@@ -35,7 +35,7 @@ const NEED_OPTIONS = [
   "E-Commerce",
   "AI / Automation",
   "Ongoing Support",
-  "Something else",
+  "Other",
 ] as const;
 
 export function ContactView() {
@@ -680,10 +680,10 @@ export function ContactView() {
                 <div className="flex items-center gap-2.5">
                   <Mail className="h-4 w-4 text-champagne-deep shrink-0" />
                   <a
-                    href="mailto:hello@code2perform.com"
+                    href="mailto:mubeenk710@gmail.com"
                     className="type-title text-ink font-medium hover:text-champagne-deep break-all"
                   >
-                    hello@code2perform.com
+                    mubeenk710@gmail.com
                   </a>
                 </div>
                 <p className="type-legal text-muted pt-1">

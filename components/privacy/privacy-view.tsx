@@ -109,10 +109,10 @@ export function PrivacyView() {
                 <p className="type-legal text-muted">
                   Questions about your data? Reach us directly at{" "}
                   <a
-                    href="mailto:privacy@code2perform.com"
+                    href="mailto:mubeenk710@gmail.com"
                     className="text-ink font-medium hover:text-champagne-deep"
                   >
-                    privacy@code2perform.com
+                    mubeenk710@gmail.com
                   </a>
                 </p>
               </div>
@@ -344,10 +344,10 @@ export function PrivacyView() {
                   <p>
                     To exercise any of these rights, simply email us at{" "}
                     <a
-                      href="mailto:privacy@code2perform.com"
+                      href="mailto:mubeenk710@gmail.com"
                       className="text-ink font-medium hover:text-champagne-deep"
                     >
-                      privacy@code2perform.com
+                      mubeenk710@gmail.com
                     </a>
                     . We will acknowledge and respond to your request promptly.
                   </p>
@@ -398,10 +398,10 @@ export function PrivacyView() {
                     <div className="pt-2 flex items-center gap-2 text-ink">
                       <Mail className="h-4 w-4 text-champagne-deep shrink-0" aria-hidden="true" />
                       <a
-                        href="mailto:privacy@code2perform.com"
+                        href="mailto:mubeenk710@gmail.com"
                         className="hover:text-champagne-deep font-medium break-all"
                       >
-                        privacy@code2perform.com
+                        mubeenk710@gmail.com
                       </a>
                     </div>
                   </div>

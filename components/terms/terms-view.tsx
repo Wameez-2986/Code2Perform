@@ -119,10 +119,10 @@ export function TermsView() {
                 <p className="type-legal text-muted">
                   Questions about this agreement? Reach us directly at{" "}
                   <a
-                    href="mailto:legal@code2perform.com"
+                    href="mailto:mubeenk710@gmail.com"
                     className="text-ink font-medium hover:text-champagne-deep"
                   >
-                    legal@code2perform.com
+                    mubeenk710@gmail.com
                   </a>
                 </p>
               </div>
@@ -439,10 +439,10 @@ export function TermsView() {
                     <div className="pt-2 flex items-center gap-2 text-ink">
                       <Mail className="h-4 w-4 text-champagne-deep shrink-0" aria-hidden="true" />
                       <a
-                        href="mailto:legal@code2perform.com"
+                        href="mailto:mubeenk710@gmail.com"
                         className="hover:text-champagne-deep font-medium break-all"
                       >
-                        legal@code2perform.com
+                        mubeenk710@gmail.com
                       </a>
                     </div>
                   </div>

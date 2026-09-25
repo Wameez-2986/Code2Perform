@@ -139,16 +139,95 @@ export function AboutView() {
       </section>
 
       {/* =====================================================================
-          3. OUR APPROACH: 6 PRACTICAL STEPS
+          3. WHAT WE BELIEVE
+          Core convictions: Clarity, Speed, Utility, Durability
+          ===================================================================== */}
+      <section className="border-b border-hairline section-spacing" aria-label="What We Believe">
+        <div className="page-container space-y-12 md:space-y-16">
+          {/* Section Header */}
+          <div className="max-w-3xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
+              <p className="type-label text-champagne-deep">What We Believe</p>
+            </div>
+            <h2 className="type-heading text-ink">
+              Digital products should be simple, fast, and genuinely useful.
+            </h2>
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+              Most digital initiatives fail not from a lack of visual decoration,
+              but from a lack of focus. Here are four foundational convictions that
+              guide how we evaluate every project.
+            </p>
+          </div>
+
+          {/* 2x2 Architectural Grid Matrix */}
+          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-hairline">
+            {/* Belief 01 */}
+            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+              <span className="type-label text-champagne-deep font-medium">01 / Clarity</span>
+              <h3 className="type-title text-ink font-medium text-xl">
+                Clarity comes before decoration
+              </h3>
+              <p className="type-body-sm text-muted leading-relaxed">
+                A digital product must clearly explain its purpose within seconds of arrival.
+                If visitors are confused by ambiguous marketing slogans or cluttered navigation,
+                the design has failed. We structure information for immediate understanding.
+              </p>
+            </div>
+
+            {/* Belief 02 */}
+            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+              <span className="type-label text-champagne-deep font-medium">02 / Speed</span>
+              <h3 className="type-title text-ink font-medium text-xl">
+                Speed is respect for your user
+              </h3>
+              <p className="type-body-sm text-muted leading-relaxed">
+                Every second a person waits for a screen to load is a test of their patience.
+                Fast page loads build credibility, trust, and business conversions.
+                We engineer for instant response times from the foundation up.
+              </p>
+            </div>
+
+            {/* Belief 03 */}
+            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+              <span className="type-label text-champagne-deep font-medium">03 / Utility</span>
+              <h3 className="type-title text-ink font-medium text-xl">
+                Useful products beat flashy gimmicks
+              </h3>
+              <p className="type-body-sm text-muted leading-relaxed">
+                We build websites and digital applications that solve real tasks—helping
+                customers book a service, purchase a product, or access critical data
+                without hindrance. If a feature does not serve a clear purpose, we leave it out.
+              </p>
+            </div>
+
+            {/* Belief 04 */}
+            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+              <span className="type-label text-champagne-deep font-medium">04 / Longevity</span>
+              <h3 className="type-title text-ink font-medium text-xl">
+                Simple code is durable code
+              </h3>
+              <p className="type-body-sm text-muted leading-relaxed">
+                The best software is the simplest code that completely solves the problem.
+                We avoid fragile page builders and unnecessary libraries so your digital
+                systems stay secure, fast, and easy for your team to maintain over the long haul.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          4. HOW WE APPROACH DIGITAL WORK
           Understand business, problem, build, launch, stay available, improve
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="Our Approach">
+      <section className="border-b border-hairline section-spacing" aria-label="How We Approach Digital Work">
         <div className="page-container space-y-12 md:space-y-16">
           {/* Header */}
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-              <p className="type-label text-champagne-deep">Our Approach</p>
+              <p className="type-label text-champagne-deep">How We Approach Digital Work</p>
             </div>
             <h2 className="type-heading text-ink">
               How we guide your project from first conversation to long-term growth.
@@ -262,7 +341,7 @@ export function AboutView() {
               </div>
             </div>
 
-            {/* Step 6: Improve and expand the solution when the business needs it */}
+            {/* Step 6: Improve and expand when you need it */}
             <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">06</span>
@@ -285,85 +364,6 @@ export function AboutView() {
         </div>
       </div>
     </section>
-
-      {/* =====================================================================
-          4. WHAT WE BELIEVE
-          Core convictions: Clarity, Speed, Utility, Durability
-          ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="What We Believe">
-        <div className="page-container space-y-12 md:space-y-16">
-          {/* Section Header */}
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-              <p className="type-label text-champagne-deep">What We Believe</p>
-            </div>
-            <h2 className="type-heading text-ink">
-              Digital products should be simple, fast, and genuinely useful.
-            </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
-              Most digital initiatives fail not from a lack of visual decoration,
-              but from a lack of focus. Here are four foundational convictions that
-              guide how we evaluate every project.
-            </p>
-          </div>
-
-          {/* 2x2 Architectural Grid Matrix */}
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-hairline">
-            {/* Belief 01 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne-deep font-medium">01 / Clarity</span>
-              <h3 className="type-title text-ink font-medium text-xl">
-                Clarity comes before decoration
-              </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
-                A digital product must clearly explain its purpose within seconds of arrival.
-                If visitors are confused by ambiguous marketing slogans or cluttered navigation,
-                the design has failed. We structure information for immediate understanding.
-              </p>
-            </div>
-
-            {/* Belief 02 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne-deep font-medium">02 / Speed</span>
-              <h3 className="type-title text-ink font-medium text-xl">
-                Speed is respect for your user
-              </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
-                Every second a person waits for a screen to load is a test of their patience.
-                Fast page loads build credibility, trust, and business conversions.
-                We engineer for instant response times from the foundation up.
-              </p>
-            </div>
-
-            {/* Belief 03 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne-deep font-medium">03 / Utility</span>
-              <h3 className="type-title text-ink font-medium text-xl">
-                Useful products beat flashy gimmicks
-              </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
-                We build websites and digital applications that solve real tasks—helping
-                customers book a service, purchase a product, or access critical data
-                without hindrance. If a feature does not serve a clear purpose, we leave it out.
-              </p>
-            </div>
-
-            {/* Belief 04 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
-              <span className="type-label text-champagne-deep font-medium">04 / Longevity</span>
-              <h3 className="type-title text-ink font-medium text-xl">
-                Simple code is durable code
-              </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
-                The best software is the simplest code that completely solves the problem.
-                We avoid fragile page builders and unnecessary libraries so your digital
-                systems stay secure, fast, and easy for your team to maintain over the long haul.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* =====================================================================
           5. CTA SECTION

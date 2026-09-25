@@ -31,6 +31,10 @@
   --fs-nav:        0.9375rem;   /* 15px */
   --fs-button:     0.9375rem;   /* 15px */
   --fs-legal:      0.8125rem;   /* 13px */
+
+  /* Section Spacing Tokens */
+  --spacing-section:    clamp(4.5rem, 8vw, 8rem);  /* 72px → 128px */
+  --spacing-section-sm: clamp(2.5rem, 5vw, 4.5rem);/* 40px → 72px */
 }
 
 /* =============================================================================
@@ -82,11 +86,10 @@ p, ul, ol, li, blockquote {
 }
 
 /* =============================================================================
-   Typography Hierarchy
-   Editorial, premium — Satoshi only.
+   Typography Hierarchy (Editorial, Satoshi only)
    ============================================================================= */
 
-/* Display — Hero-scale headings. Large, tight, confident. */
+/* Display — Hero-scale headings */
 .type-display {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-display);
@@ -95,7 +98,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: -0.03em;
 }
 
-/* Heading — Primary page headings (H1 level). */
+/* Heading — Primary page headings (H1 level) */
 .type-heading {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-heading);
@@ -104,7 +107,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: -0.025em;
 }
 
-/* Subheading — Section headings (H2 level). */
+/* Subheading — Section headings (H2 level) */
 .type-subheading {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-subheading);
@@ -113,7 +116,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: -0.015em;
 }
 
-/* Title — Smaller section anchors and card titles (H3 level). */
+/* Title — Smaller section anchors (H3 level) */
 .type-title {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-title);
@@ -122,7 +125,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: -0.01em;
 }
 
-/* Body — Primary reading text. */
+/* Body — Primary reading text */
 .type-body {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-body);
@@ -131,7 +134,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: 0;
 }
 
-/* Body Small — Secondary body text, captions, supporting copy. */
+/* Body Small — Secondary text, captions, descriptions */
 .type-body-sm {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-body-sm);
@@ -140,7 +143,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: 0;
 }
 
-/* Label — Small editorial tags, eyebrows, category chips. Uppercase tracked. */
+/* Label — Editorial tags, eyebrows, category chips */
 .type-label {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-label);
@@ -150,7 +153,7 @@ p, ul, ol, li, blockquote {
   text-transform: uppercase;
 }
 
-/* Nav — Navigation links. Slightly tighter than body. */
+/* Nav — Navigation links */
 .type-nav {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-nav);
@@ -159,7 +162,7 @@ p, ul, ol, li, blockquote {
   letter-spacing: -0.01em;
 }
 
-/* Button — CTA and button text. Matches nav weight. */
+/* Button — CTA and action labels */
 .type-button {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-button);
@@ -168,11 +171,58 @@ p, ul, ol, li, blockquote {
   letter-spacing: -0.01em;
 }
 
-/* Legal — Privacy policy, terms, footnotes. Light and unobtrusive. */
+/* Legal — Footnotes, terms, privacy copy */
 .type-legal {
   font-family: "Satoshi", system-ui, sans-serif;
   font-size: var(--fs-legal);
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0;
+}
+
+/* =============================================================================
+   Global Spacing & Page Container Infrastructure
+   ============================================================================= */
+
+/* Responsive Page Container */
+.page-container {
+  width: 100%;
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;   /* 24px: mobile */
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding-left: 2.5rem; /* 40px: tablet */
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    padding-left: 4rem;   /* 64px: desktop */
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .page-container {
+    max-width: 90rem;     /* 1440px: large desktop */
+    padding-left: 5rem;   /* 80px: large desktop */
+    padding-right: 5rem;
+  }
+}
+
+/* Section Spacing Utilities */
+.section-spacing {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+
+.section-spacing-sm {
+  padding-top: var(--spacing-section-sm);
+  padding-bottom: var(--spacing-section-sm);
 }

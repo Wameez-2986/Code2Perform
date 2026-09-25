@@ -101,7 +101,7 @@ export function HomeView() {
             as possible before mobile reflow.
           */}
           <h1
-            className="font-bold text-ink w-full mb-6 md:mb-8"
+            className="font-bold text-ink w-full mb-0"
             style={{
               fontSize: "clamp(2.25rem, 5.8vw, 5.25rem)",
               letterSpacing: "-0.03em",
@@ -121,7 +121,7 @@ export function HomeView() {
 
           {/* --- Supporting Paragraph --- */}
           <p
-            className="text-muted leading-relaxed mb-10 md:mb-12 max-w-xl"
+            className="text-muted leading-relaxed mt-16 mb-10 md:mb-12 max-w-xl"
             style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}
           >
             We combine strategy, design, and modern technology to build digital

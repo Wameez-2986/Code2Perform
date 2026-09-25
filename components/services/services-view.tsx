@@ -83,7 +83,7 @@ export function ServicesView() {
               <div className="pt-2">
                 <Link
                   href="/contact"
-                  className="type-button inline-flex items-center justify-center px-6 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center"
+                  className="type-button inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center"
                 >
                   Discuss a Web Project
                 </Link>
@@ -585,16 +585,16 @@ export function ServicesView() {
               the simplest, most cost-effective way to build it.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
               <Link
                 href="/contact"
-                className="type-button inline-flex items-center justify-center px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
+                className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
               >
                 Start a Conversation
               </Link>
               <Link
                 href="/about"
-                className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5"
+                className="type-nav text-ink hover:text-champagne-deep inline-flex items-center justify-center sm:justify-start gap-1.5"
               >
                 Learn how we work
                 <ArrowRight className="h-4 w-4" />

@@ -38,7 +38,7 @@ export function AboutView() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 space-y-4 pt-1 lg:pl-6 border-t lg:border-t-0 lg:border-l border-hairline">
+            <div className="lg:col-span-4 space-y-4 pt-6 lg:pt-1 lg:pl-6 border-t lg:border-t-0 lg:border-l border-hairline">
               <div className="space-y-1">
                 <p className="type-label text-champagne-deep">What We Are</p>
                 <p className="type-body-sm text-ink">Independent Digital Agency</p>
@@ -327,16 +327,16 @@ export function AboutView() {
               have an open, practical discussion about the best way forward.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
               <Link
                 href="/contact"
-                className="type-button inline-flex items-center justify-center px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
+                className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
               >
                 Start a Project
               </Link>
               <Link
                 href="/services"
-                className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5"
+                className="type-nav text-ink hover:text-champagne-deep inline-flex items-center justify-center sm:justify-start gap-1.5"
               >
                 Explore our services
                 <ArrowUpRight className="h-4 w-4" />

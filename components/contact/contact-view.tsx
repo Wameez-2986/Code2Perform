@@ -493,10 +493,10 @@ export function ContactView() {
                   </div>
 
                   {/* Submission Row */}
-                  <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                     <button
                       type="submit"
-                      className="type-button px-8 py-4 bg-ink text-bone hover:bg-champagne-deep text-center cursor-pointer transition-none rounded-none"
+                      className="type-button w-full sm:w-auto px-8 py-4 bg-ink text-bone hover:bg-champagne-deep text-center cursor-pointer transition-none rounded-none"
                     >
                       Send Project Inquiry
                     </button>
@@ -535,7 +535,7 @@ export function ContactView() {
           {/* 3 Steps: Clean editorial columns with hairline dividers */}
           <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-hairline divide-y md:divide-y-0 md:divide-x divide-hairline">
             {/* Step 1 */}
-            <div className="py-8 md:py-10 md:pr-8 space-y-4">
+            <div className="py-8 md:py-10 md:pr-4 lg:pr-8 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">01</span>
                 <span className="type-legal text-muted">Day 1</span>
@@ -551,7 +551,7 @@ export function ContactView() {
             </div>
 
             {/* Step 2 */}
-            <div className="py-8 md:py-10 md:px-8 space-y-4">
+            <div className="py-8 md:py-10 md:px-4 lg:px-8 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">02</span>
                 <span className="type-legal text-muted">Days 2–3</span>
@@ -567,7 +567,7 @@ export function ContactView() {
             </div>
 
             {/* Step 3 */}
-            <div className="py-8 md:py-10 md:pl-8 space-y-4">
+            <div className="py-8 md:py-10 md:pl-4 lg:pl-8 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">03</span>
                 <span className="type-legal text-muted">Days 4–5</span>
@@ -614,7 +614,7 @@ export function ContactView() {
                   <Mail className="h-4 w-4 text-champagne-deep shrink-0" />
                   <a
                     href="mailto:hello@code2perform.com"
-                    className="type-title text-ink font-medium hover:text-champagne-deep"
+                    className="type-title text-ink font-medium hover:text-champagne-deep break-all"
                   >
                     hello@code2perform.com
                   </a>

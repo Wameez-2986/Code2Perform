@@ -440,7 +440,7 @@ export function TermsView() {
                       <Mail className="h-4 w-4 text-champagne-deep shrink-0" />
                       <a
                         href="mailto:legal@code2perform.com"
-                        className="hover:text-champagne-deep font-medium"
+                        className="hover:text-champagne-deep font-medium break-all"
                       >
                         legal@code2perform.com
                       </a>
@@ -450,7 +450,7 @@ export function TermsView() {
               </article>
 
               {/* Navigation Footer */}
-              <div className="pt-10 border-t border-hairline flex flex-wrap items-center justify-between gap-4">
+              <div className="pt-10 border-t border-hairline flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <Link
                   href="/home"
                   className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-2"

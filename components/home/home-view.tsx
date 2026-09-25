@@ -368,7 +368,7 @@ export function HomeView() {
               return (
                 <div
                   key={service.name}
-                  className="p-8 lg:p-10 flex flex-col justify-between border-r border-b border-hairline"
+                  className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-r border-b border-hairline"
                 >
                   <div className="space-y-4">
                     {/* Index & Simple Lucide Icon */}
@@ -436,10 +436,10 @@ export function HomeView() {
             </p>
 
             {/* Contact CTA */}
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
               <Link
                 href="/contact"
-                className="type-button inline-flex items-center justify-center px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
+                className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
               >
                 Get in Touch
               </Link>

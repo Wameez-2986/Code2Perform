@@ -4,7 +4,7 @@ import { AboutView } from "@/components/about/about-view";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Code2Perform, an independent digital agency dedicated to disciplined software engineering, clear typography, and high-performance digital products.",
+    "Learn how Code2Perform approaches client relationships as a practical digital partner—understanding the business behind every project, building the right digital solution, and staying available after launch.",
 };
 
 export default function AboutPage() {

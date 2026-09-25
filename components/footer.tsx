@@ -69,7 +69,7 @@ export function Footer() {
             <div className="space-y-3 max-w-xs">
               <p className="type-label text-champagne-deep">Inquiries</p>
               <p className="type-body-sm text-muted">
-                Have a project or partnership in mind? Let&apos;s discuss what
+                Have a project or digital challenge in mind? Let&apos;s discuss what
                 we can build together.
               </p>
               <div className="pt-1">

@@ -5,38 +5,50 @@ const SERVICES = [
   {
     number: "01",
     name: "Web & Digital Development",
-    description:
-      "Custom, high-speed websites and web applications built with Next.js and TypeScript. Clean code, sub-second page loads, and dependable uptime from launch day forward.",
+    build:
+      "Custom, high-speed websites and web applications built with Next.js and TypeScript for instant page loads and dependable uptime.",
+    ongoing:
+      "After launch, we can support you with ongoing website maintenance, technical updates, and SEO & content structure so your site stays fast and visible.",
   },
   {
     number: "02",
     name: "UI/UX & Product Design",
-    description:
-      "Straightforward, intuitive digital interfaces. We focus on clear typography, natural user flows, and purposeful layouts that make complex tools easy to use.",
+    build:
+      "Straightforward, intuitive digital interfaces. We design natural user flows, typography, and clear layouts that make complex tools easy to use.",
+    ongoing:
+      "As real users interact with your product, we can continue with performance and conversion optimization to remove friction and improve engagement.",
   },
   {
     number: "03",
     name: "Mobile App Development",
-    description:
-      "Cross-platform mobile applications for iOS and Android. Engineered with a unified codebase for consistent behavior, fast performance, and simple ongoing maintenance.",
+    build:
+      "Cross-platform mobile applications for iOS and Android, engineered with a unified codebase for consistent behavior and fast performance.",
+    ongoing:
+      "Post-launch, we handle App Store updates, OS version compatibility, and feature enhancements to keep your mobile app running smoothly.",
   },
   {
     number: "04",
     name: "SaaS & Custom Platforms",
-    description:
-      "Bespoke cloud software, client portals, and internal business tools designed specifically around your operational processes and data workflows.",
+    build:
+      "Bespoke cloud software, client portals, and internal tools designed specifically around your operational processes and data workflows.",
+    ongoing:
+      "When appropriate, we can integrate CRM and business automation systems, monitor database health, and expand features as your operations scale.",
   },
   {
     number: "05",
     name: "E-Commerce Solutions",
-    description:
-      "Direct, reliable online stores with frictionless checkout experiences, clean product presentation, and robust payment and inventory integrations.",
+    build:
+      "Direct, reliable online stores with frictionless checkout experiences, clean product presentation, and robust payment integrations.",
+    ongoing:
+      "Beyond delivery, we can assist with checkout optimization, inventory workflows, and digital marketing support to help turn visitors into loyal customers.",
   },
   {
     number: "06",
     name: "AI & Business Automation",
-    description:
-      "Sensible automation workflows and practical AI integrations that eliminate repetitive manual tasks and connect your everyday business software reliably.",
+    build:
+      "Sensible automation workflows and custom AI integrations that eliminate repetitive manual tasks and connect your everyday business software.",
+    ongoing:
+      "We can also deploy and maintain intelligent chatbot solutions, automated inquiry triage, and internal search tools tailored to your workflows.",
   },
 ];
 
@@ -160,7 +172,7 @@ export function HomeView() {
           <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Left Column: Partnership Philosophy */}
             <div className="lg:col-span-5 space-y-4">
-              <p className="type-label text-champagne">Our Partnership Model</p>
+              <p className="type-label text-champagne">Our Working Model</p>
               <h3 className="type-heading text-2xl md:text-3xl text-ink">
                 An agency that stays in your corner.
               </h3>
@@ -229,7 +241,7 @@ export function HomeView() {
 
       {/* =====================================================================
           3. HOW WE WORK
-          Client journey translated into 5 clear, client-friendly stages
+          Editorial process ledger: Understand, Plan, Build, Launch, Grow
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="How We Work">
         <div className="page-container space-y-12 md:space-y-16">
@@ -240,73 +252,74 @@ export function HomeView() {
               <p className="type-label text-champagne-deep">How We Work</p>
             </div>
             <h2 className="type-heading text-ink">
-              A transparent journey from first conversation to long-term growth.
+              A disciplined delivery process from discovery to launch—and beyond.
             </h2>
             <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
-              Great digital partnerships are built on clarity, open communication,
-              and dependable execution. Here is how we collaborate with you every step
-              of the way.
+              We believe great digital products come from open communication, sound
+              engineering, and a clear step-by-step path. Here is how we collaborate
+              from our first conversation through delivery and long-term growth.
             </p>
           </div>
 
-          {/* Editorial Process Rows across the 5 client stages */}
+          {/* Editorial Process Rows across the 5 delivery stages */}
           <div className="divide-y divide-hairline border-t border-b border-hairline">
-            {/* Step 1: Consultation */}
+            {/* Step 1: Understand */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">01</span>
-                <span className="type-label text-champagne-deep">Consultation</span>
+                <span className="type-label text-champagne-deep">Understand</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We start with an open conversation
+                  We learn about your business, goals, and users
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We begin by listening. We learn about your company, your customers,
-                  and your operational goals. We ask practical questions to understand
-                  your real challenges and verify that we are the right team to help.
+                  We begin by getting to the core of your business. We listen to your goals,
+                  examine how your users interact with your services, and understand your
+                  current technical and operational challenges so we solve the right problems
+                  from day one.
                 </p>
               </div>
             </div>
 
-            {/* Step 2: Proposal & Architecture */}
+            {/* Step 2: Plan */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">02</span>
-                <span className="type-label text-champagne-deep">Proposal</span>
+                <span className="type-label text-champagne-deep">Plan</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We outline a clear plan and exact scope
+                  We define the right solution, scope, and priorities
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We define the recommended technical architecture, establish clear
-                  deliverables, and set realistic milestones with straightforward pricing.
+                  We define the appropriate technical architecture, establish clear priorities,
+                  outline the exact scope of work, and agree on a transparent delivery plan.
                   You always know what is being built, why, and when to expect it.
                 </p>
               </div>
             </div>
 
-            {/* Step 3: Design & Build */}
+            {/* Step 3: Build */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">03</span>
-                <span className="type-label text-champagne-deep">Project</span>
+                <span className="type-label text-champagne-deep">Build</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We engineer clean, resilient software
+                  We handle design, development, and testing
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We design intuitive interfaces and write lightweight, strictly typed code.
-                  You work directly with senior practitioners, receive frequent updates,
-                  and see regular progress without layers of middle management.
+                  We design intuitive interfaces, write lightweight Next.js and TypeScript
+                  code, connect third-party integrations, and test thoroughly across mobile
+                  and desktop devices to ensure speed, stability, and accessibility.
                 </p>
               </div>
             </div>
@@ -319,34 +332,35 @@ export function HomeView() {
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We deploy with rigorous care
+                  We deploy and prepare the solution for real use
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We handle hosting setup, domain configuration, accessibility audits,
-                  and mobile network tests. We deliver a thoroughly verified, production-ready
-                  product with full documentation and zero deployment stress.
+                  We manage production hosting setup, domain routing, and final performance
+                  checks. We guide your team through the handoff, ensuring everyone is comfortable
+                  and ready to run the product with complete confidence.
                 </p>
               </div>
             </div>
 
-            {/* Step 5: Support & Growth */}
+            {/* Step 5: Grow */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">05</span>
-                <span className="type-label text-champagne-deep">Support &amp; Growth</span>
+                <span className="type-label text-champagne-deep">Grow</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We stay on to optimize and evolve
+                  Long-term support and growth—whenever relevant
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We remain your dedicated technical team after launch. We monitor uptime,
-                  fine-tune page speeds, automate manual processes, and build new features
-                  as your business needs expand—earning your trust over the long haul.
+                  After launch, we can continue assisting with technical support, performance
+                  optimization, workflow automation, SEO and content structure, and custom AI
+                  solutions where relevant. We are available as your long-term partner when you
+                  need us, with zero mandatory retainers.
                 </p>
               </div>
             </div>
@@ -370,11 +384,15 @@ export function HomeView() {
               <h2 className="type-heading text-ink">
                 What we build, maintain, and grow.
               </h2>
+              <p className="type-body text-muted max-w-2xl leading-relaxed">
+                We engineer reliable digital products from the ground up, and when appropriate,
+                we continue helping you optimize, automate, and improve them over time.
+              </p>
             </div>
             <div>
               <Link
                 href="/services"
-                className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep"
+                className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep shrink-0"
               >
                 View all services &amp; deliverables
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -401,9 +419,12 @@ export function HomeView() {
                   </h3>
                 </div>
 
-                <div className="lg:col-span-5">
+                <div className="lg:col-span-5 space-y-2">
+                  <p className="type-body-sm text-ink leading-relaxed">
+                    {service.build}
+                  </p>
                   <p className="type-body-sm text-muted leading-relaxed">
-                    {service.description}
+                    {service.ongoing}
                   </p>
                 </div>
 

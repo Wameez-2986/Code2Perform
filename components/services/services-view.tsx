@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 
 export function ServicesView() {
   return (
@@ -18,35 +18,53 @@ export function ServicesView() {
 
           {/* Heading */}
           <h1 className="type-display text-ink max-w-5xl">
-            Disciplined engineering and design for products that need to perform.
+            Disciplined engineering, practical design, and dependable ongoing support.
           </h1>
 
           {/* Lower Split */}
           <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-8">
-              <p className="type-body text-muted text-lg max-w-3xl leading-relaxed">
-                We design, build, and maintain digital products across the web, mobile,
-                and cloud. No technical buzzwords, no unnecessary features—just clean,
-                reliable systems engineered to support your business goals.
+            <div className="lg:col-span-8 space-y-4">
+              <p className="type-body text-ink font-medium text-lg leading-relaxed">
+                We design, build, and support digital products that solve real business problems.
+                Whether you need a high-speed company website, a custom web platform, or a unified
+                mobile app, we focus on what actually moves your business forward.
+              </p>
+              <p className="type-body text-muted leading-relaxed">
+                Launch day is only the beginning. When appropriate, we can continue supporting
+                your team with website maintenance, search visibility, workflow automation,
+                and performance optimization—giving you a dependable digital partner without
+                forced retainers or proprietary lock-in.
               </p>
             </div>
 
-            <div className="lg:col-span-4 space-y-3 pt-1">
-              <p className="type-label text-champagne-deep">Core Practices</p>
-              <ul className="space-y-2 text-sm text-ink font-medium">
+            <div className="lg:col-span-4 space-y-3 pt-1 lg:pl-6 border-t lg:border-t-0 lg:border-l border-hairline">
+              <p className="type-label text-champagne-deep">Six Primary Practices</p>
+              <ol className="space-y-2 text-sm text-ink font-medium">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  Web &amp; Digital Development
+                  <span className="type-label text-champagne font-medium text-xs">01</span>
+                  <span>Web &amp; Digital Development</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  Product &amp; Application Development
+                  <span className="type-label text-champagne font-medium text-xs">02</span>
+                  <span>UI/UX &amp; Product Design</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  SaaS, Commerce &amp; Automation
+                  <span className="type-label text-champagne font-medium text-xs">03</span>
+                  <span>Mobile App Development</span>
                 </li>
-              </ul>
+                <li className="flex items-center gap-2">
+                  <span className="type-label text-champagne font-medium text-xs">04</span>
+                  <span>SaaS &amp; Custom Platforms</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="type-label text-champagne font-medium text-xs">05</span>
+                  <span>E-Commerce Solutions</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="type-label text-champagne font-medium text-xs">06</span>
+                  <span>AI &amp; Business Automation</span>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
@@ -54,7 +72,8 @@ export function ServicesView() {
 
       {/* =====================================================================
           2. WEB & DIGITAL DEVELOPMENT
-          Feature layout: 5:7 asymmetric split with practical client checklist & deliverables
+          Feature layout: 5:7 asymmetric split with practical client checklist,
+          deliverables & natural post-launch capabilities
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="Web & Digital Development">
         <div className="page-container">
@@ -80,48 +99,48 @@ export function ServicesView() {
               </div>
             </div>
 
-            {/* Right Explanation, Scope & Deliverables */}
+            {/* Right Explanation, Scope, Deliverables & Post-Launch Support */}
             <div className="lg:col-span-7 space-y-8">
-              {/* Simple explanation */}
+              {/* Plain-English explanation */}
               <div className="space-y-4">
                 <p className="type-body text-muted leading-relaxed">
-                  Most company websites are slow, difficult to update, and bloated with dozens of
-                  conflicting plugins that break without warning. When a prospective client visits,
-                  every second of delay causes them to lose patience and leave.
+                  Most company websites are slow, difficult to update, and weighed down with dozens of
+                  conflicting plugins that break unexpectedly. When prospective clients visit,
+                  every second of delay causes them to lose patience and navigate elsewhere.
                 </p>
                 <p className="type-body text-muted leading-relaxed">
-                  We build custom websites that load almost instantly and look sharp on every device.
-                  Every page is structured so search engines can read it easily and your visitors can
-                  find what they need without confusion.
+                  We build custom websites using Next.js and TypeScript that load almost instantly and
+                  look sharp on every screen. Every page is structured so search engines can index it easily
+                  and your visitors can understand your value proposition without confusion.
                 </p>
               </div>
 
-              {/* What Code2Perform can help with */}
+              {/* What Code2Perform can actually deliver */}
               <div className="pt-6 border-t border-hairline space-y-4">
-                <p className="type-label text-champagne-deep">What Code2Perform Can Help With</p>
+                <p className="type-label text-champagne-deep">What Code2Perform Delivers</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-1" />
                     <p className="type-body-sm text-ink">
-                      Building new company websites from the ground up
+                      Custom business websites engineered from the ground up for speed and stability
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-1" />
                     <p className="type-body-sm text-ink">
-                      Redesigning slow, outdated, or hard-to-maintain sites
+                      Complete redesigns of slow, outdated, or hard-to-maintain websites
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-1" />
                     <p className="type-body-sm text-ink">
-                      Improving page load speed, responsiveness, and SEO structure
+                      Responsive mobile, tablet, and desktop layouts with strong typography
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-1" />
                     <p className="type-body-sm text-ink">
-                      Setting up simple editing tools so your team can update content safely
+                      Straightforward content editing setups so your team can update text safely
                     </p>
                   </div>
                 </div>
@@ -133,25 +152,31 @@ export function ServicesView() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-ink">
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Production-ready website codebase</span>
+                    <span>Production-ready website codebase with full ownership</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Responsive mobile &amp; desktop layout</span>
+                    <span>Fully responsive layout tested across device sizes</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Content management configuration</span>
+                    <span>Domain, SSL security, and production hosting setup</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Domain &amp; production hosting setup</span>
-                  </li>
-                  <li className="flex items-center gap-2.5 sm:col-span-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Core Web Vitals, accessibility &amp; SEO audit checklist</span>
+                    <span>Technical SEO, accessibility, and Core Web Vitals audit</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Natural Post-Launch Support Connection */}
+              <div className="pt-6 border-t border-hairline space-y-3 bg-surface-alt/60 p-5 rounded-none">
+                <p className="type-label text-champagne-deep">Post-Launch Support Areas We Can Discuss</p>
+                <p className="type-body-sm text-muted leading-relaxed">
+                  After launch, we can assist with ongoing website maintenance, code updates, security
+                  monitoring, and bug fixes. When your business needs to expand its reach, we can also discuss
+                  search visibility improvements, content updates, and dedicated campaign landing pages.
+                </p>
               </div>
             </div>
           </div>
@@ -191,31 +216,31 @@ export function ServicesView() {
                   UI/UX &amp; Product Design
                 </h3>
                 <p className="type-body text-muted leading-relaxed">
-                  Design is not decoration; it is how easily a person can accomplish what they came
-                  to do. We design interfaces that feel straightforward from the first click,
-                  removing visual clutter and guiding users toward their goals without confusion.
+                  Design is not decoration; it is how easily a customer can accomplish what they came
+                  to do. We design interfaces that feel intuitive from the first click,
+                  removing visual clutter and guiding users toward their goals without friction.
                 </p>
               </div>
 
-              {/* What Code2Perform can help with */}
+              {/* What Code2Perform can deliver */}
               <div className="pt-6 border-t border-hairline space-y-3">
-                <p className="type-label text-champagne-deep">What Code2Perform Can Help With</p>
+                <p className="type-label text-champagne-deep">What Code2Perform Delivers</p>
                 <ul className="space-y-2.5 text-sm text-ink">
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Mapping out clear user journeys so visitors do not get lost</span>
+                    <span>Mapping out clear user journeys so visitors never feel confused</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Auditing existing products to fix confusing steps and drop-off points</span>
+                    <span>Auditing existing products to uncover and fix confusing drop-off points</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Creating clean visual layouts with legible typography and balanced spacing</span>
+                    <span>Creating clean screen layouts with legible typography and balanced spacing</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Building reusable component libraries for reliable engineering handoff</span>
+                    <span>Building reusable component libraries for seamless engineering handoff</span>
                   </li>
                 </ul>
               </div>
@@ -226,21 +251,30 @@ export function ServicesView() {
                 <ul className="space-y-2 text-sm text-ink">
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Interactive clickable prototypes</span>
+                    <span>Interactive clickable prototypes to test flows before building</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Screen-by-screen wireframes &amp; user flows</span>
+                    <span>Screen-by-screen wireframes &amp; user journey maps</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Figma design system &amp; reusable UI kit</span>
+                    <span>Figma design system &amp; reusable UI component kit</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Developer specification notes &amp; visual assets</span>
+                    <span>Developer specifications, responsive rules, and visual assets</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Post-Launch Capabilities */}
+              <div className="pt-6 border-t border-hairline space-y-2.5 bg-surface-alt/60 p-4">
+                <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
+                <p className="type-body-sm text-muted leading-relaxed">
+                  As real customers use the product, we can help analyze user feedback, perform UX
+                  audits, and design conversion improvements to optimize key interaction points.
+                </p>
               </div>
             </div>
 
@@ -260,13 +294,13 @@ export function ServicesView() {
                 </p>
               </div>
 
-              {/* What Code2Perform can help with */}
+              {/* What Code2Perform can deliver */}
               <div className="pt-6 border-t border-hairline space-y-3">
-                <p className="type-label text-champagne-deep">What Code2Perform Can Help With</p>
+                <p className="type-label text-champagne-deep">What Code2Perform Delivers</p>
                 <ul className="space-y-2.5 text-sm text-ink">
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Developing mobile applications that work on both iOS and Android</span>
+                    <span>Mobile applications that perform reliably on both iOS and Android</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
@@ -274,11 +308,11 @@ export function ServicesView() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Optimizing apps for fast performance even on spotty cellular connections</span>
+                    <span>Optimizing apps for fast response times even on spotty cellular connections</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
-                    <span>Managing the submission process for the Apple App Store and Google Play</span>
+                    <span>Guiding and managing submissions to the Apple App Store and Google Play</span>
                   </li>
                 </ul>
               </div>
@@ -289,11 +323,11 @@ export function ServicesView() {
                 <ul className="space-y-2 text-sm text-ink">
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Native-ready iOS and Android app packages</span>
+                    <span>Production iOS and Android application packages</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Secure login and user authentication system</span>
+                    <span>Secure login, token storage, and customer authentication</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
@@ -301,9 +335,18 @@ export function ServicesView() {
                   </li>
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                    <span>Complete source code repository &amp; maintenance guide</span>
+                    <span>Full codebase ownership with deployment and maintenance documentation</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Post-Launch Capabilities */}
+              <div className="pt-6 border-t border-hairline space-y-2.5 bg-surface-alt/60 p-4">
+                <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
+                <p className="type-body-sm text-muted leading-relaxed">
+                  We remain available to help keep apps compatible with new mobile OS releases, resolve
+                  edge-case bugs, and roll out feature updates when your business is ready.
+                </p>
               </div>
             </div>
           </div>
@@ -348,40 +391,40 @@ export function ServicesView() {
 
               {/* Right Content Breakdown */}
               <div className="lg:col-span-8 space-y-6">
-                {/* Simple explanation */}
+                {/* Plain-English explanation */}
                 <p className="type-body text-muted leading-relaxed">
-                  When off-the-shelf software cannot handle your company&apos;s unique workflow, or when
+                  When off-the-shelf software cannot handle your company&apos;s unique operations, or when
                   you want to launch a subscription software product of your own, we build custom web
                   platforms. We engineer stable, secure systems that can handle real daily work,
-                  manage large databases, and grow alongside your company.
+                  manage large databases, and scale alongside your business.
                 </p>
 
-                {/* What Code2Perform can help with */}
+                {/* What Code2Perform can deliver */}
                 <div className="pt-4 border-t border-hairline space-y-3">
-                  <p className="type-label text-champagne-deep">What Code2Perform Can Help With</p>
+                  <p className="type-label text-champagne-deep">What Code2Perform Delivers</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Building secure customer portals where clients can log in and view their data
+                        Secure customer portals where clients can log in and access their data
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Developing internal staff dashboards to replace messy spreadsheets
+                        Internal staff dashboards to replace messy spreadsheets and manual processes
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Setting up recurring subscription billing and customer account management
+                        Recurring subscription billing, customer invoicing, and account management
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Engineering reliable databases with automated daily backups
+                        Reliable relational databases with automated daily backups and data integrity
                       </span>
                     </div>
                   </div>
@@ -397,17 +440,27 @@ export function ServicesView() {
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Subscription billing integration (e.g. Stripe)</span>
+                      <span>Subscription billing integration (e.g., Stripe)</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Administrative dashboard &amp; reporting screens</span>
+                      <span>Administrative dashboard &amp; business reporting screens</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Secure database schema and API documentation</span>
+                      <span>Secure database schema and developer API documentation</span>
                     </li>
                   </ul>
+                </div>
+
+                {/* Post-Launch Capabilities */}
+                <div className="pt-4 border-t border-hairline space-y-2 bg-surface-alt/60 p-4">
+                  <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
+                  <p className="type-body-sm text-muted leading-relaxed">
+                    We can support ongoing platform health, database performance, security reviews, and
+                    technical support. When you identify new business requirements, we can discuss developing
+                    additional feature modules on your timeline.
+                  </p>
                 </div>
               </div>
             </div>
@@ -427,40 +480,40 @@ export function ServicesView() {
 
               {/* Right Content Breakdown */}
               <div className="lg:col-span-8 space-y-6">
-                {/* Simple explanation */}
+                {/* Plain-English explanation */}
                 <p className="type-body text-muted leading-relaxed">
                   Selling products or services online requires speed, trust, and a friction-free checkout.
                   If an online store takes seconds to load or has a confusing payment form, buyers leave.
-                  We build fast, dependable digital stores that present your products cleanly and make
+                  We build fast, dependable digital stores that present your offerings cleanly and make
                   purchasing simple for your customers.
                 </p>
 
-                {/* What Code2Perform can help with */}
+                {/* What Code2Perform can deliver */}
                 <div className="pt-4 border-t border-hairline space-y-3">
-                  <p className="type-label text-champagne-deep">What Code2Perform Can Help With</p>
+                  <p className="type-label text-champagne-deep">What Code2Perform Delivers</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Building tailored online storefronts designed around your specific products
+                        Tailored online storefronts designed around your specific products or services
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Simplifying shopping carts and checkouts to reduce abandoned purchases
+                        Simplified shopping carts and checkout flows to reduce abandoned purchases
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Connecting secure payment processors, Apple Pay, Google Pay, and credit cards
+                        Integration with credit cards, Apple Pay, Google Pay, and localized gateways
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Syncing inventory counts, automated order receipts, and shipping notifications
+                        Automated order confirmation receipts, tax calculations, and shipping notifications
                       </span>
                     </div>
                   </div>
@@ -472,21 +525,30 @@ export function ServicesView() {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink">
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Fast-loading storefront and product catalog</span>
+                      <span>Fast-loading storefront and organized product catalog</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>One-page streamlined checkout flow</span>
+                      <span>Streamlined, friction-free checkout flow</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Payment gateway integration with automated tax</span>
+                      <span>Payment processor configuration with automated tax support</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Order management and inventory sync pipeline</span>
+                      <span>Order management and inventory synchronization pipeline</span>
                     </li>
                   </ul>
+                </div>
+
+                {/* Post-Launch Capabilities */}
+                <div className="pt-4 border-t border-hairline space-y-2 bg-surface-alt/60 p-4">
+                  <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
+                  <p className="type-body-sm text-muted leading-relaxed">
+                    Following store launch, we can support conversion rate optimization, promotional
+                    campaign landing pages, checkout speed audits, and ongoing digital store maintenance.
+                  </p>
                 </div>
               </div>
             </div>
@@ -506,40 +568,40 @@ export function ServicesView() {
 
               {/* Right Content Breakdown */}
               <div className="lg:col-span-8 space-y-6">
-                {/* Simple explanation */}
+                {/* Plain-English explanation */}
                 <p className="type-body text-muted leading-relaxed">
                   Many teams spend dozens of hours every week manually copying information between
-                  different tools, sorting emails, and updating records. We set up practical automated
-                  connections between your everyday software so routine tasks handle themselves,
-                  reducing human errors and giving your team time back.
+                  different tools, sorting emails, and updating records. We build practical automated
+                  bridges between your everyday software so routine tasks handle themselves,
+                  reducing human errors and giving your team valuable time back.
                 </p>
 
-                {/* What Code2Perform can help with */}
+                {/* What Code2Perform can deliver */}
                 <div className="pt-4 border-t border-hairline space-y-3">
-                  <p className="type-label text-champagne-deep">What Code2Perform Can Help With</p>
+                  <p className="type-label text-champagne-deep">What Code2Perform Delivers</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Connecting separate software tools so customer data updates automatically
+                        Connecting separate business tools so customer and sales data updates automatically
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Automating customer inquiry intake and routing messages to the right person
+                        Automating customer inquiry intake and routing messages to the right staff member
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Extracting information from invoices, receipts, and intake forms automatically
+                        Extracting structured information from invoices, receipts, and intake forms automatically
                       </span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
                       <span className="type-body-sm text-ink">
-                        Building private internal search tools trained on your company handbooks
+                        Setting up internal AI assistants grounded strictly in your company documentation
                       </span>
                     </div>
                   </div>
@@ -551,21 +613,30 @@ export function ServicesView() {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink">
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Automated connectors between CRM, email, and databases</span>
+                      <span>Automated connectors between CRM, email, forms, and databases</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Inquiry intake and automated triage pipeline</span>
+                      <span>Inquiry intake, validation, and automated triage pipeline</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Document data-extraction scripts with validation checks</span>
+                      <span>Data-extraction scripts with validation and error-checking</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                      <span>Error notification and workflow status dashboard</span>
+                      <span>Notification triggers and automated workflow status dashboard</span>
                     </li>
                   </ul>
+                </div>
+
+                {/* Post-Launch Capabilities */}
+                <div className="pt-4 border-t border-hairline space-y-2 bg-surface-alt/60 p-4">
+                  <p className="type-label text-champagne-deep">Post-Launch Areas We Can Support</p>
+                  <p className="type-body-sm text-muted leading-relaxed">
+                    As your business workflows evolve, we can maintain API connectors, introduce customer
+                    support automation, and build additional internal AI assistants to automate new manual bottlenecks.
+                  </p>
                 </div>
               </div>
             </div>
@@ -574,7 +645,183 @@ export function ServicesView() {
       </section>
 
       {/* =====================================================================
-          5. PROJECT CTA
+          5. POST-LAUNCH & ONGOING GROWTH MODEL
+          Editorial ledger layout explaining the 6 areas Code2Perform can support
+          or discuss with clients after launch (NO generic card grid, NO packages, NO pricing)
+          ===================================================================== */}
+      <section className="border-b border-hairline section-spacing" aria-label="Post-Launch & Ongoing Support">
+        <div className="page-container space-y-12 md:space-y-16">
+          {/* Section Header */}
+          <div className="max-w-3xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
+              <p className="type-label text-champagne-deep">Beyond Delivery</p>
+            </div>
+            <h2 className="type-heading text-ink">
+              How we can support and grow your solution after launch.
+            </h2>
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+              A digital product is not static. When your project goes live, Code2Perform can
+              remain available to discuss and support ongoing technical stability, automation,
+              and growth. Here are the primary areas we can support or explore with your team:
+            </p>
+          </div>
+
+          {/* Editorial Ledger of 6 Post-Launch Support Areas */}
+          <div className="divide-y divide-hairline border-t border-b border-hairline">
+            {/* Area 1: Website Maintenance & Support */}
+            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="type-label text-champagne-deep font-medium">01 / Continuity</span>
+                <h3 className="type-title text-ink font-medium text-xl">
+                  Website Maintenance &amp; Support
+                </h3>
+              </div>
+              <div className="md:col-span-8 space-y-3">
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Keeping your digital systems reliable, secure, and fast. We can assist with routine
+                  software updates, bug fixes, security patches, hosting oversight, and technical improvements
+                  so your site continues performing smoothly in the real world.
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-ink font-medium pt-1">
+                  <span>• Software updates</span>
+                  <span>• Bug fixes</span>
+                  <span>• Technical support</span>
+                  <span>• Ongoing improvements</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Area 2: SEO & Content */}
+            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="type-label text-champagne-deep font-medium">02 / Visibility</span>
+                <h3 className="type-title text-ink font-medium text-xl">
+                  SEO &amp; Content Support
+                </h3>
+              </div>
+              <div className="md:col-span-8 space-y-3">
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Ensuring search engines and prospective clients can easily discover your business.
+                  We can support technical search visibility, structured data updates, and ongoing
+                  website content improvements as your company offers new services or products.
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-ink font-medium pt-1">
+                  <span>• Search visibility</span>
+                  <span>• Website content improvements</span>
+                  <span>• Technical SEO hygiene</span>
+                  <span>• Content support</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Area 3: Digital Marketing */}
+            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="type-label text-champagne-deep font-medium">03 / Growth</span>
+                <h3 className="type-title text-ink font-medium text-xl">
+                  Digital Marketing &amp; Landing Pages
+                </h3>
+              </div>
+              <div className="md:col-span-8 space-y-3">
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Supporting your marketing initiatives with high-converting digital assets. We can design
+                  and build focused campaign landing pages, set up conversion tracking, and implement
+                  improvements tailored to specific marketing and client acquisition efforts.
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-ink font-medium pt-1">
+                  <span>• Campaign landing pages</span>
+                  <span>• Conversion-focused improvements</span>
+                  <span>• Tracking &amp; analytics setup</span>
+                  <span>• Digital campaign support</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Area 4: CRM & Business Automation */}
+            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="type-label text-champagne-deep font-medium">04 / Efficiency</span>
+                <h3 className="type-title text-ink font-medium text-xl">
+                  CRM &amp; Business Automation
+                </h3>
+              </div>
+              <div className="md:col-span-8 space-y-3">
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Streamlining how your team handles incoming inquiries, customer records, and internal handoffs.
+                  We can connect your website to your CRM, automate lead intake workflows, and integrate
+                  disparate tools to eliminate manual administrative overhead.
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-ink font-medium pt-1">
+                  <span>• Lead workflows</span>
+                  <span>• Internal processes</span>
+                  <span>• Software integrations</span>
+                  <span>• Automated operations</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Area 5: AI & Chatbot Solutions */}
+            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="type-label text-champagne-deep font-medium">05 / Intelligence</span>
+                <h3 className="type-title text-ink font-medium text-xl">
+                  AI &amp; Chatbot Solutions
+                </h3>
+              </div>
+              <div className="md:col-span-8 space-y-3">
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Exploring practical artificial intelligence solutions that solve everyday friction.
+                  We can discuss and build customer support chatbots that answer common inquiries 24/7,
+                  internal team assistants trained on company guides, and automated document triage tools.
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-ink font-medium pt-1">
+                  <span>• Customer support automation</span>
+                  <span>• AI assistants</span>
+                  <span>• Business workflows</span>
+                  <span>• Internal AI tools</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Area 6: Performance & Conversion Optimization */}
+            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="type-label text-champagne-deep font-medium">06 / Refinement</span>
+                <h3 className="type-title text-ink font-medium text-xl">
+                  Performance &amp; Conversion Optimization
+                </h3>
+              </div>
+              <div className="md:col-span-8 space-y-3">
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Turning more of your visitors into paying customers. We analyze real user journeys to uncover
+                  friction points, speed up slow page elements, and test refined headlines, forms, and button
+                  placements to maximize the return on your existing web traffic.
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-ink font-medium pt-1">
+                  <span>• Website performance &amp; speed</span>
+                  <span>• User experience improvements</span>
+                  <span>• Conversion rate optimization</span>
+                  <span>• Friction point audits</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Model Note: No Forced Retainers */}
+          <div className="pt-2">
+            <p className="type-body-sm text-muted max-w-3xl leading-relaxed">
+              <strong className="text-ink font-medium">Collaborating on your terms:</strong> We do not lock
+              clients into mandatory ongoing service contracts. We discuss post-launch capabilities
+              openly with you, allowing your business to tap into ongoing support, technical improvements,
+              or growth services whenever you genuinely need them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          6. PROJECT CTA
           Warm editorial invitation band on surface-alt
           ===================================================================== */}
       <section className="bg-surface-alt border-b border-hairline section-spacing" aria-label="Start a Project">
@@ -582,7 +829,7 @@ export function ServicesView() {
           <div className="max-w-4xl space-y-8">
             <div className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-              <p className="type-label text-champagne-deep">Start a Project</p>
+              <p className="type-label text-champagne-deep">Start a Conversation</p>
             </div>
 
             <h2 className="type-heading text-ink">
@@ -592,7 +839,7 @@ export function ServicesView() {
             <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
               You do not need a complete technical blueprint before reaching out. Tell us
               what your business is trying to accomplish, and we will help you figure out
-              the simplest, most cost-effective way to build it.
+              the simplest, most cost-effective way to build it—and how to keep it performing over time.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
@@ -606,8 +853,8 @@ export function ServicesView() {
                 href="/about"
                 className="type-nav text-ink hover:text-champagne-deep inline-flex items-center justify-center sm:justify-start gap-1.5"
               >
-                Learn how we work
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Learn how we partner with clients
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

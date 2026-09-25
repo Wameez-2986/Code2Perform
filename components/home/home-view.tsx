@@ -1,56 +1,42 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Globe,
-  Palette,
-  Smartphone,
-  Layers,
-  ShoppingBag,
-  Cpu,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const SERVICES = [
   {
     number: "01",
     name: "Web & Digital Development",
-    icon: Globe,
     description:
-      "Custom, high-speed websites and web applications built with Next.js and TypeScript. Clean code, sub-second page loads, and dependable uptime.",
+      "Custom, high-speed websites and web applications built with Next.js and TypeScript. Clean code, sub-second page loads, and dependable uptime from launch day forward.",
   },
   {
     number: "02",
     name: "UI/UX & Product Design",
-    icon: Palette,
     description:
       "Straightforward, intuitive digital interfaces. We focus on clear typography, natural user flows, and purposeful layouts that make complex tools easy to use.",
   },
   {
     number: "03",
     name: "Mobile App Development",
-    icon: Smartphone,
     description:
-      "Cross-platform mobile applications for iOS and Android. Engineered with a unified codebase for consistent behavior, fast performance, and simple maintenance.",
+      "Cross-platform mobile applications for iOS and Android. Engineered with a unified codebase for consistent behavior, fast performance, and simple ongoing maintenance.",
   },
   {
     number: "04",
     name: "SaaS & Custom Platforms",
-    icon: Layers,
     description:
       "Bespoke cloud software, client portals, and internal business tools designed specifically around your operational processes and data workflows.",
   },
   {
     number: "05",
     name: "E-Commerce Solutions",
-    icon: ShoppingBag,
     description:
       "Direct, reliable online stores with frictionless checkout experiences, clean product presentation, and robust payment and inventory integrations.",
   },
   {
     number: "06",
     name: "AI & Business Automation",
-    icon: Cpu,
     description:
-      "Sensible automation workflows and AI integrations that eliminate repetitive manual tasks and connect your everyday business software seamlessly.",
+      "Sensible automation workflows and practical AI integrations that eliminate repetitive manual tasks and connect your everyday business software reliably.",
   },
 ];
 
@@ -59,7 +45,7 @@ export function HomeView() {
     <div className="w-full">
       {/* =====================================================================
           1. HERO SECTION
-          Asymmetric display statement with two-column bottom split
+          Positioned around long-term partnership, craft, and business utility
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="Hero">
         <div className="page-container space-y-12 md:space-y-16">
@@ -68,7 +54,7 @@ export function HomeView() {
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">
-                Code2Perform — Digital Agency &amp; Web Engineering
+                Code2Perform — Digital Design, Engineering &amp; Long-Term Growth
               </p>
             </div>
             <p className="type-legal text-muted">
@@ -79,7 +65,7 @@ export function HomeView() {
           {/* Strong Main Heading */}
           <div className="max-w-5xl">
             <h1 className="type-display text-ink">
-              We design and engineer high-performance websites for companies that refuse to compromise.
+              We design, build, and support fast digital products for businesses that value a dependable partner.
             </h1>
           </div>
 
@@ -87,15 +73,17 @@ export function HomeView() {
           <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7 space-y-4">
               <p className="type-body text-ink font-medium text-lg leading-relaxed">
-                Code2Perform is an independent digital agency. We build fast, custom
-                websites and web platforms for ambitious founders, growing businesses,
-                and established brands.
+                Code2Perform is an independent digital agency. We don&apos;t just build a
+                website or an application and disappear. We work closely with founders,
+                growing businesses, and established brands to understand their operational
+                needs, engineer reliable software, and stay by their side to support,
+                optimize, and grow their platforms over time.
               </p>
               <p className="type-body text-muted leading-relaxed">
-                When generic templates, slow loading speeds, and fragile code hold
-                your business back, we step in. We combine disciplined software engineering,
-                editorial interface design, and direct senior-level collaboration to give
-                your company a digital presence that actually performs.
+                When generic templates, slow loading speeds, and fragile code hold your
+                business back, we step in. Through direct senior-level collaboration,
+                disciplined software engineering, and ongoing technical guidance, we make
+                sure your digital presence actually performs—from day one and for years to come.
               </p>
             </div>
 
@@ -116,26 +104,26 @@ export function HomeView() {
             </div>
           </div>
 
-          {/* Lower Tripartite Editorial Rubric: What, Who, Standard */}
+          {/* Lower Tripartite Editorial Rubric: 3 Core Client Commitments */}
           <div className="pt-8 border-t border-hairline grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-2">
-              <p className="type-label text-champagne-deep">What We Do</p>
+              <p className="type-label text-champagne-deep">01 / Understand</p>
               <p className="type-body-sm text-ink">
-                Custom Web Applications, High-Performance Marketing Sites, &amp; Technical Architecture.
+                We Listen First — Grounding every project in your actual business workflows and customer needs.
               </p>
             </div>
 
             <div className="space-y-2">
-              <p className="type-label text-champagne-deep">Who We Help</p>
+              <p className="type-label text-champagne-deep">02 / Build &amp; Launch</p>
               <p className="type-body-sm text-ink">
-                Founders, Scaling Technology Teams, &amp; Companies Outgrowing Standard Website Builders.
+                Disciplined Craft — Delivering fast, maintainable websites and applications without fragile shortcuts.
               </p>
             </div>
 
             <div className="space-y-2">
-              <p className="type-label text-champagne-deep">Why Work With Us</p>
+              <p className="type-label text-champagne-deep">03 / Support &amp; Grow</p>
               <p className="type-body-sm text-ink">
-                Direct Senior Engineering, Zero Bloated Plugins, &amp; Measured Core Web Vitals Excellence.
+                Long-Term Care — Staying engaged after launch with proactive maintenance, optimization, and automation.
               </p>
             </div>
           </div>
@@ -144,7 +132,7 @@ export function HomeView() {
 
       {/* =====================================================================
           2. WHAT WE DO
-          Editorial layout: Strong heading, human explanation, 3 supporting points
+          Editorial layout: Long-term partnership thesis & 3 substantive commitments
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="What We Do">
         <div className="page-container space-y-12 md:space-y-16">
@@ -156,51 +144,84 @@ export function HomeView() {
             </div>
 
             <h2 className="type-heading text-ink">
-              We turn your ideas and business needs into useful digital products.
+              Digital solutions built around your business—and supported for the long term.
             </h2>
 
             <p className="type-body text-muted text-lg max-w-3xl leading-relaxed">
-              Every business has real challenges to solve—whether that means launching
-              a new service, fixing a website that feels outdated, or building a custom
-              tool your customers can rely on every day. We listen closely to what your
-              business actually requires, cut out the clutter, and build clean, fast,
-              and dependable software that delivers real value.
+              Most agencies deliver a project, hand over the files, and walk away.
+              When your business grows or needs evolve, you are left on your own.
+              We work differently. We partner with you from day one to understand your
+              real challenges, engineer software people rely on every day, and provide
+              continuous support so your digital presence keeps pace with your growth.
             </p>
           </div>
 
-          {/* Supporting Points: Architectural 3-Column Matrix (Not Cards) */}
-          <div className="pt-8 border-t border-hairline grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-hairline">
-            {/* Point 1 */}
-            <div className="py-6 md:py-0 md:pr-8 space-y-3">
-              <p className="type-label text-champagne">01 / Understand</p>
-              <h3 className="type-title text-ink">Finding the clearest path forward</h3>
-              <p className="type-body-sm text-muted">
-                Before writing any code, we sit down with you to understand your
-                goals, your customers, and your workflows. We make sure we are
-                solving the right problem before building anything.
+          {/* Asymmetric 2-Part Editorial Split */}
+          <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Left Column: Partnership Philosophy */}
+            <div className="lg:col-span-5 space-y-4">
+              <p className="type-label text-champagne">Our Partnership Model</p>
+              <h3 className="type-heading text-2xl md:text-3xl text-ink">
+                An agency that stays in your corner.
+              </h3>
+              <p className="type-body text-muted leading-relaxed">
+                A digital product is not a one-time transaction; it is an active foundation
+                for your business. We measure our success by how reliably your software
+                performs over months and years. That means listening carefully from our first
+                conversation, building with durability and clean code, and remaining available
+                whenever your team needs guidance or new capabilities.
               </p>
             </div>
 
-            {/* Point 2 */}
-            <div className="py-6 md:py-0 md:px-8 space-y-3">
-              <p className="type-label text-champagne">02 / Build</p>
-              <h3 className="type-title text-ink">Crafting tools people actually use</h3>
-              <p className="type-body-sm text-muted">
-                We design interfaces that are simple to navigate and write clean,
-                resilient code underneath. Your users get a fast, intuitive experience,
-                and your team gets software that simply works.
-              </p>
-            </div>
+            {/* Right Column: 3 Concrete Pillars (Understand, Build, Support) */}
+            <div className="lg:col-span-7 space-y-8 lg:pl-8 lg:border-l border-hairline">
+              {/* Point 1: Understand */}
+              <div className="space-y-3">
+                <span className="type-label text-champagne-deep font-medium">
+                  01 / We Understand Your Business Needs
+                </span>
+                <h4 className="type-title text-ink font-medium text-xl">
+                  Solving the right problems before writing code
+                </h4>
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Before writing code or designing screens, we take the time to learn your
+                  operational workflows, customer expectations, and commercial objectives.
+                  By aligning on clear goals upfront, every technical decision directly supports
+                  your business and eliminates costly rework.
+                </p>
+              </div>
 
-            {/* Point 3 */}
-            <div className="py-6 md:py-0 md:pl-8 space-y-3">
-              <p className="type-label text-champagne">03 / Maintain</p>
-              <h3 className="type-title text-ink">Built to last and easy to manage</h3>
-              <p className="type-body-sm text-muted">
-                We avoid fragile templates and messy plugins. Everything we build
-                follows sound engineering practices so your website stays fast,
-                secure, and straightforward to update over time.
-              </p>
+              {/* Point 2: Build & Launch */}
+              <div className="pt-6 border-t border-hairline space-y-3">
+                <span className="type-label text-champagne-deep font-medium">
+                  02 / We Build &amp; Launch Useful Solutions
+                </span>
+                <h4 className="type-title text-ink font-medium text-xl">
+                  Engineering fast, dependable tools people actually use
+                </h4>
+                <p className="type-body-sm text-muted leading-relaxed">
+                  We design interfaces that feel natural and write lightweight, maintainable
+                  Next.js and TypeScript code. From marketing sites and e-commerce stores to
+                  custom client portals, everything we deploy is built for speed, stability,
+                  and complete team ownership.
+                </p>
+              </div>
+
+              {/* Point 3: Support & Grow */}
+              <div className="pt-6 border-t border-hairline space-y-3">
+                <span className="type-label text-champagne-deep font-medium">
+                  03 / We Help You Grow After Launch
+                </span>
+                <h4 className="type-title text-ink font-medium text-xl">
+                  Ongoing maintenance, optimization, and automation
+                </h4>
+                <p className="type-body-sm text-muted leading-relaxed">
+                  Deployment is only the beginning of our relationship. We monitor system
+                  health, keep dependencies up to date, automate repetitive manual workflows,
+                  and continuously refine features based on real user feedback as your
+                  business expands.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -208,7 +229,7 @@ export function HomeView() {
 
       {/* =====================================================================
           3. HOW WE WORK
-          Editorial process ledger: 5 clear steps with typography, numbering & dividers
+          Client journey translated into 5 clear, client-friendly stages
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="How We Work">
         <div className="page-container space-y-12 md:space-y-16">
@@ -219,113 +240,113 @@ export function HomeView() {
               <p className="type-label text-champagne-deep">How We Work</p>
             </div>
             <h2 className="type-heading text-ink">
-              A clear, predictable path from idea to launch.
+              A transparent journey from first conversation to long-term growth.
             </h2>
             <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
-              We believe great digital products come from open communication and a
-              structured, step-by-step process. Here is how we take every project from an
-              initial conversation to a successful deployment.
+              Great digital partnerships are built on clarity, open communication,
+              and dependable execution. Here is how we collaborate with you every step
+              of the way.
             </p>
           </div>
 
-          {/* Editorial Process Rows (Not a card grid) */}
+          {/* Editorial Process Rows across the 5 client stages */}
           <div className="divide-y divide-hairline border-t border-b border-hairline">
-            {/* Step 1: Understand */}
+            {/* Step 1: Consultation */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">01</span>
-                <span className="type-label text-champagne-deep">Understand</span>
+                <span className="type-label text-champagne-deep">Consultation</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We listen to your goals and needs
+                  We start with an open conversation
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We begin by learning about your business, who your customers are,
-                  and what you want to achieve. This ensures we solve the right problems
-                  before writing a single line of code.
+                  We begin by listening. We learn about your company, your customers,
+                  and your operational goals. We ask practical questions to understand
+                  your real challenges and verify that we are the right team to help.
                 </p>
               </div>
             </div>
 
-            {/* Step 2: Plan */}
+            {/* Step 2: Proposal & Architecture */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">02</span>
-                <span className="type-label text-champagne-deep">Plan</span>
+                <span className="type-label text-champagne-deep">Proposal</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We map out the architecture
+                  We outline a clear plan and exact scope
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We define the structure of your site, choose the right technical
-                  stack, and lay out clear milestones so you always know what is
-                  happening and when to expect it.
+                  We define the recommended technical architecture, establish clear
+                  deliverables, and set realistic milestones with straightforward pricing.
+                  You always know what is being built, why, and when to expect it.
                 </p>
               </div>
             </div>
 
-            {/* Step 3: Build */}
+            {/* Step 3: Design & Build */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">03</span>
-                <span className="type-label text-champagne-deep">Build</span>
+                <span className="type-label text-champagne-deep">Project</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We engineer clean, fast code
+                  We engineer clean, resilient software
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We design refined interfaces and write robust Next.js and TypeScript
-                  code. We keep the codebase lightweight and maintainable, ensuring
-                  instant loading speeds from day one.
+                  We design intuitive interfaces and write lightweight, strictly typed code.
+                  You work directly with senior practitioners, receive frequent updates,
+                  and see regular progress without layers of middle management.
                 </p>
               </div>
             </div>
 
-            {/* Step 4: Refine */}
+            {/* Step 4: Launch */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="md:col-span-3 flex items-baseline gap-3">
                 <span className="type-label text-champagne font-medium">04</span>
-                <span className="type-label text-champagne-deep">Refine</span>
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium">
-                  We test and polish every detail
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted">
-                  We test across phones, tablets, and desktop browsers to verify
-                  responsiveness, fix edge cases, and ensure everything feels smooth,
-                  fast, and effortless to use.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 5: Launch */}
-            <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">05</span>
                 <span className="type-label text-champagne-deep">Launch</span>
               </div>
               <div className="md:col-span-4">
                 <h3 className="type-title text-ink font-medium">
-                  We deliver with zero stress
+                  We deploy with rigorous care
                 </h3>
               </div>
               <div className="md:col-span-5">
                 <p className="type-body-sm text-muted">
-                  We handle hosting setup, domain configuration, and deployment.
-                  You receive a production-ready website and clear guidance, ready
-                  to represent your business with confidence.
+                  We handle hosting setup, domain configuration, accessibility audits,
+                  and mobile network tests. We deliver a thoroughly verified, production-ready
+                  product with full documentation and zero deployment stress.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 5: Support & Growth */}
+            <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+              <div className="md:col-span-3 flex items-baseline gap-3">
+                <span className="type-label text-champagne font-medium">05</span>
+                <span className="type-label text-champagne-deep">Support &amp; Growth</span>
+              </div>
+              <div className="md:col-span-4">
+                <h3 className="type-title text-ink font-medium">
+                  We stay on to optimize and evolve
+                </h3>
+              </div>
+              <div className="md:col-span-5">
+                <p className="type-body-sm text-muted">
+                  We remain your dedicated technical team after launch. We monitor uptime,
+                  fine-tune page speeds, automate manual processes, and build new features
+                  as your business needs expand—earning your trust over the long haul.
                 </p>
               </div>
             </div>
@@ -335,7 +356,7 @@ export function HomeView() {
 
       {/* =====================================================================
           4. SERVICES OVERVIEW
-          Compact architectural matrix across the 6 exact service practices
+          Editorial directory ledger across the 6 exact service practices
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="Services Overview">
         <div className="page-container space-y-12 md:space-y-16">
@@ -344,10 +365,10 @@ export function HomeView() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                <p className="type-label text-champagne-deep">Services Overview</p>
+                <p className="type-label text-champagne-deep">Services &amp; Capabilities</p>
               </div>
               <h2 className="type-heading text-ink">
-                What we build for our clients.
+                What we build, maintain, and grow.
               </h2>
             </div>
             <div>
@@ -355,55 +376,49 @@ export function HomeView() {
                 href="/services"
                 className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep"
               >
-                View all services
+                View all services &amp; deliverables
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
 
-          {/* 3x2 Architectural Matrix (Not generic cards) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-hairline">
-            {SERVICES.map((service) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={service.name}
-                  className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-r border-b border-hairline"
-                >
-                  <div className="space-y-4">
-                    {/* Index & Simple Lucide Icon */}
-                    <div className="flex items-center justify-between">
-                      <span className="type-label text-champagne-deep font-medium">
-                        {service.number}
-                      </span>
-                      <Icon className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
-                    </div>
-
-                    {/* Exact Service Name */}
-                    <h3 className="type-title text-ink font-medium text-xl">
-                      {service.name}
-                    </h3>
-
-                    {/* Short Human Explanation */}
-                    <p className="type-body-sm text-muted leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Contextual Link */}
-                  <div className="mt-8 pt-4 border-t border-hairline/60">
-                    <Link
-                      href="/services"
-                      aria-label={`Learn more about ${service.name}`}
-                      className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5"
-                    >
-                      Learn more
-                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                    </Link>
-                  </div>
+          {/* Editorial Index Ledger (Not a boxed card grid) */}
+          <div className="divide-y divide-hairline border-b border-hairline">
+            {SERVICES.map((service) => (
+              <div
+                key={service.name}
+                className="py-8 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start group"
+              >
+                <div className="lg:col-span-1">
+                  <span className="type-label text-champagne-deep font-medium">
+                    {service.number}
+                  </span>
                 </div>
-              );
-            })}
+
+                <div className="lg:col-span-4">
+                  <h3 className="type-heading text-2xl text-ink font-medium">
+                    {service.name}
+                  </h3>
+                </div>
+
+                <div className="lg:col-span-5">
+                  <p className="type-body-sm text-muted leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                <div className="lg:col-span-2 lg:text-right pt-2 lg:pt-0">
+                  <Link
+                    href="/services"
+                    aria-label={`Learn more about ${service.name}`}
+                    className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5"
+                  >
+                    View practice
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -411,7 +426,7 @@ export function HomeView() {
       {/* =====================================================================
           5. FINAL CTA
           Warm editorial invitation: distinct tonal background, simple human language,
-          zero fake urgency or marketing clichés
+          emphasizing long-term partnership and honest consultation
           ===================================================================== */}
       <section className="bg-surface-alt border-b border-hairline section-spacing" aria-label="Start a Conversation">
         <div className="page-container">
@@ -424,16 +439,16 @@ export function HomeView() {
 
             {/* Strong Heading */}
             <h2 className="type-heading text-ink">
-              Let&apos;s talk about what you want to build.
+              Looking for a digital partner you can rely on for the long haul?
             </h2>
 
             {/* Short Supporting Text */}
             <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
-              Whether you have a fully formed project specification or an early
-              idea you want to explore, we are always glad to connect. Tell us
-              what you are aiming for, and we will share clear, practical
-              advice on the best way forward. No pressure, no aggressive sales
-              pitches—just a straightforward conversation between professionals.
+              Whether you need to build a new platform from scratch, modernize an
+              existing system that has slowed down, or find dependable ongoing technical
+              support, we are here to help. Tell us about your business goals, and let&apos;s
+              have an open, practical discussion about the best way forward. No pressure,
+              no aggressive sales pitches—just an honest conversation between professionals.
             </p>
 
             {/* Contact CTA */}
@@ -442,7 +457,7 @@ export function HomeView() {
                 href="/contact"
                 className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
               >
-                Get in Touch
+                Start a Project
               </Link>
               <Link
                 href="/services"

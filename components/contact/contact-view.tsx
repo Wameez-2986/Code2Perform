@@ -318,7 +318,7 @@ export function ContactView() {
                         placeholder="First and last name"
                         className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none ${
                           touched.name && errors.name
-                            ? "border border-[#991B1B] focus:border-[#991B1B] focus:ring-1 focus:ring-[#991B1B]"
+                            ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
                             : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
                         }`}
                       />
@@ -326,7 +326,7 @@ export function ContactView() {
                         <p
                           id="name-error"
                           role="alert"
-                          className="type-legal text-[#991B1B] flex items-center gap-1.5 pt-0.5"
+                          className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
                         >
                           <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                           <span>{errors.name}</span>
@@ -361,7 +361,7 @@ export function ContactView() {
                         placeholder="name@company.com"
                         className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none ${
                           touched.email && errors.email
-                            ? "border border-[#991B1B] focus:border-[#991B1B] focus:ring-1 focus:ring-[#991B1B]"
+                            ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
                             : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
                         }`}
                       />
@@ -369,7 +369,7 @@ export function ContactView() {
                         <p
                           id="email-error"
                           role="alert"
-                          className="type-legal text-[#991B1B] flex items-center gap-1.5 pt-0.5"
+                          className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
                         >
                           <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                           <span>{errors.email}</span>
@@ -476,7 +476,7 @@ export function ContactView() {
                       placeholder="Tell us what you are looking to build, your current challenges, and any target milestones or dates."
                       className={`w-full px-4 py-3 bg-surface text-ink text-sm rounded-none placeholder:text-muted/60 transition-none focus:outline-none resize-y ${
                         touched.details && errors.details
-                          ? "border border-[#991B1B] focus:border-[#991B1B] focus:ring-1 focus:ring-[#991B1B]"
+                          ? "border-2 border-champagne-deep focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
                           : "border border-hairline focus:border-champagne-deep focus:ring-1 focus:ring-champagne-deep"
                       }`}
                     />
@@ -484,7 +484,7 @@ export function ContactView() {
                       <p
                         id="details-error"
                         role="alert"
-                        className="type-legal text-[#991B1B] flex items-center gap-1.5 pt-0.5"
+                        className="type-legal text-champagne-deep font-medium flex items-center gap-1.5 pt-0.5"
                       >
                         <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                         <span>{errors.details}</span>

@@ -1,14 +1,5 @@
 import Link from "next/link";
-import {
-  Globe,
-  Palette,
-  Smartphone,
-  Layers,
-  ShoppingBag,
-  Cpu,
-  ArrowRight,
-  Check,
-} from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 export function ServicesView() {
   return (
@@ -71,8 +62,7 @@ export function ServicesView() {
             {/* Left Anchor */}
             <div className="lg:col-span-5 space-y-5">
               <div className="flex items-center gap-3">
-                <span className="type-label text-champagne-deep font-medium">01</span>
-                <Globe className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
+                <span className="type-label text-champagne-deep font-medium">01 / Practice</span>
               </div>
               <h2 className="type-heading text-ink">
                 Web &amp; Digital Development
@@ -137,26 +127,31 @@ export function ServicesView() {
                 </div>
               </div>
 
-              {/* Examples of deliverables */}
+              {/* Structured Deliverables Specification */}
               <div className="pt-6 border-t border-hairline space-y-3">
-                <p className="type-label text-champagne-deep">Examples of Deliverables</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Production-ready website codebase
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Fully responsive layout across mobile and desktop
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Content management configuration
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Domain and production hosting setup
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Performance, accessibility &amp; SEO audit checklist
-                  </span>
-                </div>
+                <p className="type-label text-champagne-deep">Tangible Deliverables</p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-ink">
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Production-ready website codebase</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Responsive mobile &amp; desktop layout</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Content management configuration</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Domain &amp; production hosting setup</span>
+                  </li>
+                  <li className="flex items-center gap-2.5 sm:col-span-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Core Web Vitals, accessibility &amp; SEO audit checklist</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -190,8 +185,7 @@ export function ServicesView() {
             <div className="py-10 lg:pr-12 space-y-8">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="type-label text-champagne-deep font-medium">02</span>
-                  <Palette className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
+                  <span className="type-label text-champagne-deep font-medium">02 / Design</span>
                 </div>
                 <h3 className="type-heading text-2xl md:text-3xl text-ink">
                   UI/UX &amp; Product Design
@@ -226,23 +220,27 @@ export function ServicesView() {
                 </ul>
               </div>
 
-              {/* Examples of deliverables */}
+              {/* Structured Deliverables Specification */}
               <div className="pt-6 border-t border-hairline space-y-3">
-                <p className="type-label text-champagne-deep">Examples of Deliverables</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Interactive clickable prototypes
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Screen-by-screen wireframes &amp; user flows
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Figma design system &amp; reusable UI kit
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Developer specification notes &amp; visual assets
-                  </span>
-                </div>
+                <p className="type-label text-champagne-deep">Tangible Deliverables</p>
+                <ul className="space-y-2 text-sm text-ink">
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Interactive clickable prototypes</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Screen-by-screen wireframes &amp; user flows</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Figma design system &amp; reusable UI kit</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Developer specification notes &amp; visual assets</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -250,8 +248,7 @@ export function ServicesView() {
             <div className="py-10 lg:pl-12 space-y-8">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="type-label text-champagne-deep font-medium">03</span>
-                  <Smartphone className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
+                  <span className="type-label text-champagne-deep font-medium">03 / Mobile</span>
                 </div>
                 <h3 className="type-heading text-2xl md:text-3xl text-ink">
                   Mobile App Development
@@ -286,23 +283,27 @@ export function ServicesView() {
                 </ul>
               </div>
 
-              {/* Examples of deliverables */}
+              {/* Structured Deliverables Specification */}
               <div className="pt-6 border-t border-hairline space-y-3">
-                <p className="type-label text-champagne-deep">Examples of Deliverables</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Native-ready iOS and Android app packages
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Secure login and user authentication system
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    App Store &amp; Google Play listing configuration
-                  </span>
-                  <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                    Complete source code repository &amp; maintenance guide
-                  </span>
-                </div>
+                <p className="type-label text-champagne-deep">Tangible Deliverables</p>
+                <ul className="space-y-2 text-sm text-ink">
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Native-ready iOS and Android app packages</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Secure login and user authentication system</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>App Store &amp; Google Play listing configuration</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                    <span>Complete source code repository &amp; maintenance guide</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -337,8 +338,7 @@ export function ServicesView() {
               {/* Left Identifier */}
               <div className="lg:col-span-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="type-label text-champagne-deep font-medium">04</span>
-                  <Layers className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
+                  <span className="type-label text-champagne-deep font-medium">04 / Platforms</span>
                 </div>
                 <h3 className="type-title text-ink font-medium text-2xl">
                   SaaS &amp; Custom Platforms
@@ -387,23 +387,27 @@ export function ServicesView() {
                   </div>
                 </div>
 
-                {/* Examples of deliverables */}
+                {/* Structured Deliverables Specification */}
                 <div className="pt-4 border-t border-hairline space-y-2.5">
-                  <p className="type-label text-champagne-deep">Examples of Deliverables</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Custom web application with role-based permissions
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Automated billing &amp; subscription integration (e.g. Stripe)
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Internal administrative dashboard &amp; reporting screens
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Secure database schema and API documentation
-                    </span>
-                  </div>
+                  <p className="type-label text-champagne-deep">Tangible Deliverables</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink">
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Custom web application with role-based permissions</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Subscription billing integration (e.g. Stripe)</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Administrative dashboard &amp; reporting screens</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Secure database schema and API documentation</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -413,8 +417,7 @@ export function ServicesView() {
               {/* Left Identifier */}
               <div className="lg:col-span-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="type-label text-champagne-deep font-medium">05</span>
-                  <ShoppingBag className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
+                  <span className="type-label text-champagne-deep font-medium">05 / Commerce</span>
                 </div>
                 <h3 className="type-title text-ink font-medium text-2xl">
                   E-Commerce Solutions
@@ -463,23 +466,27 @@ export function ServicesView() {
                   </div>
                 </div>
 
-                {/* Examples of deliverables */}
+                {/* Structured Deliverables Specification */}
                 <div className="pt-4 border-t border-hairline space-y-2.5">
-                  <p className="type-label text-champagne-deep">Examples of Deliverables</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Fast-loading online storefront and product catalog
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      One-page streamlined checkout flow
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Payment gateway integration with automated tax calculation
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Order management and inventory sync pipeline
-                    </span>
-                  </div>
+                  <p className="type-label text-champagne-deep">Tangible Deliverables</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink">
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Fast-loading storefront and product catalog</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>One-page streamlined checkout flow</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Payment gateway integration with automated tax</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Order management and inventory sync pipeline</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -489,8 +496,7 @@ export function ServicesView() {
               {/* Left Identifier */}
               <div className="lg:col-span-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="type-label text-champagne-deep font-medium">06</span>
-                  <Cpu className="h-5 w-5 text-champagne-deep stroke-[1.5]" aria-hidden="true" />
+                  <span className="type-label text-champagne-deep font-medium">06 / Automation</span>
                 </div>
                 <h3 className="type-title text-ink font-medium text-2xl">
                   AI &amp; Business Automation
@@ -539,23 +545,27 @@ export function ServicesView() {
                   </div>
                 </div>
 
-                {/* Examples of deliverables */}
+                {/* Structured Deliverables Specification */}
                 <div className="pt-4 border-t border-hairline space-y-2.5">
-                  <p className="type-label text-champagne-deep">Examples of Deliverables</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Automated workflow connectors between your CRM, email, and databases
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Inquiry intake and automated triage pipeline
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Document data-extraction scripts with validation checks
-                    </span>
-                    <span className="px-3 py-1.5 bg-surface-alt border border-hairline text-xs text-ink font-medium">
-                      Error notification and workflow status dashboard
-                    </span>
-                  </div>
+                  <p className="type-label text-champagne-deep">Tangible Deliverables</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink">
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Automated connectors between CRM, email, and databases</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Inquiry intake and automated triage pipeline</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Document data-extraction scripts with validation checks</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+                      <span>Error notification and workflow status dashboard</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

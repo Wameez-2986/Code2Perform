@@ -18,6 +18,7 @@
   --color-surface:         #FFFFFF;
   --color-surface-alt:     #F1ECE0;
   --color-hairline:        #E8E2D2;
+  --color-champagne-glow:  rgba(217, 192, 138, 0.25);
 
   /* Typography scale — fluid via clamp(min, fluid, max) */
   --fs-display:    clamp(2.25rem, 5.5vw, 5.25rem); /* ~36px on 320px → 84px on large screens */
@@ -49,6 +50,7 @@
   --color-surface:         var(--color-surface);
   --color-surface-alt:     var(--color-surface-alt);
   --color-hairline:        var(--color-hairline);
+  --color-champagne-glow:  var(--color-champagne-glow);
 }
 
 /* =============================================================================

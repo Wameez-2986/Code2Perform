@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const SERVICES = [
   {
@@ -56,89 +56,95 @@ export function HomeView() {
   return (
     <div className="w-full">
       {/* =====================================================================
-          1. HERO SECTION
-          Positioned around long-term partnership, craft, and business utility
+          1. HERO SECTION — Exact reference match
+          Centered composition: status pill / headline / paragraph / CTA buttons
+          Background: bone color + subtle static dot texture (CSS only)
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="Hero">
-        <div className="page-container space-y-12 md:space-y-16">
-          {/* Top Row: Editorial Label & Status */}
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-champagne" />
-              <p className="type-label text-champagne-deep">
-                Code2Perform — Digital Design, Engineering &amp; Long-Term Growth
-              </p>
-            </div>
-            <p className="type-legal text-muted">
-              Accepting Select Engagements
-            </p>
+      <section
+        className="hero-texture border-b border-hairline"
+        aria-label="Hero"
+        style={{ paddingTop: "clamp(2.5rem, 5vw, 4.5rem)", paddingBottom: "clamp(4.5rem, 9vw, 8rem)" }}
+      >
+        <div className="page-container flex flex-col items-center text-center">
+
+          {/* --- Status / Location Pill --- */}
+          <div
+            className="inline-flex items-center gap-2.5 px-4 py-2 bg-surface border border-hairline rounded-full shadow-sm mb-10 md:mb-14"
+            role="status"
+            aria-label="Hyderabad · Remote Worldwide — Accepting New Projects"
+          >
+            {/* Green status dot */}
+            <span
+              className="w-2 h-2 rounded-full shrink-0"
+              style={{ backgroundColor: "#22c55e" }}
+              aria-hidden="true"
+            />
+            <span className="type-label text-ink tracking-widest whitespace-nowrap">
+              HYDERABAD · REMOTE WORLDWIDE
+            </span>
+            {/* Vertical divider */}
+            <span
+              className="w-px h-3.5 bg-hairline shrink-0"
+              aria-hidden="true"
+            />
+            <span className="type-label text-muted whitespace-nowrap tracking-wide">
+              Accepting New Projects
+            </span>
           </div>
 
-          {/* Strong Main Heading */}
-          <div className="max-w-5xl">
-            <h1 className="type-display text-ink">
-              We design, build, and support fast digital products for businesses that value a dependable partner.
-            </h1>
+          {/* --- Main Headline --- */}
+          {/*
+            TWO-LINE STRUCTURE
+            Each line is an explicit display:block span with white-space:nowrap so
+            the browser can never wrap within a line. The clamp scales the font
+            down as the viewport narrows, preserving both lines for as long
+            as possible before mobile reflow.
+          */}
+          <h1
+            className="font-bold text-ink w-full mb-10 md:mb-14"
+            style={{
+              fontSize: "clamp(2.25rem, 5.8vw, 5.25rem)",
+              letterSpacing: "-0.03em",
+              lineHeight: "1.08",
+            }}
+          >
+            {/* Line 1 — always one line */}
+            <span style={{ display: "block", whiteSpace: "nowrap" }}>
+              We turn ideas into digital
+            </span>
+            {/* Line 2 — always one line, partial champagne color */}
+            <span style={{ display: "block", whiteSpace: "nowrap" }}>
+              <span style={{ color: "var(--color-ink)" }}>experiences </span>
+              <span style={{ color: "var(--color-champagne)" }}>that perform.</span>
+            </span>
+          </h1>
+
+          {/* --- Supporting Paragraph --- */}
+          <p
+            className="text-muted leading-relaxed mb-10 md:mb-12 max-w-xl"
+            style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}
+          >
+            We combine strategy, design, and modern technology to build digital
+            products that help businesses grow, connect, and move forward.
+          </p>
+
+          {/* --- CTA Buttons --- */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-ink text-white font-medium rounded-full text-base hover:bg-champagne-deep"
+            >
+              Discuss a Project
+              <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center px-7 py-3.5 bg-surface border border-hairline text-ink font-medium rounded-full text-base hover:border-ink"
+            >
+              View Services
+            </Link>
           </div>
 
-          {/* Middle Two-Column Grid: Human Narrative & Action Triggers */}
-          <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-7 space-y-4">
-              <p className="type-body text-ink font-medium text-lg leading-relaxed">
-                Code2Perform is an independent digital agency. We don&apos;t just build a
-                website or an application and disappear. We work closely with founders,
-                growing businesses, and established brands to understand their operational
-                needs, engineer reliable software, and stay by their side to support,
-                optimize, and grow their platforms over time.
-              </p>
-              <p className="type-body text-muted leading-relaxed">
-                When generic templates, slow loading speeds, and fragile code hold your
-                business back, we step in. Through direct senior-level collaboration,
-                disciplined software engineering, and ongoing technical guidance, we make
-                sure your digital presence actually performs—from day one and for years to come.
-              </p>
-            </div>
-
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-start gap-4 lg:pl-8">
-              <Link
-                href="/contact"
-                className="type-button inline-flex items-center justify-center w-full sm:w-auto lg:w-full px-6 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
-              >
-                Start a Project
-              </Link>
-              <Link
-                href="/services"
-                className="type-nav inline-flex items-center justify-center gap-2 w-full sm:w-auto lg:w-full px-6 py-3.5 border border-hairline text-ink hover:border-ink text-center"
-              >
-                Explore Our Services
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Lower Tripartite Editorial Rubric: 3 Core Client Commitments */}
-          <div className="pt-8 border-t border-hairline grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-2">
-              <p className="type-label text-champagne-deep">01 / Understand</p>
-              <p className="type-body-sm text-ink">
-                We Listen First — Grounding every project in your actual business workflows and customer needs.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <p className="type-label text-champagne-deep">02 / Build &amp; Launch</p>
-              <p className="type-body-sm text-ink">
-                Disciplined Craft — Delivering fast, maintainable websites and applications without fragile shortcuts.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <p className="type-label text-champagne-deep">03 / Support &amp; Grow</p>
-              <p className="type-body-sm text-ink">
-                Long-Term Care — Staying engaged after launch with proactive maintenance, optimization, and automation.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 

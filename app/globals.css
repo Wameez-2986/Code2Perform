@@ -307,3 +307,10 @@ p, ul, ol, li, blockquote {
   border-color: var(--color-ink);
 }
 
+/* Hero — Subtle static dot texture (CSS only, no image dependency) */
+.hero-texture {
+  background-color: var(--color-bone);
+  background-image: radial-gradient(circle, rgba(22, 21, 15, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+

@@ -69,7 +69,7 @@ export function HomeView() {
 
           {/* --- Status / Location Pill --- */}
           <div
-            className="inline-flex items-center gap-2.5 px-4 py-2 bg-surface border border-hairline rounded-full shadow-sm mb-10 md:mb-14"
+            className="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 px-4 py-2 bg-surface border border-hairline rounded-full shadow-sm mb-8 md:mb-12 max-w-full"
             role="status"
             aria-label="Hyderabad · Remote Worldwide — Accepting New Projects"
           >
@@ -79,15 +79,15 @@ export function HomeView() {
               style={{ backgroundColor: "#22c55e" }}
               aria-hidden="true"
             />
-            <span className="type-label text-ink tracking-widest whitespace-nowrap">
+            <span className="type-label text-ink tracking-widest">
               HYDERABAD · REMOTE WORLDWIDE
             </span>
-            {/* Vertical divider */}
+            {/* Vertical divider — hidden when pill wraps */}
             <span
-              className="w-px h-3.5 bg-hairline shrink-0"
+              className="w-px h-3.5 bg-hairline shrink-0 hidden sm:block"
               aria-hidden="true"
             />
-            <span className="type-label text-muted whitespace-nowrap tracking-wide">
+            <span className="type-label text-muted tracking-wide">
               Accepting New Projects
             </span>
           </div>
@@ -101,19 +101,19 @@ export function HomeView() {
             as possible before mobile reflow.
           */}
           <h1
-            className="font-bold text-ink w-full mb-10 md:mb-14"
+            className="font-bold text-ink w-full mb-6 md:mb-8"
             style={{
               fontSize: "clamp(2.25rem, 5.8vw, 5.25rem)",
               letterSpacing: "-0.03em",
               lineHeight: "1.08",
             }}
           >
-            {/* Line 1 — always one line */}
-            <span style={{ display: "block", whiteSpace: "nowrap" }}>
+          {/* Line 1 — nowrap on lg+, natural wrap on mobile */}
+            <span className="block lg:whitespace-nowrap">
               We turn ideas into digital
             </span>
-            {/* Line 2 — always one line, partial champagne color */}
-            <span style={{ display: "block", whiteSpace: "nowrap" }}>
+            {/* Line 2 — nowrap on lg+, natural wrap on mobile */}
+            <span className="block lg:whitespace-nowrap">
               <span style={{ color: "var(--color-ink)" }}>experiences </span>
               <span style={{ color: "var(--color-champagne)" }}>that perform.</span>
             </span>

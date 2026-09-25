@@ -38,7 +38,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-bone border-b border-hairline">
-      <div className="page-container flex h-24 items-center justify-between">
+      <div className="page-container flex h-32 items-center justify-between">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -52,7 +52,7 @@ export function Header() {
             width={300}
             height={252}
             priority
-            className="w-[90px] md:w-[120px] h-auto object-contain"
+            className="w-22.5 md:w-30 h-auto object-contain"
           />
         </Link>
 

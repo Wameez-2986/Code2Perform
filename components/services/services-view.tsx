@@ -86,7 +86,7 @@ export function ServicesView() {
               <h2 className="type-heading text-ink">
                 Web &amp; Digital Development
               </h2>
-              <p className="type-body text-ink font-medium text-lg leading-relaxed">
+              <p className="type-body text-ink font-medium text-lg leading-relaxed pt-3 md:pt-5">
                 Fast, reliable business websites built from clean code rather than fragile page builders.
               </p>
               <div className="pt-2">
@@ -198,7 +198,7 @@ export function ServicesView() {
             <h2 className="type-heading text-ink">
               Product &amp; Application Development
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
               We design and engineer digital interfaces and mobile apps focused on clarity,
               everyday usability, and consistent performance across screens.
             </p>
@@ -216,7 +216,7 @@ export function ServicesView() {
                 <h3 className="type-heading text-2xl md:text-3xl text-ink">
                   UI/UX &amp; Product Design
                 </h3>
-                <p className="type-body text-muted leading-relaxed">
+                <p className="type-body text-muted leading-relaxed pt-2 md:pt-4">
                   Design is not decoration; it is how easily a customer can accomplish what they came
                   to do. We design interfaces that feel intuitive from the first click,
                   removing visual clutter and guiding users toward their goals without friction.
@@ -288,7 +288,7 @@ export function ServicesView() {
                 <h3 className="type-heading text-2xl md:text-3xl text-ink">
                   Mobile App Development
                 </h3>
-                <p className="type-body text-muted leading-relaxed">
+                <p className="type-body text-muted leading-relaxed pt-2 md:pt-4">
                   Most customers interact with digital services on their phones. We build smooth,
                   reliable mobile apps that run consistently across both iPhone and Android devices.
                   You get one unified product without paying twice for separate development teams.
@@ -370,7 +370,7 @@ export function ServicesView() {
             <h2 className="type-heading text-ink">
               SaaS, Commerce &amp; Automation
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
               We engineer custom software platforms, dependable online stores, and
               practical automated workflows that remove operational bottlenecks.
             </p>
@@ -663,7 +663,7 @@ export function ServicesView() {
               Not sure which service matches your project? Let&apos;s talk it through.
             </h2>
 
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
               You do not need a complete technical blueprint before reaching out. Tell us
               what your business is trying to accomplish, and we will help you figure out
               the simplest, most cost-effective way to build it—and how to keep it performing over time.

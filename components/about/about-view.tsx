@@ -18,7 +18,7 @@ export function AboutView() {
 
           {/* Main Display Heading */}
           <h1 className="type-display text-ink max-w-5xl">
-            We are a practical digital partner built on understanding the business behind every project.
+            We’re a digital partner focused on your business.
           </h1>
 
           {/* Lower Split: Narrative & Focus Sidebar */}
@@ -153,7 +153,7 @@ export function AboutView() {
             <h2 className="type-heading text-ink">
               Digital products should be simple, fast, and genuinely useful.
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
               Most digital initiatives fail not from a lack of visual decoration,
               but from a lack of focus. Here are four foundational convictions that
               guide how we evaluate every project.
@@ -230,11 +230,10 @@ export function AboutView() {
               <p className="type-label text-champagne-deep">How We Approach Digital Work</p>
             </div>
             <h2 className="type-heading text-ink">
-              How we guide your project from first conversation to long-term growth.
+              How we take your project from idea to growth.
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
-              We treat digital engineering as a thoughtful, disciplined craft. Here are
-              the six foundational stages that guide how we work with every business.
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
+              We believe in building digital products with care and a clear process. These six simple steps guide how we work with every business.
             </p>
           </div>
 
@@ -381,7 +380,7 @@ export function AboutView() {
               Looking for a digital partner who understands your business?
             </h2>
 
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
               Whether you need to build a new platform from scratch, fix an existing
               system that has slowed down, or find dependable ongoing technical guidance,
               we would love to talk. Tell us what your business is aiming for, and let&apos;s

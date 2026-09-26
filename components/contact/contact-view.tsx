@@ -238,7 +238,7 @@ export function ContactView() {
 
           {/* Heading */}
           <h1 className="type-display text-ink max-w-5xl">
-            Tell us what you&apos;re trying to achieve. We&apos;ll understand the situation and discuss what makes sense.
+            Tell us what you need. We’ll understand your goals and find the right way forward.
           </h1>
 
           {/* Supporting Text & Reassurance Bar (No promised response times, no aggressive sales) */}
@@ -698,16 +698,16 @@ export function ContactView() {
             </div>
 
             <h2 className="type-heading text-ink">
-              Prefer to send a brief or RFP directly?
+              Have a project brief or requirements? Send them to us directly.
             </h2>
 
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
               If you have already prepared a detailed scope document, request for proposal (RFP),
               or design brief, you are welcome to send it directly to our team via email.
             </p>
 
             {/* Contact Details Block */}
-            <div className="pt-4 border-t border-hairline grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="pt-4 border-t border-hairline">
               <div className="space-y-2">
                 <p className="type-label text-muted">Direct Email</p>
                 <div className="flex items-center gap-2.5">
@@ -721,16 +721,6 @@ export function ContactView() {
                 </div>
                 <p className="type-legal text-muted pt-1">
                   Reviewed directly by our engineering and design team.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <p className="type-label text-muted">Office Hours</p>
-                <p className="type-body-sm text-ink font-medium">
-                  Monday – Friday, 9:00 AM – 6:00 PM
-                </p>
-                <p className="type-legal text-muted pt-1">
-                  Available for scheduled technical consultations and video calls.
                 </p>
               </div>
             </div>

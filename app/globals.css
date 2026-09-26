@@ -1,7 +1,8 @@
 /* =============================================================================
-   Satoshi — Fontshare (must precede all other imports)
+   Satoshi — Fontshare & Playfair Display — Google Fonts (must precede all other imports)
    ============================================================================= */
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap");
 
 @import "tailwindcss";
 
@@ -41,6 +42,7 @@
    ============================================================================= */
 @theme inline {
   --font-sans: "Satoshi", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 
   --color-bone:            var(--color-bone);
   --color-ink:             var(--color-ink);
@@ -51,6 +53,10 @@
   --color-surface-alt:     var(--color-surface-alt);
   --color-hairline:        var(--color-hairline);
   --color-champagne-glow:  var(--color-champagne-glow);
+}
+
+.font-serif {
+  font-family: "Playfair Display", Georgia, serif !important;
 }
 
 /* =============================================================================

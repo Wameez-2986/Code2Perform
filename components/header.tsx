@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { MagneticButton } from "@/components/motion/MagneticButton";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/home" },
@@ -15,10 +16,23 @@ const NAV_ITEMS = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
+
+  // Scroll compaction listener (>10px)
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Close mobile menu on Escape key press
   useEffect(() => {
@@ -37,13 +51,23 @@ export function Header() {
   const isHomeActive = pathname === "/" || pathname === "/home";
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-bone border-b border-hairline">
-      <div className="page-container flex h-32 items-center justify-between">
+    <header
+      className={`sticky top-0 z-50 w-full border-b border-hairline transition-all duration-300 ${
+        isScrolled
+          ? "bg-bone/90 backdrop-blur-md shadow-xs py-1"
+          : "bg-bone py-3 md:py-4"
+      }`}
+    >
+      <div
+        className={`page-container flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? "h-16 md:h-20" : "h-20 md:h-24"
+        }`}
+      >
         {/* Brand Logo */}
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex items-center"
+          className="group flex items-center"
           aria-label="Code2Perform Home"
         >
           <Image
@@ -52,7 +76,9 @@ export function Header() {
             width={300}
             height={252}
             priority
-            className="w-22.5 md:w-30 h-auto object-contain"
+            className={`h-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+              isScrolled ? "w-20 md:w-24" : "w-24 md:w-28"
+            }`}
           />
         </Link>
 
@@ -72,13 +98,20 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`type-nav ${
+                className={`type-nav relative py-1 transition-colors duration-200 group ${
                   isActive
-                    ? "text-ink font-medium"
+                    ? "text-ink font-semibold"
                     : "text-muted hover:text-ink"
                 }`}
               >
-                {item.label}
+                <span>{item.label}</span>
+                {/* Hairline expanding underline */}
+                <span
+                  className={`absolute bottom-0 left-0 h-[1.5px] w-full bg-champagne-deep origin-left transition-transform duration-300 ease-out ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                  aria-hidden="true"
+                />
               </Link>
             );
           })}
@@ -86,12 +119,11 @@ export function Header() {
 
         {/* Primary CTA */}
         <div className="hidden md:flex items-center">
-          <Link
-            href="/contact"
-            className="type-button inline-flex items-center justify-center px-5 py-2.5 bg-ink text-bone hover:bg-champagne-deep text-center"
-          >
-            Start a Project
-          </Link>
+          <MagneticButton href="/contact" dataCursor="contact">
+            <span className="type-button inline-flex items-center justify-center px-6 py-2.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full transition-colors shadow-xs">
+              Start a Project
+            </span>
+          </MagneticButton>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -99,61 +131,52 @@ export function Header() {
           id="mobile-menu-toggle"
           type="button"
           onClick={toggleMenu}
-          className="md:hidden p-2 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-champagne-deep"
           aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-controls="mobile-nav-menu"
+          aria-label={isOpen ? "Close main navigation menu" : "Open main navigation menu"}
+          className="md:hidden p-2 -mr-2 text-ink hover:text-champagne-deep focus:outline-none focus:ring-2 focus:ring-champagne transition-colors"
         >
-          {isOpen ? (
-            <X className="h-6 w-6" aria-hidden="true" />
-          ) : (
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          )}
+          {isOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
         </button>
       </div>
 
-      {/* Mobile Navigation Panel */}
+      {/* Mobile Menu Drawer */}
       {isOpen && (
         <div
-          id="mobile-menu"
-          className="md:hidden border-t border-hairline bg-bone px-6 py-6"
+          id="mobile-nav-menu"
+          className="md:hidden border-b border-hairline bg-bone px-4 pt-2 pb-6 space-y-3"
+          role="navigation"
+          aria-label="Mobile Navigation"
         >
-          <nav
-            className="flex flex-col space-y-4"
-            aria-label="Mobile Navigation"
-          >
-            {NAV_ITEMS.map((item) => {
-              const isActive =
-                item.href === "/home"
-                  ? isHomeActive
-                  : pathname === item.href || pathname?.startsWith(`${item.href}/`);
+          {NAV_ITEMS.map((item) => {
+            const isActive =
+              item.href === "/home"
+                ? isHomeActive
+                : pathname === item.href || pathname?.startsWith(`${item.href}/`);
 
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={closeMenu}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`type-nav py-2 ${
-                    isActive
-                      ? "text-ink font-medium"
-                      : "text-muted hover:text-ink"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            <div className="pt-3 border-t border-hairline">
+            return (
               <Link
-                href="/contact"
+                key={item.label}
+                href={item.href}
                 onClick={closeMenu}
-                className="type-button flex w-full items-center justify-center px-5 py-3 bg-ink text-bone hover:bg-champagne-deep text-center"
+                aria-current={isActive ? "page" : undefined}
+                className={`block py-2 text-base font-medium transition-colors ${
+                  isActive ? "text-ink font-semibold" : "text-muted hover:text-ink"
+                }`}
               >
-                Start a Project
+                {item.label}
               </Link>
-            </div>
-          </nav>
+            );
+          })}
+          <div className="pt-2">
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="w-full inline-flex items-center justify-center px-5 py-3 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full transition-colors text-sm font-medium"
+            >
+              Start a Project
+            </Link>
+          </div>
         </div>
       )}
     </header>

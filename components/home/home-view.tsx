@@ -153,41 +153,33 @@ export function HomeView() {
           Editorial layout: Long-term partnership thesis & 3 substantive commitments
           ===================================================================== */}
       <section className="border-b border-hairline section-spacing" aria-label="What We Do">
-        <div className="page-container space-y-12 md:space-y-16">
+        <div className="page-container space-y-15 md:space-y-16">
           {/* Header Block: Section Label, Main Heading, Human Explanation */}
-          <div className="max-w-4xl space-y-6">
-            <div className="flex items-center gap-3">
+          <div className="max-w-4xl space-y-8">
+            <div className="flex items-center gap-">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">What We Do</p>
             </div>
 
             <h2 className="type-heading text-ink">
-              Digital solutions built around your business—and supported for the long term.
+              Digital solutions built around your business.
             </h2>
 
-            <p className="type-body text-muted text-lg max-w-3xl leading-relaxed">
-              Most agencies deliver a project, hand over the files, and walk away.
-              When your business grows or needs evolve, you are left on your own.
-              We work differently. We partner with you from day one to understand your
-              real challenges, engineer software people rely on every day, and provide
-              continuous support so your digital presence keeps pace with your growth.
+            <p className="type-body text-muted text-lg max-w-3xl leading-relaxed mt-8">
+              We don’t just deliver projects—we build, support, and grow digital solutions with your business.
             </p>
           </div>
 
           {/* Asymmetric 2-Part Editorial Split */}
           <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Left Column: Partnership Philosophy */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-10">
               <p className="type-label text-champagne">Our Working Model</p>
               <h3 className="type-heading text-2xl md:text-3xl text-ink">
                 An agency that stays in your corner.
               </h3>
-              <p className="type-body text-muted leading-relaxed">
-                A digital product is not a one-time transaction; it is an active foundation
-                for your business. We measure our success by how reliably your software
-                performs over months and years. That means listening carefully from our first
-                conversation, building with durability and clean code, and remaining available
-                whenever your team needs guidance or new capabilities.
+              <p className="type-body text-muted leading-relaxed mt-8">
+                We build digital products to grow with your business—not just launch and disappear.
               </p>
             </div>
 
@@ -201,7 +193,7 @@ export function HomeView() {
                 <h4 className="type-title text-ink font-medium text-xl">
                   Solving the right problems before writing code
                 </h4>
-                <p className="type-body-sm text-muted leading-relaxed">
+                <p className="type-body-sm text-muted leading-relaxed mt-3">
                   Before writing code or designing screens, we take the time to learn your
                   operational workflows, customer expectations, and commercial objectives.
                   By aligning on clear goals upfront, every technical decision directly supports
@@ -217,7 +209,7 @@ export function HomeView() {
                 <h4 className="type-title text-ink font-medium text-xl">
                   Engineering fast, dependable tools people actually use
                 </h4>
-                <p className="type-body-sm text-muted leading-relaxed">
+                <p className="type-body-sm text-muted leading-relaxed mt-3">
                   We design interfaces that feel natural and write lightweight, maintainable
                   Next.js and TypeScript code. From marketing sites and e-commerce stores to
                   custom client portals, everything we deploy is built for speed, stability,
@@ -233,7 +225,7 @@ export function HomeView() {
                 <h4 className="type-title text-ink font-medium text-xl">
                   Ongoing maintenance, optimization, and automation
                 </h4>
-                <p className="type-body-sm text-muted leading-relaxed">
+                <p className="type-body-sm text-muted leading-relaxed mt-3">
                   Deployment is only the beginning of our relationship. We monitor system
                   health, keep dependencies up to date, automate repetitive manual workflows,
                   and continuously refine features based on real user feedback as your

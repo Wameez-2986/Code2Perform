@@ -34,6 +34,24 @@
   /* Section Spacing Tokens */
   --spacing-section:    clamp(3.5rem, 7vw, 7.5rem);  /* 56px → 120px */
   --spacing-section-sm: clamp(2rem, 4.5vw, 4rem);    /* 32px → 64px */
+
+  /* Layered Card Stack Tokens */
+  --card-base-top: 4.25rem;
+  --card-stack-offset: 14px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --card-base-top: 4.75rem;
+    --card-stack-offset: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --card-base-top: 5.25rem;
+    --card-stack-offset: 24px;
+  }
 }
 
 /* =============================================================================
@@ -60,7 +78,7 @@ html {
   font-family: "Satoshi", system-ui, sans-serif;
   background-color: var(--color-bone);
   color: var(--color-ink);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -70,7 +88,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-wrap: break-word;
 }
 

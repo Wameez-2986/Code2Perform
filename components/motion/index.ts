@@ -10,4 +10,6 @@ export { HeroGlow } from "./HeroGlow";
 export { CountUp } from "./CountUp";
 export { LinkUnderline } from "./LinkUnderline";
 export { AnimatedAccordionPanel } from "./AnimatedAccordionPanel";
+export { ScrollCardSection, StackedCardSection } from "./StackedCardSection";
+export type { StackedCardSectionProps } from "./StackedCardSection";
 export { usePointerFine, usePrefersReducedMotion } from "./useMotionPreferences";

@@ -1,17 +1,23 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { StackedCardSection } from "@/components/motion";
 
 export function AboutView() {
   return (
-    <div className="w-full">
+    <div className="relative w-full pt-4 sm:pt-6 pb-36 sm:pb-48 md:pb-64">
       {/* =====================================================================
           1. ABOUT HERO
           Positioning: Understanding the business behind every project
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="About Hero">
-        <div className="page-container space-y-12 md:space-y-16">
+      <StackedCardSection
+        index={0}
+        totalSections={5}
+        ariaLabel="About Hero"
+        id="about-hero"
+      >
+        <div className="page-container space-y-6 md:space-y-8">
           {/* Eyebrow */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
             <p className="type-label text-champagne-deep">About Code2Perform</p>
           </div>
@@ -22,15 +28,15 @@ export function AboutView() {
           </h1>
 
           {/* Lower Split: Narrative & Focus Sidebar */}
-          <div className="pt-8 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-8 space-y-4">
-              <p className="type-body text-ink font-medium text-lg leading-relaxed">
+          <div className="pt-4 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+            <div className="lg:col-span-8 space-y-3">
+              <p className="type-body text-ink font-medium text-base sm:text-lg leading-relaxed">
                 Too many software projects fail not because of poor coding, but because the
                 agency never took the time to understand the business they were building for.
                 Code2Perform works differently. We are an independent digital agency that acts
                 as a reliable partner to founders, growing teams, and established businesses.
               </p>
-              <p className="type-body text-muted leading-relaxed">
+              <p className="type-body text-muted text-sm sm:text-base leading-relaxed">
                 We don&apos;t treat software as a disconnected list of technical tickets. We dig into
                 how your company actually operates, who your customers are, and what commercial
                 goals you need to hit. Then we design, engineer, and support digital products
@@ -38,137 +44,134 @@ export function AboutView() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 space-y-4 pt-6 lg:pt-1 lg:pl-6 border-t lg:border-t-0 lg:border-l border-hairline">
-              <div className="space-y-1">
+            <div className="lg:col-span-4 space-y-3 pt-4 lg:pt-1 lg:pl-6 border-t lg:border-t-0 lg:border-l border-hairline">
+              <div className="space-y-0.5">
                 <p className="type-label text-champagne-deep">Our Role</p>
-                <p className="type-body-sm text-ink">Practical Digital Partner</p>
+                <p className="type-body-sm text-ink font-medium">Practical Digital Partner</p>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-0.5">
                 <p className="type-label text-champagne-deep">Our Focus</p>
-                <p className="type-body-sm text-ink">Understanding the Business First</p>
+                <p className="type-body-sm text-ink font-medium">Understanding the Business First</p>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-0.5">
                 <p className="type-label text-champagne-deep">Our Model</p>
-                <p className="type-body-sm text-ink">Direct Collaboration &amp; Long-Term Support</p>
+                <p className="type-body-sm text-ink font-medium">Direct Collaboration &amp; Long-Term Support</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           2. BEYOND CONTRACTING: HOW WE PARTNER
           Presenting the agency as a practical partner rather than a software contractor
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="Our Working Philosophy">
+      <StackedCardSection
+        index={1}
+        totalSections={5}
+        ariaLabel="Our Working Philosophy"
+        id="our-working-philosophy"
+      >
         <div className="page-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Column: Heading Anchor */}
-            <div className="lg:col-span-5 space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+            {/* Left Column: Heading Anchor & Mission */}
+            <div className="lg:col-span-5 space-y-3">
               <p className="type-label text-champagne-deep">Our Working Philosophy</p>
               <h2 className="type-heading text-ink">
                 We work as an extension of your business, not a transactional software contractor.
               </h2>
+              <p className="type-body text-muted text-xs sm:text-sm leading-relaxed">
+                A typical software contractor takes a scope document and leaves when the invoice is paid.
+                We approach client relationships with direct personal accountability—giving honest counsel,
+                recommending simpler solutions, and protecting your bottom line.
+              </p>
             </div>
 
-            {/* Right Column: Narrative & What Clients Can Expect */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
-                <p className="type-body text-ink font-medium leading-relaxed">
-                  A typical software contractor takes a scope document, writes code to
-                  match the bullet points, and hands over an invoice. If the product is
-                  confusing for your customers or fails to solve your operational bottleneck,
-                  it is no longer their concern.
-                </p>
-                <p className="type-body text-muted leading-relaxed">
-                  We approach client relationships with direct personal accountability. You work
-                  directly with experienced practitioners who take the time to understand your
-                  business context. If an idea adds unnecessary complexity or cost without
-                  delivering real value, we tell you openly and recommend a simpler, more durable path.
-                </p>
-              </div>
+            {/* Right Column: 4 Cornerstones */}
+            <div className="lg:col-span-7 space-y-2.5">
+              <p className="type-label text-champagne-deep">How We Approach Client Relationships</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
+                <div className="space-y-0.5">
+                  <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                    1. Business-first counsel
+                  </h3>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    We examine how digital choices impact your operational workflows,
+                    customer retention, and bottom line before writing a line of code.
+                  </p>
+                </div>
 
-              {/* 4 Cornerstones of Our Client Relationships */}
-              <div className="pt-6 border-t border-hairline space-y-4">
-                <p className="type-label text-champagne-deep">How We Approach Client Relationships</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-1.5">
-                    <h3 className="type-title text-ink font-medium text-base">
-                      1. Business-first counsel
-                    </h3>
-                    <p className="type-body-sm text-muted">
-                      We examine how digital choices impact your operational workflows,
-                      customer retention, and bottom line before writing a line of code.
-                    </p>
-                  </div>
+                <div className="space-y-0.5">
+                  <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                    2. Direct practitioner access
+                  </h3>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    You communicate directly with the designers and engineers building
+                    your product, avoiding sales intermediaries and lost details.
+                  </p>
+                </div>
 
-                  <div className="space-y-1.5">
-                    <h3 className="type-title text-ink font-medium text-base">
-                      2. Direct practitioner access
-                    </h3>
-                    <p className="type-body-sm text-muted">
-                      You communicate directly with the designers and engineers building
-                      your product, avoiding sales intermediaries and lost details.
-                    </p>
-                  </div>
+                <div className="space-y-0.5">
+                  <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                    3. Complete ownership &amp; freedom
+                  </h3>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    You own 100% of your source code, design files, and deployment
+                    credentials from day one, with zero proprietary lock-in.
+                  </p>
+                </div>
 
-                  <div className="space-y-1.5">
-                    <h3 className="type-title text-ink font-medium text-base">
-                      3. Complete ownership &amp; freedom
-                    </h3>
-                    <p className="type-body-sm text-muted">
-                      You own 100% of your source code, design files, and deployment
-                      credentials from day one, with zero proprietary lock-in.
-                    </p>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <h3 className="type-title text-ink font-medium text-base">
-                      4. Long-term availability
-                    </h3>
-                    <p className="type-body-sm text-muted">
-                      We remain available to help your product evolve when your business needs
-                      it, without forcing you into expensive, mandatory retainers.
-                    </p>
-                  </div>
+                <div className="space-y-0.5">
+                  <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                    4. Long-term availability
+                  </h3>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    We remain available to help your product evolve when your business needs
+                    it, without forcing you into expensive, mandatory retainers.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           3. WHAT WE BELIEVE
           Core convictions: Clarity, Speed, Utility, Durability
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="What We Believe">
-        <div className="page-container space-y-12 md:space-y-16">
+      <StackedCardSection
+        index={2}
+        totalSections={5}
+        ariaLabel="What We Believe"
+        id="what-we-believe"
+      >
+        <div className="page-container space-y-3 sm:space-y-4">
           {/* Section Header */}
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-3">
+          <div className="max-w-3xl space-y-1.5">
+            <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">What We Believe</p>
             </div>
-            <h2 className="type-heading text-ink">
+            <h2 className="type-heading text-ink text-xl sm:text-2xl lg:text-3xl">
               Digital products should be simple, fast, and genuinely useful.
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
+            <p className="type-body text-muted text-xs sm:text-sm max-w-2xl leading-relaxed">
               Most digital initiatives fail not from a lack of visual decoration,
               but from a lack of focus. Here are four foundational convictions that
               guide how we evaluate every project.
             </p>
           </div>
 
-          {/* 2x2 Architectural Grid Matrix */}
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-hairline">
+          {/* 4-Item Grid Matrix: Single row on desktop (lg:grid-cols-4) so it never overflows */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-hairline">
             {/* Belief 01 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
               <span className="type-label text-champagne-deep font-medium">01 / Clarity</span>
-              <h3 className="type-title text-ink font-medium text-xl">
+              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
                 Clarity comes before decoration
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs leading-relaxed">
                 A digital product must clearly explain its purpose within seconds of arrival.
                 If visitors are confused by ambiguous marketing slogans or cluttered navigation,
                 the design has failed. We structure information for immediate understanding.
@@ -176,12 +179,12 @@ export function AboutView() {
             </div>
 
             {/* Belief 02 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
               <span className="type-label text-champagne-deep font-medium">02 / Speed</span>
-              <h3 className="type-title text-ink font-medium text-xl">
+              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
                 Speed is respect for your user
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs leading-relaxed">
                 Every second a person waits for a screen to load is a test of their patience.
                 Fast page loads build credibility, trust, and business conversions.
                 We engineer for instant response times from the foundation up.
@@ -189,12 +192,12 @@ export function AboutView() {
             </div>
 
             {/* Belief 03 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
               <span className="type-label text-champagne-deep font-medium">03 / Utility</span>
-              <h3 className="type-title text-ink font-medium text-xl">
+              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
                 Useful products beat flashy gimmicks
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs leading-relaxed">
                 We build websites and digital applications that solve real tasks—helping
                 customers book a service, purchase a product, or access critical data
                 without hindrance. If a feature does not serve a clear purpose, we leave it out.
@@ -202,12 +205,12 @@ export function AboutView() {
             </div>
 
             {/* Belief 04 */}
-            <div className="p-8 md:p-10 border-r border-b border-hairline space-y-3">
+            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
               <span className="type-label text-champagne-deep font-medium">04 / Longevity</span>
-              <h3 className="type-title text-ink font-medium text-xl">
+              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
                 Simple code is durable code
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs leading-relaxed">
                 The best software is the simplest code that completely solves the problem.
                 We avoid fragile page builders and unnecessary libraries so your digital
                 systems stay secure, fast, and easy for your team to maintain over the long haul.
@@ -215,163 +218,151 @@ export function AboutView() {
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           4. HOW WE APPROACH DIGITAL WORK
           Understand business, problem, build, launch, stay available, improve
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="How We Approach Digital Work">
-        <div className="page-container space-y-12 md:space-y-16">
+      <StackedCardSection
+        index={3}
+        totalSections={5}
+        ariaLabel="How We Approach Digital Work"
+        id="how-we-approach"
+      >
+        <div className="page-container space-y-5 md:space-y-6">
           {/* Header */}
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-3">
+          <div className="max-w-3xl space-y-2">
+            <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">How We Approach Digital Work</p>
             </div>
             <h2 className="type-heading text-ink">
               How we take your project from idea to growth.
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
+            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed pt-1">
               We believe in building digital products with care and a clear process. These six simple steps guide how we work with every business.
             </p>
           </div>
 
-          {/* 6-Stage Editorial Ledger */}
+          {/* 6-Stage Grid: 2-column format on desktop for compact viewport fit */}
           <div className="border-t border-b border-hairline">
-            <div className="divide-y divide-hairline">
-            {/* Step 1: Understand the business */}
-            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">01</span>
-                <span className="type-label text-champagne-deep">Discovery</span>
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium text-xl">
-                  Understand the business
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted leading-relaxed">
-                  We begin by learning how your business operates, how you serve your
-                  customers, and what commercial goals drive your team. Software only
-                  succeeds when it aligns directly with your business model.
-                </p>
-              </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-hairline">
+              {/* Left Column: Steps 1-3 */}
+              <div className="divide-y divide-hairline md:pr-6">
+                {/* Step 1 */}
+                <div className="py-3.5 space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="type-label text-champagne font-medium">01</span>
+                    <span className="type-label text-champagne-deep">Discovery</span>
+                    <span className="text-muted/40 text-xs">•</span>
+                    <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                      Understand the business
+                    </h3>
+                  </div>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    We begin by learning how your business operates, how you serve your
+                    customers, and what commercial goals drive your team.
+                  </p>
+                </div>
 
-            {/* Step 2: Understand the problem */}
-            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">02</span>
-                <span className="type-label text-champagne-deep">Diagnosis</span>
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium text-xl">
-                  Understand the problem
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted leading-relaxed">
-                  Before recommending tools or technology, we identify the specific
-                  friction points holding your business back—whether it is an outdated
-                  website, slow load speeds, or manual operational bottlenecks.
-                </p>
-              </div>
-            </div>
+                {/* Step 2 */}
+                <div className="py-3.5 space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="type-label text-champagne font-medium">02</span>
+                    <span className="type-label text-champagne-deep">Diagnosis</span>
+                    <span className="text-muted/40 text-xs">•</span>
+                    <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                      Understand the problem
+                    </h3>
+                  </div>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    Before recommending tools, we identify specific friction points holding your business back—slow speeds, poor UX, or manual bottlenecks.
+                  </p>
+                </div>
 
-            {/* Step 3: Build the right digital solution */}
-            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">03</span>
-                <span className="type-label text-champagne-deep">Execution</span>
+                {/* Step 3 */}
+                <div className="py-3.5 space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="type-label text-champagne font-medium">03</span>
+                    <span className="type-label text-champagne-deep">Execution</span>
+                    <span className="text-muted/40 text-xs">•</span>
+                    <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                      Build the right digital solution
+                    </h3>
+                  </div>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    We design clear user interfaces and write lightweight, strictly typed code using Next.js and TypeScript tailored strictly to your needs.
+                  </p>
+                </div>
               </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium text-xl">
-                  Build the right digital solution
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted leading-relaxed">
-                  We design straightforward user interfaces and write lightweight, strictly
-                  typed code using Next.js and TypeScript. We build only what your business
-                  genuinely needs, avoiding bloated themes and fragile plugins.
-                </p>
-              </div>
-            </div>
 
-            {/* Step 4: Launch it properly */}
-            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">04</span>
-                <span className="type-label text-champagne-deep">Deployment</span>
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium text-xl">
-                  Launch it properly
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted leading-relaxed">
-                  We handle hosting setup, domain routing, performance audits, and security
-                  verification. We walk your team through the system so everyone feels
-                  prepared and confident for day-one traffic.
-                </p>
-              </div>
-            </div>
+              {/* Right Column: Steps 4-6 */}
+              <div className="divide-y divide-hairline md:pl-6">
+                {/* Step 4 */}
+                <div className="py-3.5 space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="type-label text-champagne font-medium">04</span>
+                    <span className="type-label text-champagne-deep">Deployment</span>
+                    <span className="text-muted/40 text-xs">•</span>
+                    <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                      Launch it properly
+                    </h3>
+                  </div>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    We handle hosting setup, domain routing, performance audits, and security verification so your team feels prepared for day-one traffic.
+                  </p>
+                </div>
 
-            {/* Step 5: Stay available after launch */}
-            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">05</span>
-                <span className="type-label text-champagne-deep">Continuity</span>
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium text-xl">
-                  Stay available after launch
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted leading-relaxed">
-                  Launch day is not the end of our partnership. We remain available to answer
-                  questions, monitor uptime, maintain code libraries, and ensure your digital
-                  assets continue running smoothly in the real world.
-                </p>
-              </div>
-            </div>
+                {/* Step 5 */}
+                <div className="py-3.5 space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="type-label text-champagne font-medium">05</span>
+                    <span className="type-label text-champagne-deep">Continuity</span>
+                    <span className="text-muted/40 text-xs">•</span>
+                    <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                      Stay available after launch
+                    </h3>
+                  </div>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    Launch day is not the end. We remain available to answer questions, monitor uptime, maintain code, and ensure steady performance.
+                  </p>
+                </div>
 
-            {/* Step 6: Improve and expand when you need it */}
-            <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-              <div className="md:col-span-3 flex items-baseline gap-3">
-                <span className="type-label text-champagne font-medium">06</span>
-                <span className="type-label text-champagne-deep">Evolution</span>
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="type-title text-ink font-medium text-xl">
-                  Improve and expand when you need it
-                </h3>
-              </div>
-              <div className="md:col-span-5">
-                <p className="type-body-sm text-muted leading-relaxed">
-                  As your company grows, your digital tools must grow too. When you are ready,
-                  we can assist with conversion optimization, workflow automation, SEO and
-                  content refinement, or new features—working on your timeline with zero forced contracts.
-                </p>
+                {/* Step 6 */}
+                <div className="py-3.5 space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="type-label text-champagne font-medium">06</span>
+                    <span className="type-label text-champagne-deep">Evolution</span>
+                    <span className="text-muted/40 text-xs">•</span>
+                    <h3 className="type-title text-ink font-medium text-sm sm:text-base">
+                      Improve and expand when needed
+                    </h3>
+                  </div>
+                  <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                    As your company grows, we can assist with conversion optimization, workflow automation, SEO, and new features on your timeline.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           5. CTA SECTION
           Warm editorial invitation band on surface-alt
           ===================================================================== */}
-      <section className="bg-surface-alt border-b border-hairline section-spacing" aria-label="Start a Project">
+      <StackedCardSection
+        index={4}
+        totalSections={5}
+        ariaLabel="Start a Project"
+        id="start-a-project"
+        surfaceAlt
+      >
         <div className="page-container">
-          <div className="max-w-4xl space-y-8">
-            <div className="flex items-center gap-3">
+          <div className="max-w-4xl space-y-5 md:space-y-6">
+            <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">Start a Conversation</p>
             </div>
@@ -380,17 +371,17 @@ export function AboutView() {
               Looking for a digital partner who understands your business?
             </h2>
 
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
+            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed pt-1">
               Whether you need to build a new platform from scratch, fix an existing
               system that has slowed down, or find dependable ongoing technical guidance,
               we would love to talk. Tell us what your business is aiming for, and let&apos;s
               have an open, practical discussion about the best way forward.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/contact"
-                className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-4 bg-ink text-bone hover:bg-champagne-deep text-center"
+                className="type-button inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center"
               >
                 Start a Project
               </Link>
@@ -404,7 +395,7 @@ export function AboutView() {
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
     </div>
   );
 }

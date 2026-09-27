@@ -10,6 +10,7 @@ import {
   Compass,
   Check,
 } from "lucide-react";
+import { StackedCardSection } from "@/components/motion";
 
 interface FormFields {
   name: string;
@@ -223,15 +224,20 @@ export function ContactView() {
   };
 
   return (
-    <div className="w-full">
+    <div className="relative w-full pt-4 sm:pt-6 pb-36 sm:pb-48 md:pb-64">
       {/* =====================================================================
           1. CONTACT HERO: CONSULTATION-FIRST POSITIONING
           Communicating: "Tell us what you're trying to achieve. We'll understand the situation and discuss what makes sense."
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="Contact Hero">
-        <div className="page-container space-y-8 md:space-y-12">
+      <StackedCardSection
+        index={0}
+        totalSections={4}
+        ariaLabel="Contact Hero"
+        id="contact-hero"
+      >
+        <div className="page-container space-y-5 md:space-y-6">
           {/* Eyebrow */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
             <p className="type-label text-champagne-deep">Consultation &amp; Discovery</p>
           </div>
@@ -242,9 +248,9 @@ export function ContactView() {
           </h1>
 
           {/* Supporting Text & Reassurance Bar (No promised response times, no aggressive sales) */}
-          <div className="pt-6 border-t border-hairline grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="pt-3.5 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
             <div className="lg:col-span-8">
-              <p className="type-body text-muted text-lg max-w-3xl leading-relaxed">
+              <p className="type-body text-muted text-sm sm:text-base max-w-3xl leading-relaxed">
                 We treat initial conversations as a practical consultation rather than a sales pitch.
                 Whether you have an established product that needs architectural improvements or an
                 entirely new initiative, we take time to understand your business first and advise
@@ -252,19 +258,19 @@ export function ContactView() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 space-y-3 pt-1">
-              <div className="flex items-center gap-2.5 text-sm text-ink font-medium">
+            <div className="lg:col-span-4 space-y-2.5 pt-1">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-ink font-medium">
                 <Compass className="h-4 w-4 text-champagne-deep shrink-0" />
                 <span>Direct practitioner review</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm text-ink font-medium">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-ink font-medium">
                 <ShieldCheck className="h-4 w-4 text-champagne-deep shrink-0" />
                 <span>Honest technical advice, no sales pressure</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           2. DISCOVERY FORM
@@ -272,25 +278,30 @@ export function ContactView() {
           Name, Work Email, Company / Business, What do you need?,
           Tell us about the project, What are you trying to achieve?
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="Discovery Inquiry Form">
+      <StackedCardSection
+        index={1}
+        totalSections={4}
+        ariaLabel="Discovery Inquiry Form"
+        id="discovery-inquiry-form"
+      >
         <div className="page-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
             {/* Left Column: Discovery Framing & Advice */}
-            <div className="lg:col-span-4 space-y-6">
-              <div className="space-y-3">
+            <div className="lg:col-span-4 space-y-3.5">
+              <div className="space-y-1.5">
                 <p className="type-label text-champagne-deep">Initial Discovery</p>
                 <h2 className="type-heading text-ink">
                   How can we help?
                 </h2>
               </div>
-              <p className="type-body text-muted leading-relaxed">
+              <p className="type-body text-muted text-xs sm:text-sm leading-relaxed">
                 You do not need a complete technical specification or final requirements document.
                 Share what you are experiencing, what your business needs, and what outcome you are aiming for.
               </p>
 
-              <div className="pt-4 border-t border-hairline space-y-3">
+              <div className="pt-3 border-t border-hairline space-y-2">
                 <p className="type-label text-muted">What We Look For In Discovery</p>
-                <ul className="space-y-2.5 text-sm text-ink">
+                <ul className="space-y-2 text-xs sm:text-sm text-ink">
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne mt-1.5 shrink-0" />
                     <span>The core problem or bottleneck your team is facing</span>
@@ -349,12 +360,12 @@ export function ContactView() {
                   </div>
                 </div>
               ) : (
-                <div className="bg-surface border border-hairline rounded-3xl p-6 sm:p-8 md:p-10 shadow-none">
-                  <h2 className="type-heading text-2xl sm:text-3xl font-bold text-ink tracking-tight mb-8">
+                <div className="bg-surface border border-hairline rounded-2xl p-3.5 sm:p-5 md:p-5 shadow-none">
+                  <h2 className="type-heading text-lg sm:text-xl font-bold text-ink tracking-tight mb-3">
                     Start a Conversation
                   </h2>
 
-                  <form onSubmit={handleSubmit} noValidate className="space-y-6" aria-label="Start a Conversation form">
+                  <form onSubmit={handleSubmit} noValidate className="space-y-2.5 sm:space-y-3" aria-label="Start a Conversation form">
                     {/* Hidden Honeypot Field for Spam Protection */}
                     <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
                       <label htmlFor="company_website_url">Leave this empty</label>
@@ -373,10 +384,10 @@ export function ContactView() {
                     {serverError && (
                       <div
                         role="alert"
-                        className="p-4 bg-surface border border-champagne-deep/40 rounded-xl flex items-start gap-3 text-sm text-ink"
+                        className="p-3 bg-surface border border-champagne-deep/40 rounded-xl flex items-start gap-2 text-xs text-ink"
                       >
-                        <AlertCircle className="h-5 w-5 text-champagne-deep shrink-0 mt-0.5" />
-                        <div className="space-y-1">
+                        <AlertCircle className="h-4 w-4 text-champagne-deep shrink-0 mt-0.5" />
+                        <div className="space-y-0.5">
                           <p className="font-medium text-ink">Submission Error</p>
                           <p className="text-muted text-xs leading-relaxed">{serverError}</p>
                         </div>
@@ -384,12 +395,12 @@ export function ContactView() {
                     )}
 
                     {/* ROW 1 — TWO COLUMNS */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                       {/* YOUR NAME * */}
-                      <div className="space-y-2">
+                      <div className="space-y-0.5">
                         <label
                           htmlFor="name"
-                          className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
+                          className="block text-[10px] sm:text-[11px] font-semibold tracking-wider text-ink/80 uppercase"
                         >
                           YOUR NAME <span className="text-champagne-deep" aria-hidden="true">*</span>
                         </label>
@@ -408,7 +419,7 @@ export function ContactView() {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="John Doe"
-                          className={`contact-input ${
+                          className={`contact-input py-2 px-3 text-xs sm:text-sm ${
                             touched.name && errors.name
                               ? "border-champagne-deep"
                               : "border-hairline"
@@ -423,10 +434,10 @@ export function ContactView() {
                       </div>
 
                       {/* EMAIL ADDRESS * */}
-                      <div className="space-y-2">
+                      <div className="space-y-0.5">
                         <label
                           htmlFor="email"
-                          className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
+                          className="block text-[10px] sm:text-[11px] font-semibold tracking-wider text-ink/80 uppercase"
                         >
                           EMAIL ADDRESS <span className="text-champagne-deep" aria-hidden="true">*</span>
                         </label>
@@ -445,7 +456,7 @@ export function ContactView() {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="john@company.com"
-                          className={`contact-input ${
+                          className={`contact-input py-2 px-3 text-xs sm:text-sm ${
                             touched.email && errors.email
                               ? "border-champagne-deep"
                               : "border-hairline"
@@ -461,10 +472,10 @@ export function ContactView() {
                     </div>
 
                     {/* ROW 2 — FULL WIDTH: PHONE NUMBER */}
-                    <div className="space-y-2">
+                    <div className="space-y-0.5">
                       <label
                         htmlFor="phone"
-                        className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
+                        className="block text-[10px] sm:text-[11px] font-semibold tracking-wider text-ink/80 uppercase"
                       >
                         PHONE NUMBER
                       </label>
@@ -477,19 +488,19 @@ export function ContactView() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className="contact-input border-hairline"
+                        className="contact-input py-2 px-3 text-xs sm:text-sm border-hairline"
                       />
                     </div>
 
                     {/* ROW 3 — SERVICES NEEDED (SELECT ALL THAT APPLY) */}
-                    <div className="space-y-2.5">
-                      <span id="services-label" className="block text-xs font-semibold tracking-wider text-ink/80 uppercase">
+                    <div className="space-y-1">
+                      <span id="services-label" className="block text-[10px] sm:text-[11px] font-semibold tracking-wider text-ink/80 uppercase">
                         SERVICES NEEDED (SELECT ALL THAT APPLY)
                       </span>
                       <div
                         role="group"
                         aria-labelledby="services-label"
-                        className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-1.5"
                       >
                         {SERVICE_OPTIONS.map((service) => {
                           const isSelected = formData.services.includes(service);
@@ -501,17 +512,17 @@ export function ContactView() {
                               disabled={status === "submitting"}
                               aria-checked={isSelected}
                               onClick={() => toggleService(service)}
-                              className={`w-full flex items-center justify-between px-4 py-3 sm:py-3.5 rounded-xl border text-left cursor-pointer transition-none ${
+                              className={`w-full flex items-center justify-between px-3 py-1.5 sm:py-2 rounded-lg border text-left cursor-pointer transition-none ${
                                 isSelected
                                   ? "border-ink bg-surface text-ink"
                                   : "border-hairline bg-surface text-ink hover:border-muted/50"
                               }`}
                             >
-                              <span className="text-xs sm:text-sm font-medium pr-3 leading-snug">
+                              <span className="text-xs font-medium pr-2 leading-snug">
                                 {service}
                               </span>
                               <span
-                                className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-none ${
+                                className={`w-3.5 h-3.5 rounded border flex items-center justify-center shrink-0 transition-none ${
                                   isSelected
                                     ? "border-ink bg-ink text-white"
                                     : "border-hairline bg-surface"
@@ -519,7 +530,7 @@ export function ContactView() {
                                 aria-hidden="true"
                               >
                                 {isSelected && (
-                                  <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+                                  <Check className="h-2.5 w-2.5 text-white" strokeWidth={3} />
                                 )}
                               </span>
                             </button>
@@ -529,10 +540,10 @@ export function ContactView() {
                     </div>
 
                     {/* ROW 4 — PROJECT DETAILS */}
-                    <div className="space-y-2">
+                    <div className="space-y-0.5">
                       <label
                         htmlFor="projectDetails"
-                        className="block text-xs font-semibold tracking-wider text-ink/80 uppercase"
+                        className="block text-[10px] sm:text-[11px] font-semibold tracking-wider text-ink/80 uppercase"
                       >
                         TELL US ABOUT YOUR PROJECT <span className="text-champagne-deep" aria-hidden="true">*</span>
                       </label>
@@ -540,7 +551,7 @@ export function ContactView() {
                         ref={projectDetailsRef}
                         id="projectDetails"
                         name="projectDetails"
-                        rows={4}
+                        rows={2}
                         required
                         disabled={status === "submitting"}
                         aria-required="true"
@@ -549,8 +560,8 @@ export function ContactView() {
                         value={formData.projectDetails}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="Tell us about your business, what you want to build, your goals, and any important requirements..."
-                        className={`contact-input resize-y min-h-30 ${
+                        placeholder="Tell us about your business, what you want to build, and key goals..."
+                        className={`contact-input py-2 px-3 text-xs sm:text-sm resize-y min-h-16 ${
                           touched.projectDetails && errors.projectDetails
                             ? "border-champagne-deep"
                             : "border-hairline"
@@ -565,11 +576,11 @@ export function ContactView() {
                     </div>
 
                     {/* SUBMIT BUTTON */}
-                    <div className="pt-2">
+                    <div className="pt-0.5">
                       <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className={`w-full py-4 px-6 rounded-2xl bg-ink text-white font-medium text-base hover:bg-champagne-deep cursor-pointer flex items-center justify-center gap-2 transition-none ${
+                        className={`w-full py-2.5 px-5 rounded-xl bg-ink text-white font-medium text-xs sm:text-sm hover:bg-champagne-deep cursor-pointer flex items-center justify-center gap-2 transition-none ${
                           status === "submitting" ? "opacity-75 cursor-not-allowed" : ""
                         }`}
                       >
@@ -584,7 +595,7 @@ export function ContactView() {
                       </button>
 
                       {/* PRIVACY MESSAGE */}
-                      <p className="text-center text-xs text-muted pt-3">
+                      <p className="text-center text-[10px] text-muted pt-1.5">
                         We respect your privacy. No spam ever.
                       </p>
                     </div>
@@ -594,7 +605,7 @@ export function ContactView() {
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           3. WHAT HAPPENS NEXT
@@ -605,18 +616,23 @@ export function ContactView() {
           4. If there is a fit, we prepare the proposal and next steps.
           (NO promised response times, NO aggressive sales language)
           ===================================================================== */}
-      <section className="border-b border-hairline section-spacing" aria-label="What Happens Next">
-        <div className="page-container space-y-12">
+      <StackedCardSection
+        index={2}
+        totalSections={4}
+        ariaLabel="Consultation Process"
+        id="consultation-process"
+      >
+        <div className="page-container space-y-5 md:space-y-6">
           {/* Section Header */}
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-3">
+          <div className="max-w-3xl space-y-2">
+            <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">Expectations &amp; Process</p>
             </div>
             <h2 className="type-heading text-ink">
               What happens next.
             </h2>
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed">
+            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed">
               We believe in direct, transparent collaboration from the very first interaction.
               Here is how we guide initial inquiries:
             </p>
@@ -626,73 +642,79 @@ export function ContactView() {
           <div className="border-t border-b border-hairline">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-hairline">
             {/* Step 1 */}
-            <div className="py-8 md:py-10 sm:pr-6 lg:pr-8 space-y-3">
+            <div className="py-4 md:py-5 sm:pr-4 lg:pr-6 space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">01</span>
                 <span className="type-label text-champagne-deep text-xs">Review</span>
               </div>
-              <h3 className="type-title text-ink font-medium text-lg">
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg">
                 We review your requirements
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                 We read through your submission and examine your current setup, goals, and technical context.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="py-8 md:py-10 sm:px-6 lg:px-8 space-y-3">
+            <div className="py-4 md:py-5 sm:px-4 lg:px-6 space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">02</span>
                 <span className="type-label text-champagne-deep text-xs">Discussion</span>
               </div>
-              <h3 className="type-title text-ink font-medium text-lg">
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg">
                 We discuss the business and project
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                 We connect directly to talk through your operational realities, user expectations, and key priorities.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="py-8 md:py-10 sm:px-6 lg:px-8 space-y-3">
+            <div className="py-4 md:py-5 sm:px-4 lg:px-6 space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">03</span>
                 <span className="type-label text-champagne-deep text-xs">Advisory</span>
               </div>
-              <h3 className="type-title text-ink font-medium text-lg">
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg">
                 We recommend an appropriate approach
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                 We outline practical technical options—recommending the simplest, most durable way to solve the problem.
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="py-8 md:py-10 sm:pl-6 lg:pl-8 space-y-3">
+            <div className="py-4 md:py-5 sm:pl-4 lg:pl-6 space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="type-label text-champagne font-medium">04</span>
                 <span className="type-label text-champagne-deep text-xs">Proposal</span>
               </div>
-              <h3 className="type-title text-ink font-medium text-lg">
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg">
                 Proposal &amp; next steps
               </h3>
-              <p className="type-body-sm text-muted leading-relaxed">
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                 If there is a mutual fit, we prepare a clear proposal with scope, deliverables, and next steps for your review.
               </p>
             </div>
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
 
       {/* =====================================================================
           4. DIRECT CONTACT INFORMATION
           Clean editorial block for direct correspondence, briefs, and RFPs
           ===================================================================== */}
-      <section className="bg-surface-alt border-b border-hairline section-spacing" aria-label="Direct Contact Information">
+      <StackedCardSection
+        index={3}
+        totalSections={4}
+        ariaLabel="Direct Contact Information"
+        id="direct-contact-info"
+        surfaceAlt
+      >
         <div className="page-container">
-          <div className="max-w-4xl space-y-8">
-            <div className="flex items-center gap-3">
+          <div className="max-w-4xl space-y-5 md:space-y-6">
+            <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">Direct Contact</p>
             </div>
@@ -701,14 +723,14 @@ export function ContactView() {
               Have a project brief or requirements? Send them to us directly.
             </h2>
 
-            <p className="type-body text-muted text-lg max-w-2xl leading-relaxed pt-3 md:pt-5">
+            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed pt-1">
               If you have already prepared a detailed scope document, request for proposal (RFP),
               or design brief, you are welcome to send it directly to our team via email.
             </p>
 
             {/* Contact Details Block */}
-            <div className="pt-4 border-t border-hairline">
-              <div className="space-y-2">
+            <div className="pt-3 border-t border-hairline">
+              <div className="space-y-1.5">
                 <p className="type-label text-muted">Direct Email</p>
                 <div className="flex items-center gap-2.5">
                   <Mail className="h-4 w-4 text-champagne-deep shrink-0" />
@@ -719,14 +741,14 @@ export function ContactView() {
                     mubeenk710@gmail.com
                   </a>
                 </div>
-                <p className="type-legal text-muted pt-1">
+                <p className="type-legal text-muted text-xs pt-0.5">
                   Reviewed directly by our engineering and design team.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </StackedCardSection>
     </div>
   );
 }

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ScrollScenes } from "@/components/motion/ScrollScenes";
-import { FeaturedWork } from "@/components/home/featured-work";
 import { Reveal } from "@/components/motion/Reveal";
 import { SpotlightCard } from "@/components/motion/SpotlightCard";
 import { MagneticButton } from "@/components/motion/MagneticButton";
@@ -149,10 +148,6 @@ export function HomeView() {
           aria-hidden="true"
         />
 
-        {/* Section A: Selected Engineering Work (Wrapped in <Reveal>) */}
-        <Reveal distance={24} duration={0.5}>
-          <FeaturedWork />
-        </Reveal>
 
         {/* Section B: Services & Capabilities (Wrapped in <Reveal>) */}
         <section

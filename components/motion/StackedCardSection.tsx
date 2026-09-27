@@ -58,14 +58,16 @@ export function StackedCardSection({
       } ${className}`}
     >
       <div
-        className={`mx-3 sm:mx-6 lg:mx-auto max-w-7xl min-h-fit sm:min-h-[44vh] lg:min-h-[48vh] overflow-y-auto flex flex-col justify-start rounded-[20px] sm:rounded-[26px] lg:rounded-[30px] border border-hairline shadow-[0_-2px_16px_rgba(22,21,15,0.03),0_12px_36px_-8px_rgba(22,21,15,0.08),0_2px_8px_-2px_rgba(22,21,15,0.04)] transition-[box-shadow,border-color] duration-300 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+        tabIndex={0}
+        aria-label={ariaLabel ? `${ariaLabel} content` : undefined}
+        className={`mx-3 sm:mx-6 lg:mx-auto max-w-7xl min-h-fit sm:min-h-[44vh] lg:min-h-[48vh] overflow-y-auto flex flex-col justify-start rounded-[20px] sm:rounded-[26px] lg:rounded-[30px] border border-hairline shadow-[0_-2px_16px_rgba(22,21,15,0.03),0_12px_36px_-8px_rgba(22,21,15,0.08),0_2px_8px_-2px_rgba(22,21,15,0.04)] transition-[box-shadow,border-color] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-deep focus-visible:ring-offset-2 card-scrollbar ${
           surfaceAlt ? "bg-surface-alt" : "bg-surface"
         } ${cardClassName}`}
         style={{
           maxHeight: maxCardHeight,
         }}
       >
-        <div className="py-4 px-4 sm:py-5 sm:px-6 md:py-6 md:px-8 lg:py-7 lg:px-10 w-full">
+        <div className="py-3.5 px-3.5 sm:py-4 sm:px-6 md:py-4.5 md:px-8 lg:py-4.5 lg:px-8 w-full">
           {children}
         </div>
       </div>

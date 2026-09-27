@@ -354,4 +354,25 @@ p, ul, ol, li, blockquote {
   }
 }
 
+/* =============================================================================
+   Card Stack Thin Scrollbar Utility
+   ============================================================================= */
+.card-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(22, 21, 15, 0.2) transparent;
+}
+
+.card-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(22, 21, 15, 0.2);
+  border-radius: 9999px;
+}
+
 

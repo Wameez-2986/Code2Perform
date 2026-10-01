@@ -5,6 +5,8 @@ import { ReactNode, useRef, useState } from "react";
 import Link from "next/link";
 import { MOTION } from "@/lib/motion";
 
+import { useShouldAnimate } from "./useMotionPreferences";
+
 interface MagneticButtonProps {
   children: ReactNode;
   className?: string;
@@ -24,10 +26,10 @@ export function MagneticButton({
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const shouldAnimate = useShouldAnimate();
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return;
-    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) return;
+    if (!shouldAnimate || !ref.current) return;
 
     const { clientX, clientY } = e;
     const { width, height, left, top } = ref.current.getBoundingClientRect();
@@ -42,10 +44,11 @@ export function MagneticButton({
   };
 
   const handleMouseLeave = () => {
+    if (!shouldAnimate) return;
     setPosition({ x: 0, y: 0 });
   };
 
-  const content = (
+  const content = shouldAnimate ? (
     <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
@@ -62,6 +65,14 @@ export function MagneticButton({
     >
       {children}
     </motion.div>
+  ) : (
+    <div
+      ref={ref}
+      className={`inline-block ${className}`}
+      data-cursor={dataCursor}
+    >
+      {children}
+    </div>
   );
 
   if (href) {

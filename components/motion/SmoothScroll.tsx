@@ -11,9 +11,9 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // PERFORMANCE ENGINE: Only run JS wheel momentum on desktop with precise pointers.
-    // Budget mobile phones (10fps - 50fps) utilize 100% native hardware momentum scroll.
-    const isMobile = typeof window !== "undefined" && (window.innerWidth < 1024 || window.matchMedia("(pointer: coarse)").matches);
+    // In mobile phone view (< 768px): No animation / smooth momentum. 100% native scrolling.
+    // Desktop and Tablet view (>= 768px): Smooth Lenis scrolling with GSAP ticker synchronization.
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (isMobile || prefersReducedMotion) {

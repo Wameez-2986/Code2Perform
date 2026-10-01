@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import { MOTION } from "@/lib/motion";
 
+import { useShouldAnimate } from "./useMotionPreferences";
+
 interface WordRevealProps {
   text: string;
   className?: string;
@@ -16,6 +18,12 @@ export function WordReveal({
   as: Component = "h2",
   delay = 0,
 }: WordRevealProps) {
+  const shouldAnimate = useShouldAnimate();
+
+  if (!shouldAnimate) {
+    return <Component className={className}>{text}</Component>;
+  }
+
   const words = text.split(" ");
 
   return (

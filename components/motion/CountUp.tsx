@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "motion/react";
 
+import { useShouldAnimate } from "./useMotionPreferences";
+
 interface CountUpProps {
   to: number;
   from?: number;
@@ -24,9 +26,14 @@ export function CountUp({
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [value, setValue] = useState(from);
+  const shouldAnimate = useShouldAnimate();
+  const [value, setValue] = useState(shouldAnimate ? from : to);
 
   useEffect(() => {
+    if (!shouldAnimate) {
+      setValue(to);
+      return;
+    }
     if (!isInView) return;
 
     let startTime: number | null = null;

@@ -45,9 +45,10 @@ export function ScrollScenes() {
       const mm = gsap.matchMedia();
 
       // =====================================================================
-      // TIER 1: DESKTOP & LAPTOPS (Full 540svh Pinned Timeline with Camera Drift)
+      // TIER 1: DESKTOP & TABLETS (min-width: 768px)
+      // Full 540svh Pinned Timeline with Camera Drift, Scene Counter & Beat Animations
       // =====================================================================
-      mm.add("(min-width: 1024px) and (pointer: fine)", () => {
+      mm.add("(min-width: 768px)", () => {
         // Master Timeline pinned across 540svh
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -185,12 +186,13 @@ export function ScrollScenes() {
       });
 
       // =====================================================================
-      // TIER 2: MOBILE & TOUCH DEVICES (10 FPS - 50 FPS Safe Zero-Hang Architecture)
+      // TIER 2: MOBILE PHONES (< 768px)
+      // Normal website layout: No animation, no pinning, pure vertical flow
       // =====================================================================
-      mm.add("(max-width: 1023px), (pointer: coarse)", () => {
-        // On mobile: Completely disable 540svh pinning and continuous scrub
-        // Reveal beats naturally as user scrolls using low-overhead discrete triggers
-        gsap.set([b0, b1, b2, b3], { autoAlpha: 1, y: 0 });
+      mm.add("(max-width: 767px)", () => {
+        // On mobile phone: Completely disable pinning, scrub, and animation
+        // All beats remain fully visible in standard document flow
+        gsap.set([b0, b1, b2, b3], { autoAlpha: 1, y: 0, clearProps: "transform" });
         const b2Words = b2.querySelectorAll(".beat2-word");
         if (b2Words.length > 0) {
           gsap.set(b2Words, { opacity: 1 });
@@ -204,13 +206,13 @@ export function ScrollScenes() {
     <div
       ref={wrapperRef}
       id="home"
-      className="relative w-full lg:h-[540svh]"
+      className="relative w-full md:h-[540svh]"
       aria-label="Interactive Presentation"
     >
-      {/* Pinned Stage on Desktop (h-svh), Natural Vertical Flow on Mobile (h-auto) */}
+      {/* Pinned Stage on Desktop & Tablet (h-svh), Natural Vertical Flow on Mobile (h-auto) */}
       <div
         ref={stageRef}
-        className="relative lg:sticky top-0 h-auto lg:h-svh w-full overflow-hidden hero-texture flex flex-col justify-center"
+        className="relative md:sticky top-0 h-auto md:h-svh w-full overflow-hidden hero-texture flex flex-col justify-center"
       >
         {/* Background Camera Drift Container (GPU Composited) */}
         <div
@@ -222,8 +224,8 @@ export function ScrollScenes() {
           <div className="absolute top-1/2 -right-32 w-64 md:w-lg h-64 md:h-128 rounded-full bg-champagne-glow blur-2xl md:blur-3xl opacity-30 md:opacity-40" />
         </div>
 
-        {/* Dynamic Scene Counter (Desktop Only) */}
-        <div className="absolute bottom-8 right-8 z-30 hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface/80 border border-hairline backdrop-blur-xs shadow-xs">
+        {/* Dynamic Scene Counter (Desktop & Tablet) */}
+        <div className="absolute bottom-8 right-8 z-30 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface/80 border border-hairline backdrop-blur-xs shadow-xs">
           <span className="w-1.5 h-1.5 rounded-full bg-champagne-deep" />
           <span
             ref={counterRef}
@@ -238,7 +240,7 @@ export function ScrollScenes() {
             ================================================================= */}
         <div
           ref={beat0Ref}
-          className="relative lg:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-16 lg:py-0 z-20"
+          className="relative md:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-16 md:py-0 z-20"
         >
           <div className="max-w-4xl flex flex-col items-center">
             {/* Live Status Pill */}
@@ -246,7 +248,7 @@ export function ScrollScenes() {
               className="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 px-4 py-2 bg-surface border border-hairline rounded-full shadow-xs mb-6 md:mb-10"
               role="status"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-500 md:animate-pulse" />
               <span className="type-label text-ink tracking-widest text-[10px] sm:text-xs">
                 {SCENES_DATA.beat0.pill}
               </span>
@@ -288,10 +290,10 @@ export function ScrollScenes() {
             </div>
           </div>
 
-          {/* Scroll Cue Pulse (Desktop Only) */}
+          {/* Scroll Cue Pulse (Desktop & Tablet) */}
           <div
             ref={scrollCueRef}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 pointer-events-none"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 pointer-events-none"
           >
             <span className="text-[11px] font-mono tracking-widest uppercase text-muted">
               Scroll to explore
@@ -305,7 +307,7 @@ export function ScrollScenes() {
             ================================================================= */}
         <div
           ref={beat1Ref}
-          className="relative lg:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-12 lg:py-0 z-20 pointer-events-auto border-t lg:border-t-0 border-hairline"
+          className="relative md:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-12 md:py-0 z-20 pointer-events-auto border-t md:border-t-0 border-hairline"
         >
           <div className="page-container max-w-5xl space-y-6 md:space-y-8">
             <div className="space-y-2 md:space-y-3">
@@ -347,7 +349,7 @@ export function ScrollScenes() {
             ================================================================= */}
         <div
           ref={beat2Ref}
-          className="relative lg:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-12 lg:py-0 z-20 pointer-events-auto border-t lg:border-t-0 border-hairline"
+          className="relative md:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-12 md:py-0 z-20 pointer-events-auto border-t md:border-t-0 border-hairline"
         >
           <div className="page-container max-w-5xl space-y-6 md:space-y-8">
             <div className="space-y-2 md:space-y-3">
@@ -357,7 +359,7 @@ export function ScrollScenes() {
               </div>
               <h2 className="type-heading text-ink text-xl sm:text-3xl md:text-4xl max-w-2xl mx-auto flex flex-wrap justify-center gap-x-[0.25em]">
                 {SCENES_DATA.beat2.heading.split(" ").map((w, i) => (
-                  <span key={i} className="beat2-word inline-block lg:opacity-25">
+                  <span key={i} className="beat2-word inline-block md:opacity-25">
                     {w}
                   </span>
                 ))}
@@ -390,7 +392,7 @@ export function ScrollScenes() {
             ================================================================= */}
         <div
           ref={beat3Ref}
-          className="relative lg:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-12 lg:py-0 z-20 pointer-events-auto border-t lg:border-t-0 border-hairline"
+          className="relative md:absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-12 md:py-0 z-20 pointer-events-auto border-t md:border-t-0 border-hairline"
         >
           <div className="page-container max-w-5xl space-y-6 md:space-y-8">
             <div className="space-y-2 md:space-y-3">

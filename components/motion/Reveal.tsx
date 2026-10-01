@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { ReactNode } from "react";
 import { MOTION } from "@/lib/motion";
 
+import { useShouldAnimate } from "./useMotionPreferences";
+
 interface RevealProps {
   children: ReactNode;
   className?: string;
@@ -21,6 +23,12 @@ export function Reveal({
   delay = 0,
   threshold = 0.05,
 }: RevealProps) {
+  const shouldAnimate = useShouldAnimate();
+
+  if (!shouldAnimate) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: distance }}

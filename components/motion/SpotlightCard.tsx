@@ -19,8 +19,8 @@ export function SpotlightCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // 10fps - 50fps Mobile Safety: Skip completely on touch screens
-    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) return;
+    // Disable on mobile phone view (< 768px)
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
 
     const card = cardRef.current;
     if (!card) return;
@@ -35,7 +35,7 @@ export function SpotlightCard({
   };
 
   const handleMouseEnter = () => {
-    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) return;
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
     setIsHovered(true);
   };
 
@@ -54,9 +54,9 @@ export function SpotlightCard({
         } as React.CSSProperties
       }
     >
-      {/* Ambient Radial Spotlight Highlight (Desktop Only) */}
+      {/* Ambient Radial Spotlight Highlight (Desktop & Tablet) */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-10 hidden lg:block"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-10 hidden md:block"
         style={{
           opacity: isHovered ? 1 : 0,
           background: `radial-gradient(400px circle at var(--spotlight-x) var(--spotlight-y), ${spotlightColor}, transparent 70%)`,

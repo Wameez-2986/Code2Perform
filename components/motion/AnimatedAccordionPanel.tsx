@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { ReactNode } from "react";
 import { MOTION } from "@/lib/motion";
 
+import { useShouldAnimate } from "./useMotionPreferences";
+
 interface AnimatedAccordionPanelProps {
   isOpen: boolean;
   children: ReactNode;
@@ -17,6 +19,17 @@ export function AnimatedAccordionPanel({
   className = "",
   id,
 }: AnimatedAccordionPanelProps) {
+  const shouldAnimate = useShouldAnimate();
+
+  if (!shouldAnimate) {
+    if (!isOpen) return null;
+    return (
+      <div id={id} className={className}>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <AnimatePresence initial={false}>
       {isOpen && (

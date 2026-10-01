@@ -355,24 +355,60 @@ p, ul, ol, li, blockquote {
 }
 
 /* =============================================================================
-   Card Stack Thin Scrollbar Utility
+   Responsive Card Stacking Layout
+   Mobile (<768px): Normal website layout — sections flow naturally, no sticky, no internal scroll
+   Tablet & Desktop (>=768px): Layered / nested card stack scroll interaction
    ============================================================================= */
-.card-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(22, 21, 15, 0.2) transparent;
+.stacked-card-section {
+  position: relative;
+  top: auto;
+  z-index: auto;
 }
 
-.card-scrollbar::-webkit-scrollbar {
-  width: 6px;
+.stacked-card-inner {
+  max-height: none;
+  overflow: visible;
 }
 
-.card-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+@media (min-width: 768px) {
+  .stacked-card-section {
+    position: sticky;
+    top: var(--stack-top);
+    z-index: var(--stack-z);
+  }
+
+  .stacked-card-inner {
+    max-height: var(--card-max-height);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(22, 21, 15, 0.2) transparent;
+  }
+
+  .stacked-card-inner::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .stacked-card-inner::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .stacked-card-inner::-webkit-scrollbar-thumb {
+    background-color: rgba(22, 21, 15, 0.2);
+    border-radius: 9999px;
+  }
 }
 
-.card-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(22, 21, 15, 0.2);
-  border-radius: 9999px;
+/* =============================================================================
+   Mobile Phone Animation Exclusion (<768px)
+   Normal website on mobile: no CSS animations or keyframe pulses
+   ============================================================================= */
+@media (max-width: 767px) {
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
 }
 
 

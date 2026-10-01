@@ -4,7 +4,7 @@ import { StackedCardSection } from "@/components/motion";
 
 export function ServicesView() {
   return (
-    <div className="relative w-full pt-4 sm:pt-6 pb-36 sm:pb-48 md:pb-64">
+    <div className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-20 md:pb-64">
       {/* =====================================================================
           1. SERVICES HERO
           Editorial opening with practice anchor bar

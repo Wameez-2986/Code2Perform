@@ -1,12 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import { usePointerFine, usePrefersReducedMotion } from "./useMotionPreferences";
+import { useShouldAnimate } from "./useMotionPreferences";
 
 export function HeroGlow() {
-  const isPointerFine = usePointerFine();
-  const prefersReduced = usePrefersReducedMotion();
-  const shouldAnimate = isPointerFine && !prefersReduced;
+  const shouldAnimate = useShouldAnimate();
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">

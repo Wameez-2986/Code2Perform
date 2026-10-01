@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { ReactNode } from "react";
 import { MOTION } from "@/lib/motion";
 
+import { useShouldAnimate } from "./useMotionPreferences";
+
 interface StaggerProps {
   children: ReactNode;
   className?: string;
@@ -17,6 +19,12 @@ export function Stagger({
   interval = 0.08,
   delay = 0.05,
 }: StaggerProps) {
+  const shouldAnimate = useShouldAnimate();
+
+  if (!shouldAnimate) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial="hidden"
@@ -47,6 +55,12 @@ export function StaggerItem({
   className?: string;
   distance?: number;
 }) {
+  const shouldAnimate = useShouldAnimate();
+
+  if (!shouldAnimate) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{

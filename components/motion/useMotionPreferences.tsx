@@ -49,3 +49,51 @@ export function usePrefersReducedMotion() {
     getReducedMotionServerSnapshot
   );
 }
+
+function subscribeDesktopOrTablet(callback: () => void) {
+  if (typeof window === "undefined") return () => {};
+  const mq = window.matchMedia("(min-width: 768px)");
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
+
+function getDesktopOrTabletSnapshot() {
+  if (typeof window === "undefined") return true;
+  return window.matchMedia("(min-width: 768px)").matches;
+}
+
+function getDesktopOrTabletServerSnapshot() {
+  return true;
+}
+
+/**
+ * Returns true if the device is a Tablet or Desktop (>= 768px).
+ * Returns false on Mobile phones (< 768px).
+ */
+export function useIsDesktopOrTablet() {
+  return useSyncExternalStore(
+    subscribeDesktopOrTablet,
+    getDesktopOrTabletSnapshot,
+    getDesktopOrTabletServerSnapshot
+  );
+}
+
+/**
+ * Returns true on Mobile phones (< 768px).
+ */
+export function useIsMobile() {
+  const isDesktopOrTablet = useIsDesktopOrTablet();
+  return !isDesktopOrTablet;
+}
+
+/**
+ * Core animation gate: animations ONLY run on desktop & tablet (>= 768px)
+ * and when reduced motion is not explicitly requested.
+ * On mobile phones, this returns false so the website remains normal without animations.
+ */
+export function useShouldAnimate() {
+  const isDesktopOrTablet = useIsDesktopOrTablet();
+  const prefersReduced = usePrefersReducedMotion();
+  return isDesktopOrTablet && !prefersReduced;
+}
+

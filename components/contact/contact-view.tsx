@@ -224,7 +224,7 @@ export function ContactView() {
   };
 
   return (
-    <div className="relative w-full pt-4 sm:pt-6 pb-36 sm:pb-48 md:pb-64">
+    <div className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-20 md:pb-64">
       {/* =====================================================================
           1. CONTACT HERO: CONSULTATION-FIRST POSITIONING
           Communicating: "Tell us what you're trying to achieve. We'll understand the situation and discuss what makes sense."

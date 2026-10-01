@@ -141,7 +141,7 @@ export function HomeView() {
           Applies the exact same physical card stack animation as About, Services,
           and Contact pages to the second and third sections without altering content.
           ===================================================================== */}
-      <div id="content-stream" className="relative z-20 bg-bone pt-6 sm:pt-10 pb-36 sm:pb-48 md:pb-64">
+      <div id="content-stream" className="relative z-20 bg-bone pt-6 sm:pt-10 pb-12 sm:pb-20 md:pb-64">
         {/* 140px Handoff Gradient Fade Mask */}
         <div
           className="pointer-events-none absolute -top-35 left-0 right-0 h-35 bg-linear-to-b from-transparent to-bone"

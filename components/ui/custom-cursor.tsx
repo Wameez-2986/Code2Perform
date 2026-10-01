@@ -10,9 +10,9 @@ export function CustomCursor() {
   const cursorLabelRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    // ZERO MOBILE OVERHEAD: Strictly disable on touch or screens under 1024px
+    // ZERO MOBILE OVERHEAD: Strictly disable on touch or screens under 768px
     if (typeof window === "undefined") return;
-    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024;
+    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
     if (isTouch) return;
 
     const container = containerRef.current;
@@ -92,7 +92,7 @@ export function CustomCursor() {
   return (
     <div
       ref={containerRef}
-      className="pointer-events-none fixed inset-0 z-9999 opacity-0 transition-opacity duration-300 hidden lg:block"
+      className="pointer-events-none fixed inset-0 z-9999 opacity-0 transition-opacity duration-300 hidden md:block"
       aria-hidden="true"
     >
       {/* Precision Core Dot */}

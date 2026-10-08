@@ -7,8 +7,6 @@ export interface SceneCard {
 
 export const SCENES_DATA = {
   beat0: {
-    pill: "HYDERABAD · REMOTE WORLDWIDE",
-    pillStatus: "Accepting New Projects",
     titleLine1: "We turn ideas into digital",
     titleLine2: "experiences that perform.",
     description:

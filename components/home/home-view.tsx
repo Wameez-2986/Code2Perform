@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { ScrollScenes } from "@/components/motion/ScrollScenes";
-import { StackedCardSection } from "@/components/motion";
-import { SpotlightCard } from "@/components/motion/SpotlightCard";
-import { MagneticButton } from "@/components/motion/MagneticButton";
+import { HomeScenes } from "./home-scenes";
+import { SectionCard } from "@/components/ui/section-card";
 
 // Custom SVG Icons matching the clean outline style from the reference cards, themed in champagne
 function UiUxIcon({ className = "w-8 h-8 text-champagne-deep" }: { className?: string }) {
@@ -127,114 +125,92 @@ export function HomeView() {
   return (
     <div className="w-full">
       {/* =====================================================================
-          1. MASTER PINNED SCROLL SCENES (540svh Stage)
-          Scans through 4 Narrative Beats:
-          - Beat 0: Hero & Thesis (camera zoom 1.12, kinetic text rise)
-          - Beat 1: What Sets Us Apart (4 cards stagger)
-          - Beat 2: How We Turn Ideas Into Products (word brightening, 3 steps)
-          - Beat 3: Who We Work With (client cards + handoff dwell)
+          1. HOME SCENES (Hero, What Sets Us Apart, Our Process, Who We Work With)
           ===================================================================== */}
-      <ScrollScenes />
+      <HomeScenes />
 
       {/* =====================================================================
-          2. CONTENT STREAM: LAYERED / NESTED CARD STACK SCROLL INTERACTION
-          Applies the exact same physical card stack animation as About, Services,
-          and Contact pages to the second and third sections without altering content.
+          2. CONTENT STREAM: SERVICES & CAPABILITIES AND CALL TO ACTION
+          Standard natural document flow with clean visual presentation.
           ===================================================================== */}
-      <div id="content-stream" className="relative z-20 bg-bone pt-6 sm:pt-10 pb-12 sm:pb-20 md:pb-64">
-        {/* 140px Handoff Gradient Fade Mask */}
-        <div
-          className="pointer-events-none absolute -top-35 left-0 right-0 h-35 bg-linear-to-b from-transparent to-bone"
-          aria-hidden="true"
-        />
-
+      <div id="content-stream" className="relative z-20 bg-bone py-12 sm:py-16 md:py-20">
         {/* Section B: Services & Capabilities (Card 0) */}
-        <StackedCardSection
+        <SectionCard
           index={0}
           totalSections={2}
           ariaLabel="Services & Capabilities"
           id="services"
           cardClassName="relative overflow-hidden"
         >
-          {/* Ambient Champagne Glow Orbs */}
-          <div
-            className="absolute -top-16 -left-16 w-96 h-96 rounded-full bg-champagne-glow blur-3xl pointer-events-none opacity-40"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute -bottom-16 -right-16 w-96 h-96 rounded-full bg-champagne-glow blur-3xl pointer-events-none opacity-30"
-            aria-hidden="true"
-          />
-
-          <div className="relative page-container space-y-3 sm:space-y-4 lg:space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-2 sm:pb-3 border-b border-hairline">
+          <div className="relative page-container space-y-4 lg:space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-hairline">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
                   <p className="type-label text-champagne-deep text-xs">Services &amp; Capabilities</p>
                 </div>
-                <h2 className="type-heading text-ink text-lg sm:text-xl lg:text-2xl">
+                <h2 className="type-heading text-ink text-xl sm:text-2xl lg:text-3xl">
                   What we build, maintain, and grow.
                 </h2>
-                <p className="type-body-sm text-muted text-xs sm:text-[13px] max-w-2xl leading-normal sm:leading-relaxed">
+                <p className="type-body-sm text-muted text-xs sm:text-sm max-w-2xl leading-normal sm:leading-relaxed">
                   We engineer reliable digital products from the ground up, and continue helping
                   you optimize, automate, and improve them over time.
                 </p>
               </div>
               <div className="shrink-0">
-                <MagneticButton href="/services" dataCursor="explore">
-                  <span className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep shrink-0 font-medium transition-colors text-xs">
-                    View all services &amp; deliverables
-                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                  </span>
-                </MagneticButton>
+                <Link
+                  href="/services"
+                  className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep shrink-0 font-medium text-xs"
+                >
+                  View all services &amp; deliverables
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
               </div>
             </div>
 
-            {/* Spotlight Cards Grid - Compact and proportional so both rows are 100% visible on all desktop screens */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3 lg:gap-3.5">
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-4">
               {SERVICES.map((service) => {
                 const IconComponent = service.icon;
                 return (
-                  <SpotlightCard
+                  <div
                     key={service.name}
-                    dataCursor="explore"
-                    className="relative rounded-xl border border-hairline bg-white/70 backdrop-blur-xs shadow-xs hover:shadow-md hover:border-champagne/40 hover:-translate-y-0.5 transition-all duration-300"
+                    className="relative rounded-xl border border-hairline bg-surface p-4 shadow-xs hover:border-champagne/40"
                   >
                     <Link
                       href="/services"
-                      className="group relative flex flex-col items-center text-center p-3 sm:py-3 sm:px-3.5 lg:py-2.5 lg:px-3.5 h-full"
+                      className="group relative flex flex-col items-center text-center p-2 h-full"
                     >
                       {/* Top Right Arrow Indicator */}
                       <ArrowUpRight
-                        className="absolute top-2.5 right-2.5 h-3.5 w-3.5 text-champagne-deep opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        className="absolute top-1 right-1 h-3.5 w-3.5 text-champagne-deep opacity-0 group-hover:opacity-100"
                         aria-hidden="true"
                       />
 
                       {/* Frosted Champagne Icon Badge */}
-                      <div className="relative w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-champagne/10 border border-champagne/20 flex items-center justify-center mb-1.5 sm:mb-2 shrink-0 shadow-xs transition-transform duration-300 group-hover:scale-105 group-hover:bg-champagne/15">
+                      <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-champagne/10 border border-champagne/20 flex items-center justify-center mb-2 shrink-0 shadow-xs">
                         <IconComponent className="w-4 h-4 text-champagne-deep" />
                       </div>
 
                       {/* Title */}
-                      <h3 className="type-title text-ink font-semibold tracking-tight text-xs sm:text-[13px] mb-1 group-hover:text-champagne-deep transition-colors">
+                      <h3 className="type-title text-ink font-semibold tracking-tight text-xs sm:text-sm mb-1 group-hover:text-champagne-deep">
                         {service.name}
                       </h3>
 
-                      {/* Description - Complete information without truncation */}
-                      <p className="type-body-sm text-muted text-[11px] sm:text-xs leading-normal sm:leading-relaxed max-w-xs">
+                      {/* Description */}
+                      <p className="type-body-sm text-muted text-xs leading-normal sm:leading-relaxed max-w-xs">
                         {service.description}
                       </p>
                     </Link>
-                  </SpotlightCard>
+                  </div>
                 );
               })}
             </div>
           </div>
-        </StackedCardSection>
+        </SectionCard>
 
         {/* Section C: Final CTA (Card 1) */}
-        <StackedCardSection
+        <SectionCard
           index={1}
           totalSections={2}
           ariaLabel="Start a Conversation"
@@ -260,11 +236,12 @@ export function HomeView() {
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <MagneticButton href="/contact" dataCursor="contact">
-                  <span className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full transition-colors shadow-xs">
-                    Start a Project
-                  </span>
-                </MagneticButton>
+                <Link
+                  href="/contact"
+                  className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full shadow-xs"
+                >
+                  Start a Project
+                </Link>
                 <Link
                   href="/services"
                   className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5 self-center"
@@ -275,7 +252,7 @@ export function HomeView() {
               </div>
             </div>
           </div>
-        </StackedCardSection>
+        </SectionCard>
       </div>
     </div>
   );

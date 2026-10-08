@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { MagneticButton } from "@/components/motion/MagneticButton";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/home" },
@@ -52,22 +51,18 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-hairline transition-all duration-300 ${
-        isScrolled
-          ? "bg-bone/90 backdrop-blur-md shadow-xs py-1"
-          : "bg-bone py-3 md:py-4"
+      className={`sticky top-0 z-50 w-full border-b border-hairline bg-bone/95 backdrop-blur-md ${
+        isScrolled ? "shadow-xs" : ""
       }`}
     >
       <div
-        className={`page-container flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? "h-16 md:h-20" : "h-20 md:h-24"
-        }`}
+        className="page-container flex items-center justify-between h-16 md:h-18"
       >
         {/* Brand Logo */}
         <Link
           href="/"
           onClick={closeMenu}
-          className="group flex items-center"
+          className="flex items-center"
           aria-label="Code2Perform Home"
         >
           <Image
@@ -76,9 +71,7 @@ export function Header() {
             width={300}
             height={252}
             priority
-            className={`h-auto object-contain transition-all duration-300 group-hover:scale-105 ${
-              isScrolled ? "w-20 md:w-24" : "w-24 md:w-28"
-            }`}
+            className="h-12 md:h-14 w-auto object-contain"
           />
         </Link>
 
@@ -98,20 +91,19 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`type-nav relative py-1 transition-colors duration-200 group ${
+                className={`type-nav relative py-1 ${
                   isActive
                     ? "text-ink font-semibold"
                     : "text-muted hover:text-ink"
                 }`}
               >
                 <span>{item.label}</span>
-                {/* Hairline expanding underline */}
-                <span
-                  className={`absolute bottom-0 left-0 h-[1.5px] w-full bg-champagne-deep origin-left transition-transform duration-300 ease-out ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                  aria-hidden="true"
-                />
+                {isActive && (
+                  <span
+                    className="absolute bottom-0 left-0 h-[1.5px] w-full bg-champagne-deep"
+                    aria-hidden="true"
+                  />
+                )}
               </Link>
             );
           })}
@@ -119,11 +111,12 @@ export function Header() {
 
         {/* Primary CTA */}
         <div className="hidden md:flex items-center">
-          <MagneticButton href="/contact" dataCursor="contact">
-            <span className="type-button inline-flex items-center justify-center px-6 py-2.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full transition-colors shadow-xs">
-              Start a Project
-            </span>
-          </MagneticButton>
+          <Link
+            href="/contact"
+            className="type-button inline-flex items-center justify-center px-6 py-2.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full shadow-xs"
+          >
+            Start a Project
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SmoothScroll } from "@/components/motion/SmoothScroll";
-import { ScrollProgress } from "@/components/motion/ScrollProgress";
-import { CustomCursor } from "@/components/ui/custom-cursor";
-import "lenis/dist/lenis.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,15 +27,11 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ScrollProgress />
-        <SmoothScroll>
-          <CustomCursor />
-          <Header />
-          <main id="main-content" tabIndex={-1} className="flex-1 w-full focus:outline-none">
-            {children}
-          </main>
-          <Footer />
-        </SmoothScroll>
+        <Header />
+        <main id="main-content" tabIndex={-1} className="flex-1 w-full focus:outline-none">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

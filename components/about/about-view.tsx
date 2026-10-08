@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { StackedCardSection } from "@/components/motion";
+import { SectionCard as StackedCardSection } from "@/components/ui/section-card";
 
 export function AboutView() {
   return (
-    <div className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-20 md:pb-64">
+    <div className="relative w-full pt-4 sm:pt-6 pb-16 md:pb-24">
       {/* =====================================================================
           1. ABOUT HERO
           Positioning: Understanding the business behind every project

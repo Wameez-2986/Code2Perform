@@ -42,15 +42,15 @@ export function HomeScenes() {
       {/* Beat 1: What Sets Us Apart */}
       <section className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone">
         <div className="page-container max-w-5xl space-y-8 md:space-y-12 text-center">
-          <div>
+          <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">{SCENES_DATA.beat1.label}</p>
             </div>
-            <h2 className="type-heading text-ink text-2xl sm:text-3xl md:text-4xl max-w-3xl mx-auto text-balance">
+            <h2 className="type-heading text-ink text-2xl sm:text-3xl md:text-4xl max-w-3xl mx-auto text-center text-balance">
               {SCENES_DATA.beat1.heading}
             </h2>
-            <p className="type-body-sm text-muted max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mt-5 sm:mt-6 md:mt-7">
+            <p className="type-body-sm text-muted max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mt-5 sm:mt-6 md:mt-7 text-center">
               {SCENES_DATA.beat1.description}
             </p>
           </div>
@@ -79,7 +79,7 @@ export function HomeScenes() {
       {/* Beat 2: How We Turn Ideas Into Products */}
       <section className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface-alt">
         <div className="page-container max-w-5xl space-y-8 md:space-y-12 text-center">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">{SCENES_DATA.beat2.label}</p>
@@ -116,15 +116,15 @@ export function HomeScenes() {
       {/* Beat 3: Who We Work With */}
       <section className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone">
         <div className="page-container max-w-5xl space-y-8 md:space-y-12 text-center">
-          <div>
+          <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
               <p className="type-label text-champagne-deep">{SCENES_DATA.beat3.label}</p>
             </div>
-            <h2 className="type-heading text-ink text-2xl sm:text-3xl md:text-4xl max-w-3xl mx-auto text-balance">
+            <h2 className="type-heading text-ink text-2xl sm:text-3xl md:text-4xl max-w-3xl mx-auto text-center text-balance">
               {SCENES_DATA.beat3.heading}
             </h2>
-            <p className="type-body-sm text-muted max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mt-5 sm:mt-6 md:mt-7">
+            <p className="type-body-sm text-muted max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mt-5 sm:mt-6 md:mt-7 text-center">
               {SCENES_DATA.beat3.description}
             </p>
           </div>

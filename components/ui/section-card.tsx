@@ -32,9 +32,7 @@ export function SectionCard({
       } ${className}`}
     >
       <div
-        tabIndex={0}
-        aria-label={ariaLabel ? `${ariaLabel} content` : undefined}
-        className={`mx-3 sm:mx-6 lg:mx-auto max-w-7xl flex flex-col justify-start rounded-[20px] sm:rounded-[26px] lg:rounded-[30px] border border-hairline shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-deep focus-visible:ring-offset-2 ${
+        className={`mx-3 sm:mx-6 lg:mx-auto max-w-7xl flex flex-col justify-start rounded-[20px] sm:rounded-[26px] lg:rounded-[30px] border border-hairline shadow-xs ${
           surfaceAlt ? "bg-surface-alt" : "bg-surface"
         } ${cardClassName}`}
       >

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { HomeScenes } from "./home-scenes";
-import { SectionCard } from "@/components/ui/section-card";
 
 // Custom SVG Icons matching the clean outline style from the reference cards, themed in champagne
 function UiUxIcon({ className = "w-8 h-8 text-champagne-deep" }: { className?: string }) {
@@ -130,130 +129,126 @@ export function HomeView() {
       <HomeScenes />
 
       {/* =====================================================================
-          2. CONTENT STREAM: SERVICES & CAPABILITIES AND CALL TO ACTION
-          Standard natural document flow with clean visual presentation.
+          2. SERVICES & CAPABILITIES
+          Standard full-width section with clean responsive container.
           ===================================================================== */}
-      <div id="content-stream" className="relative z-20 bg-bone py-12 sm:py-16 md:py-20">
-        {/* Section B: Services & Capabilities (Card 0) */}
-        <SectionCard
-          index={0}
-          totalSections={2}
-          ariaLabel="Services & Capabilities"
-          id="services"
-          cardClassName="relative overflow-hidden"
-        >
-          <div className="relative page-container space-y-4 lg:space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-hairline">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  <p className="type-label text-champagne-deep text-xs">Services &amp; Capabilities</p>
-                </div>
-                <h2 className="type-heading text-ink text-xl sm:text-2xl lg:text-3xl">
-                  What we build, maintain, and grow.
-                </h2>
-                <p className="type-body-sm text-muted text-xs sm:text-sm max-w-2xl leading-normal sm:leading-relaxed">
-                  We engineer reliable digital products from the ground up, and continue helping
-                  you optimize, automate, and improve them over time.
-                </p>
-              </div>
-              <div className="shrink-0">
-                <Link
-                  href="/services"
-                  className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep shrink-0 font-medium text-xs"
-                >
-                  View all services &amp; deliverables
-                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-4">
-              {SERVICES.map((service) => {
-                const IconComponent = service.icon;
-                return (
-                  <div
-                    key={service.name}
-                    className="relative rounded-xl border border-hairline bg-surface p-4 shadow-xs hover:border-champagne/40"
-                  >
-                    <Link
-                      href="/services"
-                      className="group relative flex flex-col items-center text-center p-2 h-full"
-                    >
-                      {/* Top Right Arrow Indicator */}
-                      <ArrowUpRight
-                        className="absolute top-1 right-1 h-3.5 w-3.5 text-champagne-deep opacity-0 group-hover:opacity-100"
-                        aria-hidden="true"
-                      />
-
-                      {/* Frosted Champagne Icon Badge */}
-                      <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-champagne/10 border border-champagne/20 flex items-center justify-center mb-2 shrink-0 shadow-xs">
-                        <IconComponent className="w-4 h-4 text-champagne-deep" />
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="type-title text-ink font-semibold tracking-tight text-xs sm:text-sm mb-1 group-hover:text-champagne-deep">
-                        {service.name}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="type-body-sm text-muted text-xs leading-normal sm:leading-relaxed max-w-xs">
-                        {service.description}
-                      </p>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </SectionCard>
-
-        {/* Section C: Final CTA (Card 1) */}
-        <SectionCard
-          index={1}
-          totalSections={2}
-          ariaLabel="Start a Conversation"
-          id="contact"
-          surfaceAlt
-        >
-          <div className="page-container">
-            <div className="max-w-4xl space-y-6">
-              <div className="flex items-center gap-2.5">
+      <section
+        id="services"
+        aria-label="Services & Capabilities"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone"
+      >
+        <div className="page-container space-y-6 lg:space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-hairline">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                <p className="type-label text-champagne-deep">Start a Conversation</p>
+                <p className="type-label text-champagne-deep text-xs">Services &amp; Capabilities</p>
               </div>
-
-              <h2 className="type-heading text-ink text-2xl sm:text-3xl md:text-4xl">
-                Looking for a digital partner you can rely on for the long haul?
+              <h2 className="type-heading text-ink text-xl sm:text-2xl lg:text-3xl">
+                What we build, maintain, and grow.
               </h2>
-
-              <p className="type-body-sm text-muted text-base max-w-2xl leading-relaxed pt-2">
-                Whether you need to build a new platform from scratch, modernize an
-                existing system that has slowed down, or find dependable ongoing technical
-                support, we are here to help. Tell us about your business goals, and let&apos;s
-                have an open, practical discussion about the best way forward.
+              <p className="type-body-sm text-muted text-xs sm:text-sm max-w-2xl leading-normal sm:leading-relaxed">
+                We engineer reliable digital products from the ground up, and continue helping
+                you optimize, automate, and improve them over time.
               </p>
-
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Link
-                  href="/contact"
-                  className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full shadow-xs"
-                >
-                  Start a Project
-                </Link>
-                <Link
-                  href="/services"
-                  className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5 self-center"
-                >
-                  Or review our services
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
+            </div>
+            <div className="shrink-0">
+              <Link
+                href="/services"
+                className="type-nav text-ink inline-flex items-center gap-1.5 hover:text-champagne-deep shrink-0 font-medium text-xs sm:text-sm"
+              >
+                View all services &amp; deliverables
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </Link>
             </div>
           </div>
-        </SectionCard>
-      </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+            {SERVICES.map((service) => {
+              const IconComponent = service.icon;
+              return (
+                <div
+                  key={service.name}
+                  className="relative rounded-2xl border border-hairline bg-surface p-5 sm:p-6 shadow-xs hover:border-champagne-deep/40 transition-colors"
+                >
+                  <Link
+                    href="/services"
+                    className="group relative flex flex-col items-center text-center p-2 h-full"
+                  >
+                    {/* Top Right Arrow Indicator */}
+                    <ArrowUpRight
+                      className="absolute top-1 right-1 h-3.5 w-3.5 text-champagne-deep opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-hidden="true"
+                    />
+
+                    {/* Frosted Champagne Icon Badge */}
+                    <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-champagne/10 border border-champagne/20 flex items-center justify-center mb-3 shrink-0 shadow-xs">
+                      <IconComponent className="w-4.5 h-4.5 text-champagne-deep" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="type-title text-ink font-semibold tracking-tight text-sm sm:text-base mb-1.5 group-hover:text-champagne-deep">
+                      {service.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed max-w-xs">
+                      {service.description}
+                    </p>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          3. CALL TO ACTION
+          Standard full-width section with clean responsive container.
+          ===================================================================== */}
+      <section
+        id="contact"
+        aria-label="Start a Conversation"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
+      >
+        <div className="page-container">
+          <div className="max-w-4xl space-y-6">
+            <div className="flex items-center gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
+              <p className="type-label text-champagne-deep">Start a Conversation</p>
+            </div>
+
+            <h2 className="type-heading text-ink text-2xl sm:text-3xl md:text-4xl">
+              Looking for a digital partner you can rely on for the long haul?
+            </h2>
+
+            <p className="type-body-sm text-muted text-base max-w-2xl leading-relaxed pt-2">
+              Whether you need to build a new platform from scratch, modernize an
+              existing system that has slowed down, or find dependable ongoing technical
+              support, we are here to help. Tell us about your business goals, and let&apos;s
+              have an open, practical discussion about the best way forward.
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <Link
+                href="/contact"
+                className="type-button inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-ink text-bone hover:bg-champagne-deep text-center rounded-full shadow-xs"
+              >
+                Start a Project
+              </Link>
+              <Link
+                href="/services"
+                className="type-nav text-ink hover:text-champagne-deep inline-flex items-center gap-1.5 self-center"
+              >
+                Or review our services
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

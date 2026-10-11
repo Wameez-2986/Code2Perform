@@ -57,37 +57,39 @@
 /* =============================================================================
    Base Reset & Font Lock
    ============================================================================= */
-html {
-  font-family: "Satoshi", system-ui, sans-serif;
-  background-color: var(--color-bone);
-  color: var(--color-ink);
-  overflow-x: clip;
-}
+@layer base {
+  html {
+    font-family: "Satoshi", system-ui, sans-serif;
+    background-color: var(--color-bone);
+    color: var(--color-ink);
+    overflow-x: clip;
+  }
 
-body {
-  font-family: "Satoshi", system-ui, sans-serif;
-  font-size: var(--fs-body);
-  font-weight: 400;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;
-  overflow-wrap: break-word;
-}
+  body {
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-size: var(--fs-body);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+    overflow-wrap: break-word;
+  }
 
-/* Override any browser heading defaults */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Satoshi", system-ui, sans-serif;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin: 0;
-  overflow-wrap: break-word;
-}
+  /* Override any browser heading defaults */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0;
+    overflow-wrap: break-word;
+  }
 
-p, ul, ol, li, blockquote {
-  font-family: "Satoshi", system-ui, sans-serif;
-  overflow-wrap: break-word;
+  p, ul, ol, li, blockquote {
+    font-family: "Satoshi", system-ui, sans-serif;
+    overflow-wrap: break-word;
+  }
 }
 
 /* =============================================================================
@@ -353,21 +355,80 @@ p, ul, ol, li, blockquote {
 }
 
 /* =============================================================================
-   Global Animation Removal — Standard Normal Website
-   No animations, keyframe pulses, or animated transitions across the entire site
+   Page Transitions & Route Smoothness
    ============================================================================= */
-*,
-*::before,
-*::after {
-  animation: none !important;
-  transition-duration: 0.001ms !important;
+.page-transition-wrapper {
+  will-change: opacity, transform;
 }
 
-.animate-pulse,
-.animate-spin,
-.animate-bounce,
-.animate-ping {
-  animation: none !important;
+.page-transition-enter {
+  animation: pageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.page-transition-exit {
+  animation: pageFadeOut 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* Route Progress Indicator */
+.route-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-champagne);
+  z-index: 9999;
+  pointer-events: none;
+  transform-origin: 0% 50%;
+  animation: routeProgress 0.4s ease-out forwards;
+}
+
+@keyframes routeProgress {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  70% {
+    transform: scaleX(0.85);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-enter,
+  .page-transition-exit,
+  .route-progress-bar {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 
 

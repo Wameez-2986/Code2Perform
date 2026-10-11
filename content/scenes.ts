@@ -14,25 +14,25 @@ export const SCENES_DATA = {
   },
   beat1: {
     label: "What Sets Us Apart",
-    heading: "An engineering agency that stays in your corner.",
-    description: "We don't launch and disappear. We build digital products to grow with your business.",
+    heading: "We build it with you, not just for you",
+    description: "Good software isn't just about getting something live. It's about building something you can actually use, maintain, and grow.",
     cards: [
       {
         id: "01",
-        tag: "01 / OWNERSHIP",
-        title: "Zero Throwaway Code",
-        description: "Built with maintainable Next.js and TypeScript architectures that your team can comfortably own forever.",
+        tag: "01 / THOUGHTFUL ENGINEERING",
+        title: "Built right from the start",
+        description: "We build with clear structure and maintainability in mind, so you're not left struggling to understand your own product six months later",
       },
       {
         id: "02",
-        tag: "02 / SPEED",
-        title: "Sub-50ms Performance",
-        description: "Laser-focused on instant page loads, 99+ Core Web Vitals, and dependable uptime across all devices.",
+        tag: "02 / NO DELAYS",
+        title: "Direct Access to Developers",
+        description: "You work directly with the people building your product. Less back-and-forth, fewer misunderstandings, and decisions made without unnecessary layers.",
       },
       {
         id: "03",
-        tag: "03 / ALIGNMENT",
-        title: "Direct Engineering Access",
+        tag: "03 / YOUR GOALS COME FIRST",
+        title: "Technology that solves a real problem",
         description: "Work directly with senior developers and designers without middle-management delays or lost context.",
       },
       {
@@ -46,7 +46,7 @@ export const SCENES_DATA = {
   beat2: {
     label: "How We Work",
     heading: "A disciplined delivery process from discovery to launch—and beyond.",
-    description: "Sound engineering, open communication, and a predictable path from day one.",
+    description: "Clear communication, thoughtful decisions, and reliable delivery.",
     steps: [
       {
         id: "01",
@@ -70,7 +70,7 @@ export const SCENES_DATA = {
   },
   beat3: {
     label: "Who We Work With",
-    heading: "Engineered for ambitious businesses and visionary operators.",
+    heading: "Built for businesses ready to turn bold ideas into real products.",
     description: "From custom platforms to enterprise redesigns, we build tools people actually use.",
     cards: [
       {

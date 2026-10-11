@@ -1,19 +1,17 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { SectionCard as StackedCardSection } from "@/components/ui/section-card";
 
 export function AboutView() {
   return (
-    <div className="relative w-full pt-4 sm:pt-6 pb-16 md:pb-24">
+    <div className="w-full">
       {/* =====================================================================
           1. ABOUT HERO
           Positioning: Understanding the business behind every project
           ===================================================================== */}
-      <StackedCardSection
-        index={0}
-        totalSections={5}
-        ariaLabel="About Hero"
+      <section
+        aria-label="About Hero"
         id="about-hero"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone"
       >
         <div className="page-container space-y-6 md:space-y-8">
           {/* Eyebrow */}
@@ -29,18 +27,15 @@ export function AboutView() {
 
           {/* Lower Split: Narrative & Focus Sidebar */}
           <div className="pt-4 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            <div className="lg:col-span-8 space-y-3">
+            <div className="lg:col-span-8 space-y-4">
               <p className="type-body text-ink font-medium text-base sm:text-lg leading-relaxed">
-                Too many software projects fail not because of poor coding, but because the
-                agency never took the time to understand the business they were building for.
-                Code2Perform works differently. We are an independent digital agency that acts
-                as a reliable partner to founders, growing teams, and established businesses.
+                Software projects can go wrong when the team building them doesn&apos;t fully understand the business behind them.
               </p>
               <p className="type-body text-muted text-sm sm:text-base leading-relaxed">
-                We don&apos;t treat software as a disconnected list of technical tickets. We dig into
-                how your company actually operates, who your customers are, and what commercial
-                goals you need to hit. Then we design, engineer, and support digital products
-                that solve real problems—and stick around to help them evolve over the long term.
+                At Code2Perform, we take the time to understand your goals, your customers, and the challenges you&apos;re trying to solve. We work closely with founders and businesses to build digital products that make sense for their needs.
+              </p>
+              <p className="type-body text-muted text-sm sm:text-base leading-relaxed">
+                From the first conversation to launch and beyond, we focus on building things that work, solving real problems, and helping your product grow with your business.
               </p>
             </div>
 
@@ -60,177 +55,170 @@ export function AboutView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          2. BEYOND CONTRACTING: HOW WE PARTNER
-          Presenting the agency as a practical partner rather than a software contractor
+          2. OUR APPROACH
+          Presenting how we work with our clients
           ===================================================================== */}
-      <StackedCardSection
-        index={1}
-        totalSections={5}
-        ariaLabel="Our Working Philosophy"
-        id="our-working-philosophy"
+      <section
+        aria-label="Our Approach"
+        id="our-approach"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
             {/* Left Column: Heading Anchor & Mission */}
-            <div className="lg:col-span-5 space-y-3">
-              <p className="type-label text-champagne-deep">Our Working Philosophy</p>
-              <h2 className="type-heading text-ink">
-                We work as an extension of your business, not a transactional software contractor.
-              </h2>
+            <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-5">
+              <div className="flex flex-col gap-2">
+                <p className="type-label text-champagne-deep">Our Approach</p>
+                <h2 className="type-heading text-ink">
+                  We build products with your business in mind.
+                </h2>
+              </div>
               <p className="type-body text-muted text-xs sm:text-sm leading-relaxed">
-                A typical software contractor takes a scope document and leaves when the invoice is paid.
-                We approach client relationships with direct personal accountability—giving honest counsel,
-                recommending simpler solutions, and protecting your bottom line.
+                We believe good software comes from understanding the people and business behind it. We take responsibility for our work, communicate openly, and focus on solutions that make sense for your business—not just the project brief.
               </p>
             </div>
 
             {/* Right Column: 4 Cornerstones */}
             <div className="lg:col-span-7 space-y-2.5">
-              <p className="type-label text-champagne-deep">How We Approach Client Relationships</p>
+              <p className="type-label text-champagne-deep">How We Work With Our Clients</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
                 <div className="space-y-0.5">
                   <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                    1. Business-first counsel
+                    1. Understand the business first
                   </h3>
                   <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
-                    We examine how digital choices impact your operational workflows,
-                    customer retention, and bottom line before writing a line of code.
+                    We take time to understand your goals, your customers, and the problems you&apos;re trying to solve before deciding what to build.
                   </p>
                 </div>
 
                 <div className="space-y-0.5">
                   <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                    2. Direct practitioner access
+                    2. Work directly with our team
                   </h3>
                   <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
-                    You communicate directly with the designers and engineers building
-                    your product, avoiding sales intermediaries and lost details.
+                    You speak directly with the designers and developers working on your product, so conversations stay clear and decisions don&apos;t get lost along the way.
                   </p>
                 </div>
 
                 <div className="space-y-0.5">
                   <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                    3. Complete ownership &amp; freedom
+                    3. You own what we build
                   </h3>
                   <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
-                    You own 100% of your source code, design files, and deployment
-                    credentials from day one, with zero proprietary lock-in.
+                    Your code, design files, and project assets belong to you. We build with transparency, so you can manage and grow your product on your own terms.
                   </p>
                 </div>
 
                 <div className="space-y-0.5">
                   <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                    4. Long-term availability
+                    4. Support beyond launch
                   </h3>
                   <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
-                    We remain available to help your product evolve when your business needs
-                    it, without forcing you into expensive, mandatory retainers.
+                    Our work doesn&apos;t have to end when your product goes live. We&apos;re available to help improve features, fix issues, and adapt the product as your needs change.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
           3. WHAT WE BELIEVE
-          Core convictions: Clarity, Speed, Utility, Durability
+          Core convictions: 01 / CLARITY, 02 / PERFORMANCE, 03 / PURPOSE, 04 / MAINTAINABILITY
           ===================================================================== */}
-      <StackedCardSection
-        index={2}
-        totalSections={5}
-        ariaLabel="What We Believe"
+      <section
+        aria-label="What We Believe"
         id="what-we-believe"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface-alt"
       >
-        <div className="page-container space-y-3 sm:space-y-4">
+        <div className="page-container space-y-8 md:space-y-10">
           {/* Section Header */}
-          <div className="max-w-3xl space-y-1.5">
+          <div className="max-w-3xl space-y-3">
             <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-              <p className="type-label text-champagne-deep">What We Believe</p>
+              <p className="type-label text-champagne-deep uppercase tracking-wider text-xs font-medium">
+                WHAT WE BELIEVE
+              </p>
             </div>
-            <h2 className="type-heading text-ink text-xl sm:text-2xl lg:text-3xl">
-              Digital products should be simple, fast, and genuinely useful.
+            <h2 className="type-heading text-ink text-2xl sm:text-3xl lg:text-4xl">
+              Good software solves problems without making things complicated.
             </h2>
-            <p className="type-body text-muted text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Most digital initiatives fail not from a lack of visual decoration,
-              but from a lack of focus. Here are four foundational convictions that
-              guide how we evaluate every project.
+            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed pt-1">
+              A digital product doesn&apos;t need to do everything. It needs to do the right things well. That&apos;s what guides us when we design and build products for our clients.
             </p>
           </div>
 
-          {/* 4-Item Grid Matrix: Single row on desktop (lg:grid-cols-4) so it never overflows */}
+          {/* 4-Item Grid Matrix: Single row on desktop */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-hairline">
             {/* Belief 01 */}
-            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
-              <span className="type-label text-champagne-deep font-medium">01 / Clarity</span>
-              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                Clarity comes before decoration
+            <div className="p-6 md:p-7 border-r border-b border-hairline flex flex-col justify-start">
+              <span className="type-label text-champagne-deep font-medium mb-2 uppercase tracking-wider text-xs">
+                01 / CLARITY
+              </span>
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg mb-2.5">
+                Make it easy to understand
               </h3>
-              <p className="type-body-sm text-muted text-xs leading-relaxed">
-                A digital product must clearly explain its purpose within seconds of arrival.
-                If visitors are confused by ambiguous marketing slogans or cluttered navigation,
-                the design has failed. We structure information for immediate understanding.
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                People shouldn&apos;t have to figure out how your product works. We keep the layout clear, the navigation simple, and the important information easy to find.
               </p>
             </div>
 
             {/* Belief 02 */}
-            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
-              <span className="type-label text-champagne-deep font-medium">02 / Speed</span>
-              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                Speed is respect for your user
+            <div className="p-6 md:p-7 border-r border-b border-hairline flex flex-col justify-start">
+              <span className="type-label text-champagne-deep font-medium mb-2 uppercase tracking-wider text-xs">
+                02 / PERFORMANCE
+              </span>
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg mb-2.5">
+                Every second counts
               </h3>
-              <p className="type-body-sm text-muted text-xs leading-relaxed">
-                Every second a person waits for a screen to load is a test of their patience.
-                Fast page loads build credibility, trust, and business conversions.
-                We engineer for instant response times from the foundation up.
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                Nobody likes waiting for a page to load. We focus on building responsive, reliable products that feel fast and make everyday tasks easier for the people using them.
               </p>
             </div>
 
             {/* Belief 03 */}
-            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
-              <span className="type-label text-champagne-deep font-medium">03 / Utility</span>
-              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                Useful products beat flashy gimmicks
+            <div className="p-6 md:p-7 border-r border-b border-hairline flex flex-col justify-start">
+              <span className="type-label text-champagne-deep font-medium mb-2 uppercase tracking-wider text-xs">
+                03 / PURPOSE
+              </span>
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg mb-2.5">
+                Every feature should have a reason
               </h3>
-              <p className="type-body-sm text-muted text-xs leading-relaxed">
-                We build websites and digital applications that solve real tasks—helping
-                customers book a service, purchase a product, or access critical data
-                without hindrance. If a feature does not serve a clear purpose, we leave it out.
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                We build around what your users actually need, whether that&apos;s booking a service, buying a product, or managing their work. If something doesn&apos;t add value, it probably doesn&apos;t need to be there.
               </p>
             </div>
 
             {/* Belief 04 */}
-            <div className="p-3 sm:p-4 border-r border-b border-hairline space-y-1">
-              <span className="type-label text-champagne-deep font-medium">04 / Longevity</span>
-              <h3 className="type-title text-ink font-medium text-sm sm:text-base">
-                Simple code is durable code
+            <div className="p-6 md:p-7 border-r border-b border-hairline flex flex-col justify-start">
+              <span className="type-label text-champagne-deep font-medium mb-2 uppercase tracking-wider text-xs">
+                04 / MAINTAINABILITY
+              </span>
+              <h3 className="type-title text-ink font-medium text-base sm:text-lg mb-2.5">
+                Build for today. Leave room for tomorrow.
               </h3>
-              <p className="type-body-sm text-muted text-xs leading-relaxed">
-                The best software is the simplest code that completely solves the problem.
-                We avoid fragile page builders and unnecessary libraries so your digital
-                systems stay secure, fast, and easy for your team to maintain over the long haul.
+              <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
+                Your product shouldn&apos;t become harder to manage as it grows. We write code that&apos;s organised, maintainable, and easier to update when your business needs something new.
               </p>
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
           4. HOW WE APPROACH DIGITAL WORK
           Understand business, problem, build, launch, stay available, improve
           ===================================================================== */}
-      <StackedCardSection
-        index={3}
-        totalSections={5}
-        ariaLabel="How We Approach Digital Work"
+      <section
+        aria-label="How We Approach Digital Work"
         id="how-we-approach"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
-        <div className="page-container space-y-5 md:space-y-6">
+        <div className="page-container space-y-6 md:space-y-8">
           {/* Header */}
           <div className="max-w-3xl space-y-2">
             <div className="flex items-center gap-2.5">
@@ -347,18 +335,16 @@ export function AboutView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
           5. CTA SECTION
           Warm editorial invitation band on surface-alt
           ===================================================================== */}
-      <StackedCardSection
-        index={4}
-        totalSections={5}
-        ariaLabel="Start a Project"
+      <section
+        aria-label="Start a Project"
         id="start-a-project"
-        surfaceAlt
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone"
       >
         <div className="page-container">
           <div className="max-w-4xl space-y-5 md:space-y-6">
@@ -371,7 +357,7 @@ export function AboutView() {
               Looking for a digital partner who understands your business?
             </h2>
 
-            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed pt-1">
+            <p className="type-body text-muted text-sm sm:text-base max-w-2xl leading-relaxed mt-5 sm:mt-6 pt-2">
               Whether you need to build a new platform from scratch, fix an existing
               system that has slowed down, or find dependable ongoing technical guidance,
               we would love to talk. Tell us what your business is aiming for, and let&apos;s
@@ -395,7 +381,7 @@ export function AboutView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
     </div>
   );
 }

@@ -10,7 +10,6 @@ import {
   Compass,
   Check,
 } from "lucide-react";
-import { SectionCard as StackedCardSection } from "@/components/ui/section-card";
 
 interface FormFields {
   name: string;
@@ -224,18 +223,17 @@ export function ContactView() {
   };
 
   return (
-    <div className="relative w-full pt-4 sm:pt-6 pb-16 md:pb-24">
+    <div className="w-full">
       {/* =====================================================================
           1. CONTACT HERO: CONSULTATION-FIRST POSITIONING
           Communicating: "Tell us what you're trying to achieve. We'll understand the situation and discuss what makes sense."
           ===================================================================== */}
-      <StackedCardSection
-        index={0}
-        totalSections={4}
-        ariaLabel="Contact Hero"
+      <section
+        aria-label="Contact Hero"
         id="contact-hero"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone"
       >
-        <div className="page-container space-y-5 md:space-y-6">
+        <div className="page-container space-y-6 md:space-y-8">
           {/* Eyebrow */}
           <div className="flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
@@ -270,7 +268,7 @@ export function ContactView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
           2. DISCOVERY FORM
@@ -278,11 +276,10 @@ export function ContactView() {
           Name, Work Email, Company / Business, What do you need?,
           Tell us about the project, What are you trying to achieve?
           ===================================================================== */}
-      <StackedCardSection
-        index={1}
-        totalSections={4}
-        ariaLabel="Discovery Inquiry Form"
+      <section
+        aria-label="Discovery Inquiry Form"
         id="discovery-inquiry-form"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -605,7 +602,7 @@ export function ContactView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
           3. WHAT HAPPENS NEXT
@@ -616,13 +613,12 @@ export function ContactView() {
           4. If there is a fit, we prepare the proposal and next steps.
           (NO promised response times, NO aggressive sales language)
           ===================================================================== */}
-      <StackedCardSection
-        index={2}
-        totalSections={4}
-        ariaLabel="Consultation Process"
+      <section
+        aria-label="Consultation Process"
         id="consultation-process"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface-alt"
       >
-        <div className="page-container space-y-5 md:space-y-6">
+        <div className="page-container space-y-6 md:space-y-8">
           {/* Section Header */}
           <div className="max-w-3xl space-y-2">
             <div className="flex items-center gap-2.5">
@@ -699,18 +695,16 @@ export function ContactView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
           4. DIRECT CONTACT INFORMATION
           Clean editorial block for direct correspondence, briefs, and RFPs
           ===================================================================== */}
-      <StackedCardSection
-        index={3}
-        totalSections={4}
-        ariaLabel="Direct Contact Information"
+      <section
+        aria-label="Direct Contact Information"
         id="direct-contact-info"
-        surfaceAlt
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone"
       >
         <div className="page-container">
           <div className="max-w-4xl space-y-5 md:space-y-6">
@@ -742,13 +736,13 @@ export function ContactView() {
                   </a>
                 </div>
                 <p className="type-legal text-muted text-xs pt-0.5">
-                  Reviewed directly by our engineering and design team.
+                  Reviewed directly by our Founder.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
     </div>
   );
 }

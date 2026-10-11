@@ -1,19 +1,17 @@
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
-import { SectionCard as StackedCardSection } from "@/components/ui/section-card";
 
 export function ServicesView() {
   return (
-    <div className="relative w-full pt-4 sm:pt-6 pb-16 md:pb-24">
+    <div className="w-full">
       {/* =====================================================================
           1. SERVICES HERO
           Editorial opening with practice anchor bar
           ===================================================================== */}
-      <StackedCardSection
-        index={0}
-        totalSections={8}
-        ariaLabel="Services Hero"
+      <section
+        aria-label="Services Hero"
         id="services-hero"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-bone"
       >
         <div className="page-container space-y-6 md:space-y-8">
           {/* Eyebrow */}
@@ -74,16 +72,15 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          2. WEB & DIGITAL DEVELOPMENT (CARD 1)
+          2. WEB & DIGITAL DEVELOPMENT (PRACTICE 1)
           ===================================================================== */}
-      <StackedCardSection
-        index={1}
-        totalSections={8}
-        ariaLabel="Web & Digital Development"
+      <section
+        aria-label="Web & Digital Development"
         id="web-digital-development"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -177,16 +174,15 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          3. UI/UX & PRODUCT DESIGN (CARD 2)
+          3. UI/UX & PRODUCT DESIGN (PRACTICE 2)
           ===================================================================== */}
-      <StackedCardSection
-        index={2}
-        totalSections={8}
-        ariaLabel="UI/UX & Product Design"
+      <section
+        aria-label="UI/UX & Product Design"
         id="ui-ux-product-design"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface-alt"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -280,16 +276,15 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          4. MOBILE APP DEVELOPMENT (CARD 3)
+          4. MOBILE APP DEVELOPMENT (PRACTICE 3)
           ===================================================================== */}
-      <StackedCardSection
-        index={3}
-        totalSections={8}
-        ariaLabel="Mobile App Development"
+      <section
+        aria-label="Mobile App Development"
         id="mobile-app-development"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -383,16 +378,15 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          5. SAAS & CUSTOM PLATFORMS (CARD 4)
+          5. SAAS & CUSTOM PLATFORMS (PRACTICE 4)
           ===================================================================== */}
-      <StackedCardSection
-        index={4}
-        totalSections={8}
-        ariaLabel="SaaS & Custom Platforms"
+      <section
+        aria-label="SaaS & Custom Platforms"
         id="saas-custom-platforms"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface-alt"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -486,16 +480,15 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          6. E-COMMERCE SOLUTIONS (CARD 5)
+          6. E-COMMERCE SOLUTIONS (PRACTICE 5)
           ===================================================================== */}
-      <StackedCardSection
-        index={5}
-        totalSections={8}
-        ariaLabel="E-Commerce Solutions"
+      <section
+        aria-label="E-Commerce Solutions"
         id="ecommerce-solutions"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -589,16 +582,15 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          7. AI & BUSINESS AUTOMATION (CARD 6)
+          7. AI & BUSINESS AUTOMATION (PRACTICE 6)
           ===================================================================== */}
-      <StackedCardSection
-        index={6}
-        totalSections={8}
-        ariaLabel="AI & Business Automation"
+      <section
+        aria-label="AI & Business Automation"
         id="ai-business-automation"
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface-alt"
       >
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -692,18 +684,16 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
 
       {/* =====================================================================
-          8. PROJECT CTA (CARD 7)
-          Warm editorial invitation band on surface-alt
+          8. PROJECT CTA
+          Editorial invitation band
           ===================================================================== */}
-      <StackedCardSection
-        index={7}
-        totalSections={8}
-        ariaLabel="Start a Project"
+      <section
+        aria-label="Start a Project"
         id="start-a-project"
-        surfaceAlt
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-hairline bg-surface"
       >
         <div className="page-container">
           <div className="max-w-4xl space-y-5 md:space-y-6">
@@ -739,7 +729,7 @@ export function ServicesView() {
             </div>
           </div>
         </div>
-      </StackedCardSection>
+      </section>
     </div>
   );
 }

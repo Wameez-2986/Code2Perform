@@ -59,14 +59,16 @@ export function HomeScenes() {
             {SCENES_DATA.beat1.cards.map((c) => (
               <div
                 key={c.id}
-                className="p-5 md:p-6 rounded-2xl bg-surface border border-hairline shadow-xs flex flex-col justify-between space-y-3"
+                className="p-5 md:p-6 rounded-2xl bg-surface border border-hairline shadow-xs flex flex-col justify-start"
               >
-                <span className="text-[11px] font-mono font-medium text-champagne-deep">
-                  {c.tag}
-                </span>
-                <h3 className="type-title text-ink font-semibold text-base md:text-lg">
-                  {c.title}
-                </h3>
+                <div className="flex flex-col gap-2 mb-4 sm:mb-5">
+                  <span className="text-[11px] font-mono font-medium text-champagne-deep block">
+                    {c.tag}
+                  </span>
+                  <h3 className="type-title text-ink font-semibold text-base md:text-lg">
+                    {c.title}
+                  </h3>
+                </div>
                 <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                   {c.description}
                 </p>
@@ -96,14 +98,16 @@ export function HomeScenes() {
             {SCENES_DATA.beat2.steps.map((s) => (
               <div
                 key={s.id}
-                className="p-6 md:p-7 rounded-2xl bg-surface border border-hairline shadow-xs space-y-3"
+                className="p-6 md:p-7 rounded-2xl bg-surface border border-hairline shadow-xs flex flex-col justify-start"
               >
-                <span className="text-[11px] font-mono font-semibold text-champagne-deep">
-                  {s.step}
-                </span>
-                <h3 className="type-title text-ink font-semibold text-base md:text-lg">
-                  {s.title}
-                </h3>
+                <div className="flex flex-col gap-2 mb-4 sm:mb-5">
+                  <span className="text-[11px] font-mono font-semibold text-champagne-deep block">
+                    {s.step}
+                  </span>
+                  <h3 className="type-title text-ink font-semibold text-base md:text-lg">
+                    {s.title}
+                  </h3>
+                </div>
                 <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                   {s.description}
                 </p>
@@ -133,17 +137,19 @@ export function HomeScenes() {
             {SCENES_DATA.beat3.cards.map((c) => (
               <div
                 key={c.id}
-                className="p-5 md:p-6 rounded-2xl bg-surface border border-hairline shadow-xs flex flex-col justify-between space-y-3 hover:border-champagne-deep/40"
+                className="p-5 md:p-6 rounded-2xl bg-surface border border-hairline shadow-xs flex flex-col justify-start hover:border-champagne-deep/40 transition-colors"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-semibold text-champagne-deep">
-                    {c.tag}
-                  </span>
-                  <ArrowUpRight className="h-4 w-4 text-muted" aria-hidden="true" />
+                <div className="flex flex-col gap-2 mb-4 sm:mb-5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-semibold text-champagne-deep">
+                      {c.tag}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-muted" aria-hidden="true" />
+                  </div>
+                  <h3 className="type-title text-ink font-semibold text-base md:text-lg">
+                    {c.title}
+                  </h3>
                 </div>
-                <h3 className="type-title text-ink font-semibold text-base md:text-lg">
-                  {c.title}
-                </h3>
                 <p className="type-body-sm text-muted text-xs sm:text-sm leading-relaxed">
                   {c.description}
                 </p>
